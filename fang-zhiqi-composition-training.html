@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方志祺 · 一次完整的作文训练流程展示</title>
+<style>
+  :root{
+    --bg:#F7F8FF;
+    --primary:#5B6CFF;
+    --yellow:#FFD166;
+    --pink:#FF7AB6;
+    --green:#55C59D;
+    --text:#1F2433;
+    --muted:#6B7280;
+    --card:#FFFFFF;
+    --line:#E5E7F5;
+    --shadow:0 8px 28px rgba(91,108,255,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Avenir Rounded','Nunito','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- 顶部横幅 ---------- */
+  header.hero{
+    background:linear-gradient(135deg,#5B6CFF 0%,#7C8BFF 55%,#9AA6FF 100%);
+    color:#fff;
+    padding:56px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .deco{position:absolute;border-radius:50%;opacity:.14;}
+  .hero .d1{width:220px;height:220px;background:#FFD166;top:-60px;right:-40px;}
+  .hero .d2{width:140px;height:140px;background:#FF7AB6;bottom:-50px;left:6%;}
+  .hero .d3{width:90px;height:90px;background:#fff;top:24px;left:32%;}
+  .hero-inner{position:relative;z-index:1;}
+  .hero .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+    padding:6px 14px;border-radius:999px;font-size:13px;letter-spacing:1px;
+    margin-bottom:18px;
+  }
+  .hero h1{font-size:clamp(26px,4.5vw,40px);font-weight:800;letter-spacing:1px;line-height:1.3;}
+  .hero .sub{margin-top:14px;font-size:clamp(15px,2.2vw,18px);opacity:.95;max-width:760px;}
+  .hero .flow-pill{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .flow-pill span{
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:8px 16px;border-radius:999px;font-size:14px;
+  }
+  .guide-link{
+    margin-top:28px;display:inline-flex;align-items:center;gap:10px;
+    background:#fff;color:var(--primary);
+    font-weight:700;padding:13px 24px;border-radius:14px;
+    text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .18s ease,box-shadow .18s ease;
+  }
+  .guide-link:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.16);}
+  .guide-link .arr{transition:transform .18s ease;}
+  .guide-link:hover .arr{transform:translateX(4px);}
+
+  /* ---------- 流程总览 ---------- */
+  section.intro{padding:40px 0 8px;}
+  .stepbar{
+    background:var(--card);border-radius:20px;box-shadow:var(--shadow);
+    padding:26px 24px;margin-top:26px;
+  }
+  .stepbar .bar-title{font-size:15px;color:var(--muted);margin-bottom:18px;text-align:center;letter-spacing:2px;}
+  .steps{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:stretch;}
+  .step{
+    flex:1 1 180px;display:flex;align-items:flex-start;gap:12px;
+    background:#FAFBFF;border:1px solid var(--line);border-radius:14px;padding:16px;
+  }
+  .step .num{
+    flex:none;width:40px;height:40px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:18px;color:#fff;
+  }
+  .step:nth-child(1) .num{background:var(--primary);}
+  .step:nth-child(2) .num{background:var(--yellow);color:#7A5A00;}
+  .step:nth-child(3) .num{background:var(--pink);}
+  .step:nth-child(4) .num{background:var(--green);}
+  .step .txt b{display:block;font-size:15px;}
+  .step .txt small{color:var(--muted);font-size:12.5px;line-height:1.5;}
+
+  /* ---------- 通用章节 ---------- */
+  section.block{padding:36px 0 8px;}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .sec-no{
+    flex:none;width:46px;height:46px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-weight:800;font-size:20px;
+  }
+  .sec-no.c1{background:var(--primary);}
+  .sec-no.c2{background:var(--yellow);color:#7A5A00;}
+  .sec-no.c3{background:var(--pink);}
+  .sec-no.c4{background:var(--green);}
+  .sec-head h2{font-size:clamp(20px,3vw,26px);font-weight:800;}
+  .sec-head .tag{margin-left:auto;background:#EEF0FF;color:var(--primary);font-size:12.5px;padding:5px 12px;border-radius:999px;font-weight:600;white-space:nowrap;}
+
+  .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:26px;margin-bottom:24px;}
+  .card p{margin-bottom:10px;}
+  .card p:last-child{margin-bottom:0;}
+
+  /* 图 + 说明并置 */
+  .media-row{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;}
+  .media-main{flex:1 1 340px;min-width:0;}
+  .media-side{flex:1 1 300px;min-width:0;}
+  figure{
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  figure img{width:100%;height:auto;display:block;}
+  figcaption{
+    padding:12px 16px;font-size:13px;color:var(--muted);
+    border-top:1px dashed var(--line);background:#FAFBFF;
+  }
+  .img-tip{font-size:14px;color:var(--muted);margin-top:10px;}
+  .pill-list{list-style:none;margin-top:6px;}
+  .pill-list li{
+    position:relative;padding:9px 0 9px 26px;border-bottom:1px dashed var(--line);font-size:14.5px;
+  }
+  .pill-list li:last-child{border-bottom:none;}
+  .pill-list li::before{
+    content:"";position:absolute;left:4px;top:16px;width:9px;height:9px;border-radius:50%;
+    background:var(--primary);
+  }
+  .pill-list li:nth-child(even)::before{background:var(--pink);}
+
+  /* 双图 */
+  .duo{display:flex;gap:24px;flex-wrap:wrap;}
+  .duo figure{flex:1 1 300px;}
+
+  /* 自评框 */
+  .selfeval{
+    margin-top:18px;background:linear-gradient(135deg,#FFF7E0,#FFFDF5);
+    border:1px solid #F3E3B0;border-radius:16px;padding:18px 22px;
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  }
+  .selfeval .score{
+    flex:none;width:88px;height:88px;border-radius:50%;
+    background:var(--yellow);color:#7A5A00;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:800;
+  }
+  .selfeval .score b{font-size:30px;line-height:1;}
+  .selfeval .score small{font-size:12px;margin-top:3px;}
+  .selfeval .txt{flex:1 1 260px;font-size:14.5px;}
+  .selfeval .txt b{color:#7A5A00;}
+
+  /* ---------- AI批改 ---------- */
+  .ai-card{
+    background:#fff;border-radius:20px;box-shadow:var(--shadow);
+    overflow:hidden;margin-bottom:24px;border:1px solid var(--line);
+  }
+  .ai-head{
+    background:linear-gradient(135deg,#FF7AB6,#FF9CCB);
+    color:#fff;padding:20px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .ai-head .avatar{
+    flex:none;width:44px;height:44px;border-radius:50%;background:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:22px;
+  }
+  .ai-head h3{font-size:19px;font-weight:800;}
+  .ai-head .who{font-size:13px;opacity:.95;}
+  .scoreband{
+    display:flex;gap:14px;flex-wrap:wrap;padding:20px 26px;
+    background:#FFF7FA;border-bottom:1px dashed var(--line);
+  }
+  .scorechip{
+    background:#fff;border:1px solid #F5DCE8;border-radius:14px;padding:10px 18px;text-align:center;flex:1 1 130px;
+  }
+  .scorechip b{display:block;font-size:22px;color:var(--pink);}
+  .scorechip small{color:var(--muted);font-size:12.5px;}
+  .ai-body{padding:26px;}
+  .ai-body h4{
+    font-size:16px;color:var(--pink);margin:26px 0 12px;font-weight:800;
+    display:flex;align-items:center;gap:8px;
+  }
+  .ai-body h4:first-child{margin-top:0;}
+  .ai-body h4::before{content:"";width:6px;height:18px;border-radius:3px;background:var(--pink);display:inline-block;}
+  .ai-body p{font-size:15px;margin-bottom:12px;}
+  .ai-body ul,.ai-body ol{margin:0 0 12px 4px;padding-left:22px;}
+  .ai-body li{font-size:15px;margin-bottom:8px;}
+  .callout{
+    background:#F4F6FF;border-left:4px solid var(--primary);border-radius:0 12px 12px 0;
+    padding:14px 18px;margin:14px 0;font-size:14.5px;
+  }
+  .callout.green{border-left-color:var(--green);background:#F1FBF7;}
+  .callout.yellow{border-left-color:var(--yellow);background:#FFFBF0;}
+  .callout.pink{border-left-color:var(--pink);background:#FFF5FA;}
+  .callout b{color:var(--primary);}
+  .callout.green b{color:#2E9E78;}
+  .callout.yellow b{color:#B98A00;}
+  .callout.pink b{color:#E0559A;}
+  .quote{
+    background:#FAFBFF;border:1px dashed #C9D0FF;border-radius:12px;
+    padding:14px 18px;font-size:14.5px;color:#4A5377;margin:12px 0;
+  }
+  .quote em{font-style:normal;color:var(--primary);font-weight:700;}
+  .badge-w{
+    display:inline-block;background:#FFF0F7;color:#D63384;border:1px solid #FFD6E8;
+    font-size:12.5px;padding:3px 10px;border-radius:999px;margin:2px 4px 2px 0;font-weight:600;
+  }
+  .badge-b{
+    display:inline-block;background:#EEF0FF;color:var(--primary);border:1px solid #D4DAFF;
+    font-size:12.5px;padding:3px 10px;border-radius:999px;margin:2px 4px 2px 0;font-weight:600;
+  }
+
+  /* 对比区 */
+  .cmp{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;}
+  .cmp .box{flex:1 1 300px;border-radius:16px;padding:18px 20px;}
+  .cmp .old{background:#FFF5F7;border:1px solid #F8D2DC;}
+  .cmp .new{background:#F0FBF6;border:1px solid #BFEBD9;}
+  .cmp .box h3{font-size:14px;margin-bottom:10px;font-weight:800;}
+  .cmp .old h3{color:#E0559A;}
+  .cmp .new h3{color:#2E9E78;}
+  .cmp .box p{font-size:14.5px;margin-bottom:8px;}
+  .cmp .box .lbl{font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:6px;display:block;}
+
+  /* 训练规范 */
+  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:8px;}
+  .rule{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;
+    border-top:4px solid var(--primary);box-shadow:var(--shadow);
+  }
+  .rule:nth-child(2){border-top-color:var(--yellow);}
+  .rule:nth-child(3){border-top-color:var(--pink);}
+  .rule:nth-child(4){border-top-color:var(--green);}
+  .rule .r-no{font-size:12px;color:var(--muted);letter-spacing:1px;}
+  .rule b{display:block;font-size:16px;margin:6px 0 8px;}
+  .rule p{font-size:13.5px;color:#44485c;}
+
+  footer{
+    margin-top:48px;background:#20243A;color:#B9C0DC;padding:30px 0 40px;text-align:center;font-size:13px;
+  }
+  footer .brand{color:#fff;font-weight:700;font-size:15px;margin-bottom:6px;}
+
+  a:focus-visible, .guide-link:focus-visible{
+    outline:3px solid var(--yellow);outline-offset:3px;border-radius:8px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;scroll-behavior:auto !important;}
+  }
+
+  @media (max-width:720px){
+    .wrap{padding:0 14px;}
+    .card{padding:20px;}
+    .sec-head .tag{margin-left:0;width:100%;}
+    .media-row{flex-direction:column;}
+    .ai-body{padding:20px;}
+  }
+
+  @media print{
+    body{background:#fff;}
+    .stepbar,.card,figure,.ai-card,.rule{box-shadow:none;break-inside:avoid;}
+    .hero{background:#5B6CFF !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    a{text-decoration:none;color:inherit;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= 顶部横幅 ================= -->
+<header class="hero">
+  <div class="deco d1"></div><div class="deco d2"></div><div class="deco d3"></div>
+  <div class="wrap hero-inner">
+    <span class="badge">📝 日常作文训练 · 全流程记录</span>
+    <h1>方志祺 · 一次完整的作文训练</h1>
+    <p class="sub">以《看，风景在变》为例，完整展示从框架构思 → 落笔成稿 → 自评 → AI 批改 → 按建议重写优化的全过程。这是孩子日常作文训练的规范流程，希望志祺以后每次都按这个节奏来。</p>
+    <div class="flow-pill">
+      <span>① 写前构思</span><span>② 落笔成稿</span><span>③ 自评打分</span><span>④ AI 批改</span><span>⑤ 重写优化</span>
+    </div>
+    <a class="guide-link" href="https://sxzjl.github.io/public-item/composition-writing-guide.html" target="_blank" rel="noopener noreferrer">
+      写作要求参考：《初中语文作文底层能力训练完整指南（作文六要）》
+      <span class="arr">→</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- ================= 流程总览 ================= -->
+  <section class="intro" aria-label="训练流程总览">
+    <div class="stepbar">
+      <div class="bar-title">— 本次训练四步流程 —</div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div class="txt"><b>写作前 · 框架构思</b><small>动笔前先想清楚开头、经过、过渡与升华落点</small></div></div>
+        <div class="step"><div class="num">2</div><div class="txt"><b>写作进行 · 成稿与自评</b><small>完成全篇，写完后孩子自评 40 分</small></div></div>
+        <div class="step"><div class="num">3</div><div class="txt"><b>AI 批改与提升建议</b><small>按中考评分标准诊断体验、素材与立意，给出可执行修改建议</small></div></div>
+        <div class="step"><div class="num">4</div><div class="txt"><b>按建议重写优化</b><small>针对"缺体验、素材拼凑、立意未理顺"，重写过渡与抒情片段</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 第1步 写作前 ================= -->
+  <section class="block" id="step1">
+    <div class="sec-head">
+      <div class="sec-no c1">1</div>
+      <h2>写作前 · 框架构思</h2>
+      <span class="tag">构思先行</span>
+    </div>
+    <div class="card">
+      <div class="media-row">
+        <div class="media-main">
+          <figure>
+            <img src="fang-zhiqi-pre-writing.jpg" alt="方志祺写作前的框架构思手稿，围绕作文题《看，风景在变》设计开头、正文的雨中撑伞与红马甲、结尾升华落点" width="1600" height="1506" loading="lazy">
+            <figcaption>写作前思路设计手稿 —— 动笔前的完整框架构思</figcaption>
+          </figure>
+        </div>
+        <div class="media-side">
+          <p>动笔之前，志祺先做了框架构思，围绕「看，风景在变」把整篇文章的「骨架」搭好：</p>
+          <ul class="pill-list">
+            <li><b>开头：</b>点明"时代的风景不断更迭，变化的是城市街头巷尾的繁华风貌，更变化的是人世间的温暖"，先扣住"变"</li>
+            <li><b>中间（经过·详写）：</b>路上遇见一位陌生人，在暴雨天为老人打伞（细节提示"一路一跛"，体现老人行动不便）</li>
+            <li><b>过渡：</b>用一句过渡句，从"雨中的个体善举"衔接到"深圳的志愿者群体"</li>
+            <li><b>中间（略写）：</b>深圳的志愿者（红马甲）作为城市风景的群像呈现</li>
+            <li><b>结尾（升华落点）：</b>回扣主题——"变的不只有城市中繁华的高楼林立，变的是世俗之中人情的温暖"</li>
+          </ul>
+          <p class="img-tip">💡 <b>规范点：</b>先搭骨架再填血肉，是作文训练的第一步，也是「作文六要」里强调的成文习惯。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 第2步 写作进行 ================= -->
+  <section class="block" id="step2">
+    <div class="sec-head">
+      <div class="sec-no c2">2</div>
+      <h2>写作进行 · 成稿与自评</h2>
+      <span class="tag">落笔成稿</span>
+    </div>
+    <div class="card">
+      <p>按构思完成全篇写作。作文题为 <b>《看，风景在变》</b>，全篇写在方格作文纸上，共两页。写完后志祺对照标准<b>自评 40 分</b>（满分 45 分）。</p>
+      <div class="duo">
+        <figure>
+          <img src="fang-zhiqi-essay-1.jpg" alt="方志祺作文第一页，标题《看，风景在变》，方格作文纸，右上角教师评分40分" width="1159" height="1600" loading="lazy">
+          <figcaption>作文第 1 页 —— 开篇与前半部分（教师评分 40 分）</figcaption>
+        </figure>
+        <figure>
+          <img src="fang-zhiqi-essay-2.jpg" alt="方志祺作文第二页，续写撑伞小伙护送老人、城市红马甲志愿者群像，结尾呼应风景之变" width="1123" height="1600" loading="lazy">
+          <figcaption>作文第 2 页 —— 后半部分与结尾</figcaption>
+        </figure>
+      </div>
+      <div class="selfeval">
+        <div class="score"><b>40</b><small>分 / 45</small></div>
+        <div class="txt"><b>孩子自评：40 分</b><br>写完全篇后主动对照评分标准自评打分，这是「自我复盘」意识的体现 —— 知道自己写得怎样，才能知道往哪改。敢于给自己打高分，正是想冲一类文的底气。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 第3步 AI批改 ================= -->
+  <section class="block" id="step3">
+    <div class="sec-head">
+      <div class="sec-no c3">3</div>
+      <h2>AI 批改与提升建议</h2>
+      <span class="tag">精准诊断</span>
+    </div>
+
+    <div class="ai-card">
+      <div class="ai-head">
+        <div class="avatar">🤖</div>
+        <div>
+          <h3>作文批改与提升建议</h3>
+          <div class="who">给志祺的一对一批改 —— 综合诊断 + 可执行修改方案</div>
+        </div>
+      </div>
+
+      <div class="scoreband">
+        <div class="scorechip"><b>Developing</b><small>整体水平 · 二类文中档</small></div>
+        <div class="scorechip"><b>32 分</b><small>参考分 · 满分 45</small></div>
+        <div class="scorechip"><b>立意 7/10</b><small>内容 10/15</small></div>
+        <div class="scorechip"><b>结构 7/10</b><small>语言 8/10</small></div>
+      </div>
+
+      <div class="ai-body">
+
+        <h4>先点赞：你的观察力与比喻运用非常棒</h4>
+        <p>读完你的作文，我最欣赏的是你对雨景的 <b>观察力和比喻的运用</b>，比如把大雨比作「接通了的高压水管」，不仅生动，而且极具视觉冲击力。</p>
+        <p>综合来看，目前这篇作文整体处于 <b>「Developing（二类文中档）」</b> 的水平。最大的优点是「叙事完整、语言流畅」。</p>
+        <div class="callout">
+          你的叙事基本功已经不错了，接下来我们主要通过调整「体验、素材组合与立意」，向一类文（<b>38 分以上</b>）冲刺。
+        </div>
+
+        <h4>专项诊断 1：唤醒「体验」——不要只做一个冰冷的摄像头</h4>
+        <p><span class="badge-w">成长点 1</span> <b>加入"我"的真实感受（体验）</b></p>
+        <ul>
+          <li><b>原文表现：</b>「我坐在教室中，静静地坐在窗边望着窗外……」随后客观记录了老人的无助、路人的冷漠和小伙子的善举。</li>
+          <li><b>问题诊断：</b>在指南的「第三要：体验」中明确提到，没有体验的文章是「正确但无感」的。在这个故事里，「我」完全置身事外了。雨那么冷，路人那么冷漠，小伙子那么温暖，这些有没有让窗内的「你」产生心理波澜？缺少了「我」的内心活动，文章就成了一篇新闻报道，感染力大打折扣。</li>
+          <li><b>下一步行动：</b>尝试在看到小伙子倾斜伞面的那一刻，加入「我」的真实心理活动或身体反应。</li>
+        </ul>
+        <div class="quote">
+          <b>引导思考：</b><br>看着他宁愿自己淋湿也要护着老人，坐在窗边的你，手心有没有微微发热？内心有没有觉得之前的寒意被驱散了？<br><br>比如：「看着他逐渐消失在雨中的背影，原本因为这场暴雨而感到一丝烦闷和寒意的我，心头忽然涌上一股暖流……」<br><br><em>这样，窗内的"我"就真正走进了风景里。</em>
+        </div>
+
+        <h4>专项诊断 2：突破「选择」与「组合」——警惕素材的「拼凑感」</h4>
+        <p><span class="badge-w">成长点 2</span> <b>删减空洞列举，把「个体」与「群体」自然连接（选择与组合）</b></p>
+        <ul>
+          <li><b>原文表现：</b>第五、六段突然大篇幅列举：「红马甲」出现在国际会议现场、高铁站、茅洲河、社区驿站……</li>
+          <li><b>问题诊断：</b>这是考场作文最容易踩的坑（指南「场景一」提到的套模板痕迹）。前面的雨中撑伞是一个非常具体、细腻的「第一层日常观察素材」，但后面突然切换到了非常宏大、像新闻联播一样的「红马甲」群像列举。这两块素材拼接在一起，体量极度不平衡，导致情感突然断裂，显得有些「假大空」。</li>
+          <li><b>下一步行动：</b>指南里说「选择就是删除」。我们需要删减第六段那种空洞的列举，用更含蓄的方式将「个人」与「城市群体」连接起来。</li>
+        </ul>
+        <div class="quote">
+          <b>引导思考：</b><br>我们不要去列举地名，而是去提炼一种「精神」。能不能这样过渡：<br><br>「其实，那个未曾留下姓名的撑伞小伙，没有穿红马甲，却做着红马甲的事。在这座城市里，像他一样的人还有很多，他们或许是街角的保安，或许是匆匆的过客……」<br><br><em>这样写，是不是就自然多了？</em>
+        </div>
+
+        <h4>专项诊断 3：扣紧「立意」——把「变」的逻辑理顺</h4>
+        <p><span class="badge-w">成长点 3</span> <b>用「对比」点明认知变化，精准扣住题眼（立意）</b></p>
+        <ul>
+          <li><b>原文表现：</b>结尾写道：「变的是，尘俗之中的人间温暖。」</li>
+          <li><b>问题诊断：</b>题目叫《看，风景在变》。既然是「变」，就需要有<b>对比</b>（指南中提到的横断面或纵剖面结构）。如果说「温暖」在变，那是从什么变成了什么？是从冷漠变成了温暖吗？你的文章中虽然写了路人的冷漠，但没有突出「我」对这座城市看法的改变。</li>
+          <li><b>下一步行动：</b>运用指南中提到的「对比式」开头或结尾，点明你的<b>认知变化</b>。</li>
+        </ul>
+        <div class="quote">
+          <b>引导思考：</b><br>你能在开头或结尾补充一下吗？<br><br>比如：「以前，我总觉得这座城市拔地而起的高楼太冰冷，人与人之间隔着厚厚的墙。但那场雨中的风景，改变了我的看法……」<br><br><em>这样，是不是就完美扣住了「变」字？</em>
+        </div>
+
+        <h4>小贴士：词义的轻重与精准度</h4>
+        <p>在「第六要：表现」中，我们强调词汇要准确。你写的「手中的菜篮子也吸到了水」和「他拉着老人」略显突兀。「吸到」有些口语化，「拉着」对于陌生人来说可能有些冒犯。</p>
+        <p><span class="badge-b">建议 1</span> 菜篮子可以说是「<b>饱吸了雨水，沉甸甸地往下坠</b>」。</p>
+        <p><span class="badge-b">建议 2</span> 小伙子可以说是「<b>虚扶着老人</b>」或者「<b>微微倾斜伞柄，替老人挡住风雨</b>」。</p>
+
+        <h4>下一步行动</h4>
+        <ol>
+          <li>在「看到小伙子倾斜伞面的那一刻」，补写一段「我」的真实心理活动或身体反应，唤醒体验。</li>
+          <li>删减红马甲的空洞地名列举，改用「精神」过渡，把撑伞小伙与城市普通人自然连接。</li>
+          <li>用「对比式」开头或结尾，点明「我」对这座城市认知的变化，精准扣住「变」字。</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 第4步 重写优化 ================= -->
+  <section class="block" id="step4">
+    <div class="sec-head">
+      <div class="sec-no c4">4</div>
+      <h2>按建议重写 · 过渡与抒情片段</h2>
+      <span class="tag">落实修改</span>
+    </div>
+    <div class="card">
+      <p>拿到 AI 建议后，志祺针对「缺少体验、素材拼凑、立意未理顺」三个核心问题，<b>动手重写了"小伙送老人离开后"的过渡与抒情片段</b>。批改 → 修改 → 再打磨，这就是作文能力提升的关键闭环。</p>
+      <figure>
+        <img src="fang-zhiqi-post-rewrite.jpg" alt="方志祺根据批改建议重写的过渡与抒情片段手稿，加入第一人称感受，从个体善举自然过渡到城市普通人，并点明认知变化" width="1200" height="1600" loading="lazy">
+        <figcaption>写作后片段优化手稿 —— 重写的过渡与抒情片段</figcaption>
+      </figure>
+
+      <div class="cmp">
+        <div class="box old">
+          <h3>✗ 修改前</h3>
+          <p><b>过渡（原）：</b>从送伞事件直接跳转至「这份善意的风景并不少见，它不只在于雨中的瞬间，还在于城市各个角落的'红马甲'」。</p>
+          <span class="lbl">问题：缺少第一人称的主观感受，"我"依然置身事外；从"雨中瞬间"到"红马甲群像"转折生硬</span>
+        </div>
+        <div class="box new">
+          <h3>✓ 修改后</h3>
+          <p><b>抒情（新）：</b>「看着他离去的背影，坐在教室原本有些寒意的我，心中竟涌起了一股股暖流，他的善意让我见识到了人间的温暖，与过路人冷漠无情的变化。」</p>
+          <p><b>过渡（新）：</b>不止没穿红马甲的撑伞小伙，普通上班族、学生、保安等普通人也会摒弃冷漠、挺身而出传递善意。</p>
+          <p><b>升华（新）：</b>从前以为繁华市井缺少温情，这场雨事后想法被改变——变化的从来不是高楼风景，而是世俗里人与人之间的温暖。</p>
+          <span class="lbl">进步：有了"我"的真实感受（体验）、从个体自然过渡到群体（选择与组合）、点明认知变化（立意）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 训练规范 ================= -->
+  <section class="block" id="rules">
+    <div class="sec-head">
+      <div class="sec-no c3">★</div>
+      <h2>日常作文训练规范 · 照着做</h2>
+      <span class="tag">形成习惯</span>
+    </div>
+    <p style="margin-bottom:16px;color:var(--muted);">这次训练展示了标准流程。以后每一次作文训练，都按以下五步来，形成规范习惯：</p>
+    <div class="rules">
+      <div class="rule">
+        <span class="r-no">STEP 1</span>
+        <b>写前先构思</b>
+        <p>动笔前先搭框架：开头写什么、中间几个事例、过渡怎么衔接、升华落在哪。不构思不动笔。</p>
+      </div>
+      <div class="rule">
+        <span class="r-no">STEP 2</span>
+        <b>成稿后自评</b>
+        <p>写完对照评分标准给自己打分，并写下理由。自评是自我复盘的第一步。</p>
+      </div>
+      <div class="rule">
+        <span class="r-no">STEP 3</span>
+        <b>提交 AI 批改</b>
+        <p>让 AI 按中考评分标准诊断立意、结构、语言，拿到具体的修改建议。</p>
+      </div>
+      <div class="rule">
+        <span class="r-no">STEP 4</span>
+        <b>按建议重写</b>
+        <p>针对指出的问题，重写开头、结尾或逻辑断层处，把建议真正落到文字里。</p>
+      </div>
+      <div class="rule">
+        <span class="r-no">STEP 5</span>
+        <b>检查再交卷</b>
+        <p>留出 3 分钟检查错别字与卷面。规范即分数，细节见功夫。</p>
+      </div>
+      <div class="rule">
+        <span class="r-no">ALWAYS</span>
+        <b>参照作文六要</b>
+        <p>全程对照《初中语文作文底层能力训练完整指南（作文六要）》，让每一篇都练在方法上。</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="brand">顺·行者学苑</div>
+  <div>日常作文训练 · 全流程记录展示</div>
+  <div style="margin-top:6px;">写作要求参考：<a href="https://sxzjl.github.io/public-item/composition-writing-guide.html" target="_blank" rel="noopener noreferrer" style="color:#9AA6FF;">初中语文作文底层能力训练完整指南（作文六要）</a></div>
+</footer>
+
+<script>
+  // 页内锚点导航拦截，确保在当前文档内完成跳转
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var target = document.querySelector(a.getAttribute('href'));
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+</script>
+</body>
+</html>
