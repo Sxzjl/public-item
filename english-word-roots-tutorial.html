@@ -1,0 +1,7356 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧩 英语词根词源学习法完整教程 · 顺·行者学苑</title>
+<style>
+:root{
+  --bg:#F7F8FF; --primary:#5B6CFF; --primary-dark:#4453d6; --yellow:#FFD166;
+  --pink:#FF7AB6; --green:#55C59D; --ink:#1F2433; --ink-2:#5a6178;
+  --card:#FFFFFF; --line:#e6e9f5; --muted:#8a90a6;
+  --sidebar-w:300px; --radius:14px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;
+  --font-num:"SF Mono",Consolas,"Courier New",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--card);
+  border-bottom:1px solid var(--line);height:56px;display:flex;align-items:center;padding:0 16px;gap:12px}
+.topbar .burger{display:none;background:var(--primary);border:0;color:#fff;width:38px;height:38px;
+  border-radius:10px;font-size:18px;cursor:pointer;flex-shrink:0}
+.topbar .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;min-width:0}
+.topbar .brand .logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--primary),#8f7bff);
+  color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.topbar .brand .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topbar .search{flex:1;max-width:340px;margin-left:auto;display:flex;align-items:center;gap:8px;
+  background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 12px}
+.topbar .search input{flex:1;border:0;outline:0;background:transparent;font-size:13.5px;color:var(--ink)}
+.topbar .search input::placeholder{color:var(--muted)}
+
+.toc{position:fixed;top:56px;left:0;bottom:0;width:var(--sidebar-w);background:var(--card);
+  border-right:1px solid var(--line);overflow-y:auto;padding:18px 12px 40px;z-index:90}
+.toc-title{font-size:13px;font-weight:700;color:var(--ink);padding:4px 10px 12px;display:flex;align-items:center;gap:8px}
+.toc-title .badge{margin-left:auto;background:var(--bg);color:var(--primary);font-size:11px;font-weight:700;
+  border-radius:20px;padding:2px 10px;border:1px solid var(--line)}
+.toc ul{list-style:none}
+.toc ul ul{margin-left:14px}
+.toc li{position:relative}
+.toc a{display:block;text-decoration:none;color:var(--ink-2);font-size:13px;line-height:1.5;
+  padding:5px 10px;border-radius:8px;border-left:2px solid transparent}
+.toc a:hover{background:var(--bg);color:var(--primary)}
+.toc a.active{background:#eef0ff;color:var(--primary-dark);font-weight:600;border-left-color:var(--primary)}
+.toc .tlv2{font-weight:700;color:var(--ink);font-size:13.5px;margin-top:6px}
+.toc .tlv3{font-size:13px}
+.toc .tlv4{font-size:12.5px;color:var(--muted)}
+.toc .tlv5{font-size:12px;color:var(--muted)}
+.toc .empty{color:var(--muted);font-size:12.5px;padding:8px 10px;display:none}
+
+.main{margin-left:var(--sidebar-w);padding:76px 20px 60px}
+.wrap{max-width:880px;margin:0 auto}
+.doc-hero{background:linear-gradient(135deg,#5B6CFF 0%,#8f7bff 55%,#a78bfa 100%);color:#fff;
+  border-radius:var(--radius);padding:34px 34px 30px;margin-bottom:8px}
+.doc-hero .hero-title{font-size:26px;line-height:1.4;font-weight:800;letter-spacing:.01em}
+.doc-hero .sub{opacity:.85;font-size:13.5px;margin-top:10px}
+.doc-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);border-radius:20px;
+  font-size:12px;padding:4px 13px;backdrop-filter:blur(4px)}
+.read-hint{background:#fff7e6;border:1px solid #ffe1a8;border-radius:var(--radius);padding:14px 18px;
+  margin:18px 0 6px;font-size:13.5px;color:#8a6d1f;display:flex;gap:10px;align-items:flex-start}
+.read-hint b{color:#6b5410}
+
+.article{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 40px 46px}
+.article h1{font-size:25px;margin:0 0 18px;padding:16px 20px;border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),#8f7bff);color:#fff;line-height:1.4}
+.article h2{font-size:22px;color:var(--ink);margin:44px 0 16px;padding:14px 18px;border-radius:12px;
+  background:linear-gradient(90deg,#eef0ff,transparent 60%);border-left:6px solid var(--primary);line-height:1.45}
+.article h2:first-child{margin-top:0}
+.article h3{font-size:18px;color:var(--primary-dark);margin:34px 0 12px;padding:8px 14px;border-radius:10px;
+  background:var(--bg);border-left:4px solid var(--green);line-height:1.5}
+.article h4{font-size:16px;color:var(--ink);margin:28px 0 10px;padding-left:12px;border-left:3px solid var(--yellow);line-height:1.5}
+.article h5{font-size:14.5px;color:var(--ink-2);margin:22px 0 8px}
+.article h1,.article h2,.article h3,.article h4,.article h5{scroll-margin-top:70px}
+.article p{margin:10px 0;color:#3a3f52}
+.article strong{color:var(--ink)}
+.article em{color:var(--primary-dark)}
+.article ul,.article ol{margin:10px 0 14px;padding-left:26px}
+.article li{margin:6px 0}
+.article li::marker{color:var(--primary)}
+.article ol li::marker{font-weight:700}
+.article blockquote{margin:14px 0;padding:12px 18px;background:#f5f6ff;border-left:4px solid var(--primary);
+  border-radius:0 10px 10px 0;color:var(--ink-2)}
+.article blockquote p{margin:6px 0}
+.article table{width:100%;border-collapse:separate;border-spacing:0;margin:16px 0 20px;
+  font-size:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.article thead th{background:var(--primary);color:#fff;font-weight:600;padding:10px 14px;text-align:left;white-space:nowrap}
+.article tbody td{padding:9px 14px;border-top:1px solid var(--line);color:#3a3f52;vertical-align:top}
+.article tbody tr:nth-child(even){background:#fafbff}
+.article tbody tr:hover{background:#f0f2ff}
+.article pre{background:#2a2f45;color:#e8eaf6;border-radius:12px;padding:16px 20px;overflow-x:auto;margin:14px 0;font-size:13.5px;line-height:1.7}
+.article pre code{font-family:var(--font-num);background:transparent;color:inherit;padding:0}
+.article code{font-family:var(--font-num);background:#eef0ff;color:var(--primary-dark);border-radius:6px;padding:2px 7px;font-size:13px}
+.article hr{border:0;border-top:1px dashed var(--line);margin:28px 0}
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--yellow);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+.footer{max-width:880px;margin:26px auto 0;color:var(--muted);font-size:12.5px;text-align:center;padding:0 20px 10px}
+.backtop{position:fixed;right:26px;bottom:30px;z-index:90;width:46px;height:46px;border-radius:50%;
+  background:var(--primary);color:#fff;border:0;font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(91,108,255,.4);
+  display:none;align-items:center;justify-content:center}
+.backtop.show{display:flex}
+
+.toc-mask{display:none;position:fixed;inset:0;background:rgba(31,36,51,.45);z-index:88}
+@media (max-width:1023px){
+  .toc{transform:translateX(-105%);transition:transform .28s ease;width:min(320px,86vw);z-index:95}
+  .toc.open{transform:translateX(0)}
+  .toc-mask.show{display:block}
+  .topbar .burger{display:flex;align-items:center;justify-content:center}
+  .main{margin-left:0;padding:70px 14px 50px}
+  .wrap{max-width:100%}
+  .article{padding:22px 18px 34px}
+  .article table{display:block;overflow-x:auto;white-space:nowrap}
+  .doc-hero{padding:26px 22px}
+  .doc-hero .hero-title{font-size:21px}
+  .topbar .search{max-width:none}
+  .topbar .brand .t{max-width:150px}
+}
+
+@media print{
+  .topbar,.toc,.toc-mask,.backtop{display:none!important}
+  .main{margin:0;padding:0}
+  body{background:#fff}
+  .article{border:0;border-radius:0;padding:0}
+  .doc-hero{background:#fff!important;color:var(--ink);border:1px solid #ddd;border-radius:8px}
+  .doc-hero .hero-title{color:var(--ink)}
+  .chip{background:#f0f0f0;color:#333;border-color:#ddd}
+  .read-hint{border:1px solid #ccc;background:#fff}
+  a{color:var(--ink)}
+  h1,h2,h3,h4{break-after:avoid}
+  table{break-inside:auto}
+  tr{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <button class="burger" id="burger" aria-label="打开目录">☰</button>
+  <div class="brand">
+    <span class="logo">📖</span>
+    <span class="t">🧩 英语词根词源学习法完整教程</span>
+  </div>
+  <div class="search">
+    <span>🔍</span>
+    <input type="text" id="tocSearch" placeholder="搜索大纲模块…" aria-label="搜索大纲">
+  </div>
+</header>
+
+<nav class="toc" id="toc" aria-label="目录大纲">
+  <div class="toc-title">📑 目录大纲<span class="badge">161 节</span></div>
+  <div class="empty" id="tocEmpty">未找到匹配模块</div>
+  <div id="tocTree"><ul><li class="tlv2"><a href="#s2">像搭乐高一样学单词 🏗️</a></li><li class="tlv2"><a href="#s3">📢 前言：为什么你要学这个方法？</a><ul><li class="tlv3"><a href="#s4">📊 数据说话</a></li><li class="tlv3"><a href="#s5">🗺️ 30天学习路线图</a></li></ul></li><li class="tlv2"><a href="#s6">📘 第一章：英语的&quot;三套词汇&quot;——先看懂单词从哪来</a><ul><li class="tlv3"><a href="#s7">1.1 英语其实是个&quot;混血儿&quot; 🧬</a><ul><li class="tlv4"><a href="#s8">🟢 第一套：日耳曼词汇（本族词/日常词）</a></li><li class="tlv4"><a href="#s9">🟡 第二套：拉丁语词汇（书面词/高级词）</a></li><li class="tlv4"><a href="#s10">🔵 第三套：希腊语词汇（学术词）</a></li></ul></li><li class="tlv3"><a href="#s11">1.2 同一个意思，三个版本 ✨</a></li><li class="tlv3"><a href="#s12">1.3 📖 词源故事：英语的三次&quot;大混血&quot;</a></li><li class="tlv3"><a href="#s13">1.4 🎮 小测验 #1（2分钟，试试看！）</a></li></ul></li><li class="tlv2"><a href="#s14">📗 第二章：100+核心词根全掌握</a><ul><li class="tlv3"><a href="#s15">🔍 怎么用这一章？</a></li><li class="tlv3"><a href="#s16">📦 第1组：感知与认知（看、听、说、写、感觉、知道）</a><ul><li class="tlv4"><a href="#s17">1️⃣ vis / vid = 看 👀</a></li><li class="tlv4"><a href="#s18">2️⃣ spect / spic = 看、观察 🔭</a></li><li class="tlv4"><a href="#s19">3️⃣ aud / audit = 听 👂</a></li><li class="tlv4"><a href="#s20">4️⃣ dict = 说 🗣️</a></li><li class="tlv4"><a href="#s21">5️⃣ scrib / script = 写 ✍️</a></li><li class="tlv4"><a href="#s22">6️⃣ sens / sent = 感觉 💭</a></li><li class="tlv4"><a href="#s23">7️⃣ cogn / gnos = 知道 🧠</a></li><li class="tlv4"><a href="#s24">8️⃣ sign = 标记、记号 🏷️</a></li></ul></li><li class="tlv3"><a href="#s25">🎮 拆词练习 #1（试试你的手！）</a></li><li class="tlv3"><a href="#s26">📦 第2组：动作与运动（做、引导、搬、走、拉、压、投）</a><ul><li class="tlv4"><a href="#s27">9️⃣ act / ag = 做、行动 🎬</a></li><li class="tlv4"><a href="#s28">🔟 duc / duct = 引导、带 🧭</a></li><li class="tlv4"><a href="#s29">1️⃣1️⃣ port = 拿、带、运 📦</a></li><li class="tlv4"><a href="#s30">1️⃣2️⃣ mov / mot / mob = 移动 🏃</a></li><li class="tlv4"><a href="#s31">1️⃣3️⃣ ced / cess = 走、让步 🚶</a></li><li class="tlv4"><a href="#s32">1️⃣4️⃣ ject = 投、掷 🎯</a></li><li class="tlv4"><a href="#s33">1️⃣5️⃣ tract = 拉、牵引 🪝</a></li><li class="tlv4"><a href="#s34">1️⃣6️⃣ press = 压、按 👇</a></li></ul></li><li class="tlv3"><a href="#s35">🎮 拆词练习 #2</a></li><li class="tlv3"><a href="#s36">📦 第3组：生命与身体（生命、手、头、牙、心、身体、皮肤）</a><ul><li class="tlv4"><a href="#s37">1️⃣7️⃣ bio = 生命 🧬</a></li><li class="tlv4"><a href="#s38">1️⃣8️⃣ viv / vit = 活、生命 🌱</a></li><li class="tlv4"><a href="#s39">1️⃣9️⃣ manu / mani = 手 ✋</a></li><li class="tlv4"><a href="#s40">2️⃣0️⃣ cap / capit = 头 🎩</a></li><li class="tlv4"><a href="#s41">2️⃣1️⃣ dent = 牙 🦷</a></li><li class="tlv4"><a href="#s42">2️⃣2️⃣ cord = 心 💜</a></li><li class="tlv4"><a href="#s43">2️⃣3️⃣ corp = 身体 🏢</a></li><li class="tlv4"><a href="#s44">2️⃣4️⃣ derm = 皮肤 🧴</a></li></ul></li><li class="tlv3"><a href="#s45">🎮 拆词练习 #3</a></li><li class="tlv3"><a href="#s46">📦 第4组：形状与结构（形状、建造、界限、关、破、做）</a><ul><li class="tlv4"><a href="#s47">2️⃣5️⃣ form = 形状、形成 🔷</a></li><li class="tlv4"><a href="#s48">2️⃣6️⃣ struct = 建造 🏗️</a></li><li class="tlv4"><a href="#s49">2️⃣7️⃣ fin = 终、界限 🔚</a></li><li class="tlv4"><a href="#s50">2️⃣8️⃣ clud / clus = 关闭、包含 🚪</a></li><li class="tlv4"><a href="#s51">2️⃣9️⃣ rupt = 破、断裂 💥</a></li><li class="tlv4"><a href="#s52">3️⃣0️⃣ fact / fect / fac = 做、制作 🔨</a></li></ul></li><li class="tlv3"><a href="#s53">🎮 拆词练习 #4</a></li><li class="tlv3"><a href="#s54">📦 第5组：时间与空间（时间、地方、地球、海、流）</a><ul><li class="tlv4"><a href="#s55">3️⃣1️⃣ temp / chron = 时间 ⏰</a></li><li class="tlv4"><a href="#s56">3️⃣2️⃣ loc = 地方 📍</a></li><li class="tlv4"><a href="#s57">3️⃣3️⃣ geo = 地球、土地 🌍</a></li><li class="tlv4"><a href="#s58">3️⃣4️⃣ mar = 海 🌊</a></li><li class="tlv4"><a href="#s59">3️⃣5️⃣ flu = 流动 💧</a></li></ul></li><li class="tlv3"><a href="#s60">📦 第6组：知识与文明（教、说、写、文字、信、法律）</a><ul><li class="tlv4"><a href="#s61">3️⃣6️⃣ doc / doct = 教 🎓</a></li><li class="tlv4"><a href="#s62">3️⃣7️⃣ log / logue = 言语、学科 📚</a></li><li class="tlv4"><a href="#s63">3️⃣8️⃣ graph / gram = 写、记录 📝</a></li><li class="tlv4"><a href="#s64">3️⃣9️⃣ liter = 文字、字母 🔤</a></li><li class="tlv4"><a href="#s65">4️⃣0️⃣ cred = 相信、信用 💳</a></li><li class="tlv4"><a href="#s66">4️⃣1️⃣ jur / jud = 法律、判断 ⚖️</a></li></ul></li><li class="tlv3"><a href="#s67">🎮 拆词练习 #5</a></li><li class="tlv3"><a href="#s68">📦 第7组：数量、等同与步骤（年、产生、等、步、错、坚）</a><ul><li class="tlv4"><a href="#s69">4️⃣2️⃣ ann / enn = 年 📅</a></li><li class="tlv4"><a href="#s70">4️⃣3️⃣ gen = 产生、出生 🌟</a></li><li class="tlv4"><a href="#s71">4️⃣4️⃣ equi = 相等 ⚖️</a></li><li class="tlv4"><a href="#s72">4️⃣5️⃣ grad / gress = 步、走 👣</a></li><li class="tlv4"><a href="#s73">4️⃣6️⃣ err = 错误 ❌</a></li><li class="tlv4"><a href="#s74">4️⃣7️⃣ dur = 持久、坚硬 💎</a></li><li class="tlv4"><a href="#s75">4️⃣8️⃣ firm = 稳固、坚定 🔒</a></li></ul></li><li class="tlv3"><a href="#s76">📦 第8组：自然与元素（光、水、火、热、星、花、声）</a><ul><li class="tlv4"><a href="#s77">4️⃣9️⃣ bene = 好 💚</a></li><li class="tlv4"><a href="#s78">5️⃣0️⃣ luc / lum = 光 💡</a></li><li class="tlv4"><a href="#s79">5️⃣1️⃣ hydr / aqua = 水 💦</a></li><li class="tlv4"><a href="#s80">5️⃣2️⃣ therm = 热 🔥</a></li><li class="tlv4"><a href="#s81">5️⃣3️⃣ astr = 星 ⭐</a></li><li class="tlv4"><a href="#s82">5️⃣4️⃣ flor / anth = 花 🌸</a></li></ul></li><li class="tlv3"><a href="#s83">📦 第9组：声音、爱与恐惧（喊、声、爱、怕、友）</a><ul><li class="tlv4"><a href="#s84">5️⃣5️⃣ voc / vok = 声音、喊叫 📣</a></li><li class="tlv4"><a href="#s85">5️⃣6️⃣ claim / clam = 呼喊 📢</a></li><li class="tlv4"><a href="#s86">5️⃣7️⃣ phil = 爱 ❤️</a></li><li class="tlv4"><a href="#s87">5️⃣8️⃣ phob = 恐惧 😱</a></li><li class="tlv4"><a href="#s88">5️⃣9️⃣ amic / car = 朋友 🤝</a></li></ul></li><li class="tlv3"><a href="#s89">📦 第10组：更多高频词根（真、转、空、来、词、放、称、正、力、量）</a><ul><li class="tlv4"><a href="#s90">6️⃣0️⃣ ver = 真 ✅</a></li><li class="tlv4"><a href="#s91">6️⃣1️⃣ vert / vers = 转 🔄</a></li><li class="tlv4"><a href="#s92">6️⃣2️⃣ vac / void = 空 🔳</a></li><li class="tlv4"><a href="#s93">6️⃣3️⃣ val = 价值 💰</a></li><li class="tlv4"><a href="#s94">6️⃣4️⃣ ven / vent = 来 🚪</a></li><li class="tlv4"><a href="#s95">6️⃣5️⃣ verb = 词语 📖</a></li><li class="tlv4"><a href="#s96">6️⃣6️⃣ pon / pos = 放置 📌</a></li><li class="tlv4"><a href="#s97">6️⃣7️⃣ pend / pens = 悬挂、称量 ⚖️</a></li><li class="tlv4"><a href="#s98">6️⃣8️⃣ rect = 正、直 📏</a></li><li class="tlv4"><a href="#s99">6️⃣9️⃣ fort = 力量 💪</a></li><li class="tlv4"><a href="#s100">7️⃣0️⃣ mens / met = 测量 📐</a></li></ul></li><li class="tlv3"><a href="#s101">🎮 拆词练习 #6（综合大挑战！）</a></li></ul></li><li class="tlv2"><a href="#s102">📙 第三章：30+前缀——学会&quot;改方向&quot;</a><ul><li class="tlv3"><a href="#s103">🧭 前缀是什么？</a></li><li class="tlv3"><a href="#s104">🚫 第一组：否定前缀——说&quot;不&quot;</a></li><li class="tlv3"><a href="#s105">🔄 第二组：方位与方向前缀——改方向</a></li><li class="tlv3"><a href="#s106">🔢 第三组：程度与数量前缀——说多少</a></li><li class="tlv3"><a href="#s107">🤝 第四组：共同与反对前缀</a></li><li class="tlv3"><a href="#s108">⚠️ 特别注意：in- 的两种面孔</a></li><li class="tlv3"><a href="#s109">🎮 前缀练习</a></li></ul></li><li class="tlv2"><a href="#s110">📕 第四章：30+后缀——学会&quot;改词性&quot;</a><ul><li class="tlv3"><a href="#s111">🧭 后缀是什么？</a></li><li class="tlv3"><a href="#s112">📛 第一组：名词后缀——给人、事、状态命名</a></li><li class="tlv3"><a href="#s113">🎨 第二组：形容词后缀——描述事物的特征</a></li><li class="tlv3"><a href="#s114">⚡ 第三组：动词后缀——表示动作</a></li><li class="tlv3"><a href="#s115">🏃 第四组：副词后缀</a></li><li class="tlv3"><a href="#s116">🎮 后缀练习</a></li></ul></li><li class="tlv2"><a href="#s117">📒 第五章：六种构词法——单词是怎么&quot;拼&quot;出来的</a><ul><li class="tlv3"><a href="#s118">5.1 拼法①：派生 = 前缀 + 词根 + 后缀 🧩</a></li><li class="tlv3"><a href="#s119">5.2 拼法②：合成 = 两个词直接拼 🔗</a></li><li class="tlv3"><a href="#s120">5.3 拼法③：混合 = 一半 + 一半 🧪</a></li><li class="tlv3"><a href="#s121">5.4 拼法④：截短 = 把长的剪短 ✂️</a></li><li class="tlv3"><a href="#s122">5.5 拼法⑤：缩写 = 取首字母 🔤</a></li><li class="tlv3"><a href="#s123">5.6 拼法⑥：转化 = 词性直接换 🔄</a></li><li class="tlv3"><a href="#s124">🎮 构词法练习</a></li></ul></li><li class="tlv2"><a href="#s125">📓 第六章：&quot;加减换&quot;规律——看出单词的亲戚关系</a><ul><li class="tlv3"><a href="#s126">6.1 加字母：为了好发音 ➕</a></li><li class="tlv3"><a href="#s127">6.2 减字母：为了简洁顺口 ➖</a></li><li class="tlv3"><a href="#s128">6.3 换字母（最关键！）🔄</a><ul><li class="tlv4"><a href="#s129">A. 元音互换（a / e / i / o / u）</a></li><li class="tlv4"><a href="#s130">B. 辅音也可以互换</a></li></ul></li><li class="tlv3"><a href="#s131">🤯 同源大彩蛋：foot、ped、pod 其实是一家人！</a></li><li class="tlv3"><a href="#s132">🎮 &quot;加减换&quot;练习</a></li></ul></li><li class="tlv2"><a href="#s133">📔 第七章：陷阱词警示——这些词看起来像但意思不同</a><ul><li class="tlv3"><a href="#s134">🚨 8 个常见陷阱词详解</a></li><li class="tlv3"><a href="#s135">📖 最重要的规律</a></li><li class="tlv3"><a href="#s136">🎮 陷阱词练习</a></li></ul></li><li class="tlv2"><a href="#s137">📕 第八章：实战拆词四步法</a><ul><li class="tlv3"><a href="#s138">8.1 四步拆词法详解 🔍</a></li><li class="tlv3"><a href="#s139">8.2 面对超纲词的三步推测法</a></li><li class="tlv3"><a href="#s140">8.3 中考真题模拟练习（10题）</a></li></ul></li><li class="tlv2"><a href="#s141">📒 第九章：词簇卡片制作指南</a><ul><li class="tlv3"><a href="#s142">9.1 词簇卡片模板 📇</a></li><li class="tlv3"><a href="#s143">9.2 示范三张卡片</a></li><li class="tlv3"><a href="#s144">9.3 推荐优先制作的 30 张卡片清单</a></li><li class="tlv3"><a href="#s145">9.4 不痛苦的复习节奏 ⏰</a></li></ul></li><li class="tlv2"><a href="#s146">📚 附录</a><ul><li class="tlv3"><a href="#s147">附录 A：100+ 词根速查表</a></li><li class="tlv3"><a href="#s148">附录 B：30+ 前缀速查表</a></li><li class="tlv3"><a href="#s149">附录 C：30+ 后缀速查表</a></li><li class="tlv3"><a href="#s150">附录 D：30天学习计划表 📅</a></li></ul></li><li class="tlv2"><a href="#s151">📖 词源故事集锦</a><ul><li class="tlv3"><a href="#s152">故事①：英语的三次&quot;大混血&quot;</a></li><li class="tlv3"><a href="#s153">故事②：advocate——凯撒大帝也干过的行当</a></li><li class="tlv3"><a href="#s154">故事③：echo——一个失恋仙女的最后声音</a></li><li class="tlv3"><a href="#s155">故事④：inflammable——美国消防部门的教训</a></li><li class="tlv3"><a href="#s156">故事⑤：salary——盐比金子还贵的时代</a></li><li class="tlv3"><a href="#s157">故事⑥：academy——一个泄密者命名了全世界的学校</a></li><li class="tlv3"><a href="#s158">故事⑦：sandwich——赌桌上的发明</a></li><li class="tlv3"><a href="#s159">故事⑧：robot——从&quot;苦工&quot;到&quot;机器人&quot;</a></li><li class="tlv3"><a href="#s160">故事⑨：berserk——穿熊皮的狂战士</a></li><li class="tlv3"><a href="#s161">故事⑩：nice——从&quot;蠢&quot;到&quot;好&quot;的800年</a></li></ul></li><li class="tlv2"><a href="#s162">🏁 结语：你已经拥有了&quot;看穿&quot;单词的超能力</a></li></ul></div>
+</nav>
+<div class="toc-mask" id="tocMask"></div>
+
+<main class="main">
+  <div class="wrap">
+    <section class="doc-hero">
+      <div class="hero-title">🧩 英语词根词源学习法完整教程</div>
+      <div class="sub">顺·行者学苑 · 教学资料</div>
+      <div class="doc-meta"><span class="chip">🔤 词根词缀</span><span class="chip">📚 中考考纲</span><span class="chip">🧠 记忆方法</span><span class="chip">📖 权威词典</span></div>
+    </section>
+    <div class="read-hint">💡 <span>使用提示：左侧"目录大纲"可一键跳转到任意模块，输入关键词可快速定位。建议先通读"开篇"，再按模块逐项学习词根词源。</span></div>
+    <article class="article" id="article">
+<h1 id="s1">🧩 英语词根词源学习法完整教程</h1>
+<h2 id="s2">像搭乐高一样学单词 🏗️</h2>
+<blockquote>
+<p><strong>一句话摘要</strong>：把单词当乐高——识三套词汇、记百个词根、玩六种构词——几百块积木拼出几万单词。</p>
+</blockquote>
+<hr />
+<h2 id="s3">📢 前言：为什么你要学这个方法？</h2>
+<p>嘿，同学！👋</p>
+<p>你是不是也有这种体验——</p>
+<ul>
+<li>背单词背到崩溃，<code>invisible</code> 要一个字母一个字母地数？</li>
+<li>阅读理解遇到超纲词就大脑一片空白？</li>
+<li>明明背了 2000 个词，考试还是觉得词汇量不够用？</li>
+</ul>
+<p><strong>告诉你一个秘密</strong>：那些英语学霸记单词，从来不是一个一个硬背的。他们脑子里有一套"积木系统"——记住几百个积木块（词根、前缀、后缀），就能像拼乐高一样，拼出、看懂、推理出几万个单词。</p>
+<h3 id="s4">📊 数据说话</h3>
+<ul>
+<li>英语中约 <strong>60% 的单词</strong>由拉丁/希腊词根构成</li>
+<li>掌握 <strong>200 个核心词根</strong>即可推导 <strong>数千个单词</strong>含义</li>
+<li>北京一所高中的实证研究显示：词根词缀法使<strong>学生词汇量一学期增长 35%，阅读理解成绩平均高 18%</strong></li>
+<li>美国国家阅读委员会(NRP)将<strong>词根词缀分析列为词汇教学核心策略</strong></li>
+</ul>
+<h3 id="s5">🗺️ 30天学习路线图</h3>
+<table><caption class="visually-hidden">🗺️ 30天学习路线图</caption>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间</th>
+<th>任务</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 入门</td>
+<td>第1周</td>
+<td>读完第一章+第二章前半</td>
+<td>理解英语三套词汇，掌握前30个词根</td>
+</tr>
+<tr>
+<td>🟡 进阶</td>
+<td>第2周</td>
+<td>第二章后半+第三章</td>
+<td>掌握全部100+词根，学会30+前缀</td>
+</tr>
+<tr>
+<td>🔴 强化</td>
+<td>第3周</td>
+<td>第四章+第五章+第六章</td>
+<td>掌握后缀，理解构词法和音变规律</td>
+</tr>
+<tr>
+<td>🏆 冲刺</td>
+<td>第4周</td>
+<td>第七章+第八章+第九章</td>
+<td>实战拆词、制作词簇卡片、模拟练习</td>
+</tr>
+</tbody>
+</table>
+<p><strong>每天只需要 30 分钟</strong>，一个月后你就能"看穿"英语单词！</p>
+<p>Let's go! 🚀</p>
+<hr />
+<h2 id="s6">📘 第一章：英语的"三套词汇"——先看懂单词从哪来</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 用一句话回答"为什么 water、aqua、hydro 长得完全不一样，但意思都是'水'？"
+- 看到一个新单词，大致判断它是"日常词"还是"高级词"</p>
+</blockquote>
+<hr />
+<h3 id="s7">1.1 英语其实是个"混血儿" 🧬</h3>
+<p>中文是一脉相承的，几千年下来基本是同一个系统。</p>
+<p>但英语不是！今天你课本里看到的英语，其实是一千多年里，英国人不断吸收别的语言"拼"出来的。</p>
+<p>它主要由 <strong>三套词汇</strong> 组成：</p>
+<h4 id="s8">🟢 第一套：日耳曼词汇（本族词/日常词）</h4>
+<p><strong>解释</strong>：这是英语"亲生"的词，最老、最日常、最口语。说英语的英国人，从一千多年前就在用这些词。</p>
+<p><strong>特点</strong>：短、好读、高频。</p>
+<p><strong>例子</strong>：water（水）、house（房子）、eat（吃）、see（看）、hear（听）、foot（脚）、man（人）、mother（妈妈）</p>
+<p><strong>你怎么认出它</strong>：一般又短又好念，像生活里随时能用上的词。</p>
+<h4 id="s9">🟡 第二套：拉丁语词汇（书面词/高级词）</h4>
+<p><strong>解释</strong>：一千年前，法国的诺曼人打到了英国，带来了大量法语（法语本质上是拉丁语的后代）。从那以后，英语就吸收了海量拉丁系的词。这些词通常拆成"词根+词缀"再用。</p>
+<p><strong>特点</strong>：更长、更书面、更正式，考试爱考。</p>
+<p><strong>例子</strong>：
+- aquatic（水生的）← aqua（水）+ tic（形容词后缀）
+- visible（可见的）← vis（看）+ ible（能…的）
+- audible（可听的）← aud（听）+ ible（能…的）</p>
+<p><strong>你怎么认出它</strong>：看起来"洋气"、字数多、常出现在文章和试卷里。</p>
+<h4 id="s10">🔵 第三套：希腊语词汇（学术词）</h4>
+<p><strong>解释</strong>：古希腊是欧洲学术的源头，所以理工、医学、心理学这些"专业领域"的词，绝大多数来自希腊语。</p>
+<p><strong>特点</strong>：学院派、专业、长得很"严肃"。</p>
+<p><strong>例子</strong>：
+- psychology（心理学）← psycho（精神）+ logy（学科）
+- telescope（望远镜）← tele（远）+ scope（看）
+- biology（生物学）← bio（生命）+ logy（学科）
+- hydrogen（氢）← hydro（水）+ gen（产生）</p>
+<p><strong>你怎么认出它</strong>：一看就是"学术词"，理化生课本里超多。</p>
+<hr />
+<h3 id="s11">1.2 同一个意思，三个版本 ✨</h3>
+<p>这是英语最让人头大、但其实最有意思的地方。同一个意思，日耳曼有一个词，拉丁有一个词根，希腊还有一个词根。</p>
+<table><caption class="visually-hidden">1.2 同一个意思，三个版本 ✨</caption>
+<thead>
+<tr>
+<th>中文意思</th>
+<th>🟢 日耳曼词（口语）</th>
+<th>🟡 拉丁词根（书面）</th>
+<th>🔵 希腊词根（学术）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>水</td>
+<td>water</td>
+<td>aqua → aquarium 水族馆</td>
+<td>hydro → hydrate 水合、dehydrate 脱水</td>
+</tr>
+<tr>
+<td>看</td>
+<td>see</td>
+<td>vis → visible、vision</td>
+<td>scope → telescope、microscope</td>
+</tr>
+<tr>
+<td>听</td>
+<td>hear</td>
+<td>aud → audible、audio</td>
+<td>—</td>
+</tr>
+<tr>
+<td>脚</td>
+<td>foot</td>
+<td>ped → pedestrian 行人</td>
+<td>pod → tripod 三脚架、octopus 章鱼</td>
+</tr>
+<tr>
+<td>写</td>
+<td>write</td>
+<td>scrib → describe、inscribe</td>
+<td>graph → paragraph、photograph</td>
+</tr>
+<tr>
+<td>生命</td>
+<td>life / live</td>
+<td>viv → survive、vivid</td>
+<td>bio → biology、biography 传记</td>
+</tr>
+<tr>
+<td>说</td>
+<td>say</td>
+<td>dict → dictate、predict</td>
+<td>phras → phrase、euphemism</td>
+</tr>
+<tr>
+<td>火</td>
+<td>fire</td>
+<td>ign → ignite 点燃</td>
+<td>pyro → pyrotechnics 烟火</td>
+</tr>
+<tr>
+<td>星</td>
+<td>star</td>
+<td>stell → stellar 恒星的</td>
+<td>astr → astronomy 天文学</td>
+</tr>
+<tr>
+<td>花</td>
+<td>flower</td>
+<td>flor → floral 花的</td>
+<td>anth → anthology 选集</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>关键认知</strong>：长单词不可怕，它们大多是"积木拼起来的"。</p>
+<hr />
+<h3 id="s12">1.3 📖 词源故事：英语的三次"大混血"</h3>
+<blockquote>
+<p><strong>第一波（5-11世纪）</strong>：盎格鲁人、撒克逊人从德国北部来到不列颠，带来了日耳曼语——英语的根基。这些词是最基础的日常词：life、death、eat、sleep...</p>
+<p><strong>第二波（1066年起）</strong>：诺曼底公爵威廉征服英格兰。法语成为统治阶级的语言，英语沦为平民口头语。结果出现了超有趣的"阶级双轨词汇"：</p>
+<table><caption class="visually-hidden">1.3 📖 词源故事：英语的三次&quot;大混血&quot;</caption>
+<thead>
+<tr>
+<th>平民养的（日耳曼词）</th>
+<th>贵族吃的（法语词）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pig 猪</td>
+<td>pork 猪肉</td>
+</tr>
+<tr>
+<td>cow 牛</td>
+<td>beef 牛肉</td>
+</tr>
+<tr>
+<td>sheep 羊</td>
+<td>mutton 羊肉</td>
+</tr>
+</tbody>
+</table>
+<p>到1500年，英语已有超过 40% 的词汇来自法语！</p>
+<p><strong>第三波（1500-1650年）</strong>：文艺复兴时期，英国学者从拉丁语和希腊语借了 10000+ 个新词。这些看起来吓人的长词，全是前缀+词根+后缀拼出来的。越长的词，结构越清晰，反而越好记！</p>
+</blockquote>
+<hr />
+<h3 id="s13">1.4 🎮 小测验 #1（2分钟，试试看！）</h3>
+<p><strong>题1</strong>：下面哪些是日耳曼词（日常词），哪些是拉丁/希腊词（高级词）？</p>
+<ol>
+<li>mother  2. aquatic  3. sunshine  4. invisible  5. brother  6. prediction</li>
+</ol>
+<p><strong>题2</strong>：你能看出下面三组词分别是什么"家族"的吗？</p>
+<p>A. see → vision → telescope<br />
+B. hear → audio → （请你说出一个含aud的词）<br />
+C. fire → ignite → （请你说出一个含pyro的词）</p>
+<p>🔑 <strong>答案</strong>：题1：日耳曼词：mother, sunshine, brother；拉丁/希腊词：aquatic, invisible, prediction<br />
+题2：A. 日耳曼→拉丁→希腊（都是"看"）；B. audience/audio/audible；C. pyrotechnics（烟火）</p>
+<hr />
+<h2 id="s14">📗 第二章：100+核心词根全掌握</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 认识 100+ 个核心词根，覆盖中考高频词汇
+- 看到一个含词根的单词，能猜出它大概的意思
+- 用"词根串讲法"一次记住一窝单词</p>
+</blockquote>
+<hr />
+<h3 id="s15">🔍 怎么用这一章？</h3>
+<p>每个词根我给你准备三样东西：
+1. <strong>含义</strong>——这个词根到底啥意思
+2. <strong>例词</strong>——5-10个由它拼出来的单词
+3. <strong>记忆口诀</strong>——一句话帮你记住</p>
+<p>标注说明：
+- ★ = <strong>中考核心词</strong>（考试高频，必会）
+- ☆ = 拓展词（了解即可，学有余力再看）</p>
+<p>词根按 <strong>语义域</strong>（意思相近的归一组）分组，每组学完后有"拆词练习"。</p>
+<hr />
+<h3 id="s16">📦 第1组：感知与认知（看、听、说、写、感觉、知道）</h3>
+<hr />
+<h4 id="s17">1️⃣ vis / vid = 看 👀</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"vis就是看，vid也是看，电视video全靠它"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣ vis / vid = 看 👀</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>visit</td>
+<td>vis(看)+it</td>
+<td>去看→参观</td>
+<td>★</td>
+</tr>
+<tr>
+<td>visible</td>
+<td>vis(看)+ible(能…的)</td>
+<td>能看见的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invisible</td>
+<td>in(不)+vis+ible</td>
+<td>看不见的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>vision</td>
+<td>vis+ion(名词)</td>
+<td>视力、视野</td>
+<td>★</td>
+</tr>
+<tr>
+<td>television</td>
+<td>tele(远)+vis+ion</td>
+<td>远处的影像→电视</td>
+<td>★</td>
+</tr>
+<tr>
+<td>video</td>
+<td>vid+eo</td>
+<td>视频</td>
+<td>★</td>
+</tr>
+<tr>
+<td>revise</td>
+<td>re(再)+vis+e</td>
+<td>再看一遍→修订</td>
+<td>★</td>
+</tr>
+<tr>
+<td>evidence</td>
+<td>e(出)+vid+ence</td>
+<td>看出来的东西→证据</td>
+<td>★</td>
+</tr>
+<tr>
+<td>supervise</td>
+<td>super(在上)+vis+e</td>
+<td>在上面看→监督</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>provide</td>
+<td>pro(向前)+vid+e</td>
+<td>向前看→提供</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s18">2️⃣ spect / spic = 看、观察 🔭</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"spect看仔细，respect是尊敬，inspect是检查"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣ spect / spic = 看、观察 🔭</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>respect</td>
+<td>re(回)+spect(看)</td>
+<td>回头看→尊重</td>
+<td>★</td>
+</tr>
+<tr>
+<td>expect</td>
+<td>ex(出)+pect(看)</td>
+<td>向外看→期待</td>
+<td>★</td>
+</tr>
+<tr>
+<td>inspect</td>
+<td>in(进入)+spect</td>
+<td>看进去→检查</td>
+<td>★</td>
+</tr>
+<tr>
+<td>suspect</td>
+<td>sub(下)+spect</td>
+<td>从下面看→怀疑</td>
+<td>★</td>
+</tr>
+<tr>
+<td>special</td>
+<td>来自spect</td>
+<td>特别的（值得多看一眼的）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>spectacle</td>
+<td>spect+acle</td>
+<td>景象、壮观</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>spectator</td>
+<td>spect+ator(人)</td>
+<td>观众（看的人）</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>perspective</td>
+<td>per(贯穿)+spect+ive</td>
+<td>看穿→视角</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>prospect</td>
+<td>pro(前)+spect</td>
+<td>向前看→前景</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>introspect</td>
+<td>intro(内部)+spect</td>
+<td>向内看→反省</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s19">3️⃣ aud / audit = 听 👂</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"aud就是听，audio是声音，audience是听众"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣ aud / audit = 听 👂</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audio</td>
+<td>aud+io</td>
+<td>音频、声音</td>
+<td>★</td>
+</tr>
+<tr>
+<td>audience</td>
+<td>aud+ience(名词)</td>
+<td>听众</td>
+<td>★</td>
+</tr>
+<tr>
+<td>audible</td>
+<td>aud+ible(能…的)</td>
+<td>能听到的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>audit</td>
+<td>audit</td>
+<td>审计（听账）</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>auditorium</td>
+<td>audit+orium(场所)</td>
+<td>礼堂（听讲座的地方）</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>audition</td>
+<td>audit+ion</td>
+<td>试镜（听你表演）</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>auditory</td>
+<td>aud+itory(形容词)</td>
+<td>听觉的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s20">4️⃣ dict = 说 🗣️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"dict就是说，dictionary是说的集合，predict是提前说"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣ dict = 说 🗣️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dictionary</td>
+<td>dict+ion+ary</td>
+<td>说的集合→字典</td>
+<td>★</td>
+</tr>
+<tr>
+<td>dictate</td>
+<td>dict+ate(动词)</td>
+<td>口述、听写</td>
+<td>★</td>
+</tr>
+<tr>
+<td>predict</td>
+<td>pre(前)+dict</td>
+<td>提前说→预言</td>
+<td>★</td>
+</tr>
+<tr>
+<td>contradict</td>
+<td>contra(相反)+dict</td>
+<td>反着说→反驳</td>
+<td>★</td>
+</tr>
+<tr>
+<td>indicate</td>
+<td>in(进入)+dic+ate</td>
+<td>说进去→指出</td>
+<td>★</td>
+</tr>
+<tr>
+<td>verdict</td>
+<td>ver(真)+dict</td>
+<td>说真话→裁决</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>edict</td>
+<td>e(出)+dict</td>
+<td>说出来的话→法令</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s21">5️⃣ scrib / script = 写 ✍️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"scrib用笔写，script是写出来的东西"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣ scrib / script = 写 ✍️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>describe</td>
+<td>de(下)+scribe(写)</td>
+<td>写下来→描述</td>
+<td>★</td>
+</tr>
+<tr>
+<td>prescription</td>
+<td>pre(前)+scrip+tion</td>
+<td>提前写的→处方</td>
+<td>★</td>
+</tr>
+<tr>
+<td>manuscript</td>
+<td>manu(手)+script</td>
+<td>手写的→手稿</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>inscription</td>
+<td>in(进入)+scrip+tion</td>
+<td>写进去的→铭文</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>subscribe</td>
+<td>sub(下)+scribe</td>
+<td>在下面签名→订阅</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>scripture</td>
+<td>script+ure</td>
+<td>写的东西→经文</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>scribe</td>
+<td>scrib+e</td>
+<td>抄写员</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s22">6️⃣ sens / sent = 感觉 💭</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"sens是感觉，sense是感官，sentiment是感情"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣ sens / sent = 感觉 💭</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sense</td>
+<td>sens+e</td>
+<td>感觉</td>
+<td>★</td>
+</tr>
+<tr>
+<td>sensitive</td>
+<td>sens+itive</td>
+<td>敏感的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>sensible</td>
+<td>sens+ible</td>
+<td>有感觉的→明智的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>sentence</td>
+<td>sent+ence</td>
+<td>感受→判决→句子</td>
+<td>★</td>
+</tr>
+<tr>
+<td>nonsense</td>
+<td>non(无)+sense</td>
+<td>没感觉→废话</td>
+<td>★</td>
+</tr>
+<tr>
+<td>consent</td>
+<td>con(共同)+sent</td>
+<td>共同感觉→同意</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>sentiment</td>
+<td>sent+iment</td>
+<td>感情</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>resent</td>
+<td>re(回)+sent</td>
+<td>重新感受到不满→怨恨</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s23">7️⃣ cogn / gnos = 知道 🧠</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"cogn是知道，recognize是重新认出"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">7️⃣ cogn / gnos = 知道 🧠</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>recognize</td>
+<td>re(再)+cogn+ize</td>
+<td>再次知道→认出</td>
+<td>★</td>
+</tr>
+<tr>
+<td>cognitive</td>
+<td>cogn+itive</td>
+<td>认知的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>cognition</td>
+<td>cogn+ition</td>
+<td>认知</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>diagnosis</td>
+<td>dia(穿过)+gnos+is</td>
+<td>看透→诊断</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>ignore</td>
+<td>i(不)+gnore(=cogn)</td>
+<td>不知道→忽视</td>
+<td>★</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>not(=gnosc)+ice</td>
+<td>注意到→知道</td>
+<td>★</td>
+</tr>
+<tr>
+<td>notify</td>
+<td>not+ify(使…)</td>
+<td>使知道→通知</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s24">8️⃣ sign = 标记、记号 🏷️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"sign是记号，signal是信号，signature是你的标记"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">8️⃣ sign = 标记、记号 🏷️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sign</td>
+<td>sign</td>
+<td>标记、标志</td>
+<td>★</td>
+</tr>
+<tr>
+<td>signal</td>
+<td>sign+al</td>
+<td>信号</td>
+<td>★</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>sign+ature</td>
+<td>签名（你的标记）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>significant</td>
+<td>sign+ific+ant</td>
+<td>有标记意义的→重要的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>assign</td>
+<td>as(去)+sign</td>
+<td>做标记→分配</td>
+<td>★</td>
+</tr>
+<tr>
+<td>design</td>
+<td>de(下)+sign</td>
+<td>画出标记→设计</td>
+<td>★</td>
+</tr>
+<tr>
+<td>resign</td>
+<td>re(回)+sign</td>
+<td>交出标记→辞职</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s25">🎮 拆词练习 #1（试试你的手！）</h3>
+<p>用刚学的词根拆解这些单词：</p>
+<ol>
+<li><strong>supervisor</strong> = <strong><em>(在上面) + </em></strong>(看) + ___(人) → ___</li>
+<li><strong>respectable</strong> = <strong><em>(回) + </em></strong>(看) + ___(能…的) → ___</li>
+<li><strong>description</strong> = <strong><em>(下) + </em></strong>(写) + ___(名词) → ___</li>
+<li><strong>consensus</strong> = <strong><em>(共同) + </em></strong>(感觉) → ___</li>
+<li><strong>designer</strong> = <strong><em>(下) + </em></strong>(标记) + ___(人) → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. super+vis+or→监督者 2. re+spect+able→值得回看的→可敬的 3. de+scrip+tion→描述 4. con+sens→共识 5. de+sign+er→设计师</p>
+<hr />
+<h3 id="s26">📦 第2组：动作与运动（做、引导、搬、走、拉、压、投）</h3>
+<hr />
+<h4 id="s27">9️⃣ act / ag = 做、行动 🎬</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"act就是做，action是行动，active是活跃的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">9️⃣ act / ag = 做、行动 🎬</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>act</td>
+<td>act</td>
+<td>行动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>action</td>
+<td>act+ion</td>
+<td>行动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>active</td>
+<td>act+ive</td>
+<td>活跃的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>activity</td>
+<td>act+ivity</td>
+<td>活动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>react</td>
+<td>re(回)+act</td>
+<td>反应</td>
+<td>★</td>
+</tr>
+<tr>
+<td>actual</td>
+<td>act+ual</td>
+<td>实际的（真正做了的）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>actor</td>
+<td>act+or(人)</td>
+<td>演员</td>
+<td>★</td>
+</tr>
+<tr>
+<td>agent</td>
+<td>ag+ent(人)</td>
+<td>代理人</td>
+<td>★</td>
+</tr>
+<tr>
+<td>agenda</td>
+<td>ag+enda</td>
+<td>要做的事→议程</td>
+<td>★</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>ex(出)+act</td>
+<td>做出来→精确的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s28">🔟 duc / duct = 引导、带 🧭</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"duc带路走，educate是引出来，produce是往前带"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">🔟 duc / duct = 引导、带 🧭</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>educate</td>
+<td>e(出)+duc+ate</td>
+<td>引出来→教育</td>
+<td>★</td>
+</tr>
+<tr>
+<td>produce</td>
+<td>pro(向前)+duc+e</td>
+<td>往前带→生产</td>
+<td>★</td>
+</tr>
+<tr>
+<td>introduce</td>
+<td>intro(进入)+duc+e</td>
+<td>引入→介绍</td>
+<td>★</td>
+</tr>
+<tr>
+<td>conduct</td>
+<td>con(共同)+duct</td>
+<td>引导→指挥、行为</td>
+<td>★</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>re(回)+duc+e</td>
+<td>往回带→减少</td>
+<td>★</td>
+</tr>
+<tr>
+<td>product</td>
+<td>pro(前)+duct</td>
+<td>生产出来的→产品</td>
+<td>★</td>
+</tr>
+<tr>
+<td>seduce</td>
+<td>se(旁)+duc+e</td>
+<td>引到旁边→诱惑</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>deduce</td>
+<td>de(下)+duc+e</td>
+<td>往下引导→推断</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s29">1️⃣1️⃣ port = 拿、带、运 📦</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"port到处搬，import进口export出口，transport是运输"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣1️⃣ port = 拿、带、运 📦</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>import</td>
+<td>im(进)+port</td>
+<td>搬进来→进口</td>
+<td>★</td>
+</tr>
+<tr>
+<td>export</td>
+<td>ex(出)+port</td>
+<td>搬出去→出口</td>
+<td>★</td>
+</tr>
+<tr>
+<td>transport</td>
+<td>trans(跨越)+port</td>
+<td>跨着搬→运输</td>
+<td>★</td>
+</tr>
+<tr>
+<td>portable</td>
+<td>port+able(能…的)</td>
+<td>能搬的→便携的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>support</td>
+<td>sup(在下)+port</td>
+<td>在下面托着→支持</td>
+<td>★</td>
+</tr>
+<tr>
+<td>report</td>
+<td>re(回)+port</td>
+<td>搬回来→报告</td>
+<td>★</td>
+</tr>
+<tr>
+<td>airport</td>
+<td>air(空)+port</td>
+<td>飞机的港口→机场</td>
+<td>★</td>
+</tr>
+<tr>
+<td>important</td>
+<td>im(进)+port+ant</td>
+<td>搬进来的→重要的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>opportunity</td>
+<td>op(朝向)+port+unity</td>
+<td>朝你来的机会→机会</td>
+<td>★</td>
+</tr>
+<tr>
+<td>deport</td>
+<td>de(下)+port</td>
+<td>搬走→驱逐</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s30">1️⃣2️⃣ mov / mot / mob = 移动 🏃</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"mov/mot都是动，motion是运动，mobile是移动的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣2️⃣ mov / mot / mob = 移动 🏃</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>move</td>
+<td>mov+e</td>
+<td>移动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>movement</td>
+<td>mov+ement</td>
+<td>运动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>re(回)+mov+e</td>
+<td>移回去→移除</td>
+<td>★</td>
+</tr>
+<tr>
+<td>motor</td>
+<td>mot+or</td>
+<td>马达（动的东西）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>motion</td>
+<td>mot+ion</td>
+<td>运动</td>
+<td>★</td>
+</tr>
+<tr>
+<td>emotion</td>
+<td>e(出)+mot+ion</td>
+<td>心里涌出来→情感</td>
+<td>★</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>mob+ile</td>
+<td>可移动的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>automobile</td>
+<td>auto(自己)+mobile</td>
+<td>自己动的→汽车</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>motivate</td>
+<td>mot+ivate</td>
+<td>让人动起来→激励</td>
+<td>★</td>
+</tr>
+<tr>
+<td>promote</td>
+<td>pro(前)+mot+e</td>
+<td>往前推→促进、晋升</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s31">1️⃣3️⃣ ced / cess = 走、让步 🚶</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"ced/cess是走，process是往前走，succeed是走成功"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣3️⃣ ced / cess = 走、让步 🚶</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>process</td>
+<td>pro(前)+cess</td>
+<td>往前走→过程</td>
+<td>★</td>
+</tr>
+<tr>
+<td>proceed</td>
+<td>pro(前)+ceed</td>
+<td>向前走→继续</td>
+<td>★</td>
+</tr>
+<tr>
+<td>succeed</td>
+<td>suc(下面)+ceed</td>
+<td>接着走→成功</td>
+<td>★</td>
+</tr>
+<tr>
+<td>success</td>
+<td>suc+cess</td>
+<td>成功</td>
+<td>★</td>
+</tr>
+<tr>
+<td>access</td>
+<td>ac(去)+cess</td>
+<td>走向→进入、通道</td>
+<td>★</td>
+</tr>
+<tr>
+<td>necessary</td>
+<td>ne(不)+cess+ary</td>
+<td>不能不走的→必要的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>exceed</td>
+<td>ex(出)+ceed</td>
+<td>走出去→超出</td>
+<td>★</td>
+</tr>
+<tr>
+<td>ancestor</td>
+<td>an(前)+cess+or</td>
+<td>走在前面的人→祖先</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>concede</td>
+<td>con(共同)+cede</td>
+<td>一起让步→承认</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s32">1️⃣4️⃣ ject = 投、掷 🎯</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"ject扔出去，object扔过来反对，project往前扔"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣4️⃣ ject = 投、掷 🎯</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>ob(对面)+ject</td>
+<td>扔过来→反对/物体</td>
+<td>★</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>sub(下)+ject</td>
+<td>扔在下面→主题/科目</td>
+<td>★</td>
+</tr>
+<tr>
+<td>project</td>
+<td>pro(前)+ject</td>
+<td>往前投→项目/投影</td>
+<td>★</td>
+</tr>
+<tr>
+<td>inject</td>
+<td>in(进入)+ject</td>
+<td>扔进去→注射</td>
+<td>★</td>
+</tr>
+<tr>
+<td>reject</td>
+<td>re(回)+ject</td>
+<td>扔回来→拒绝</td>
+<td>★</td>
+</tr>
+<tr>
+<td>eject</td>
+<td>e(出)+ject</td>
+<td>扔出去→弹出</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>objective</td>
+<td>ob(对面)+ject+ive</td>
+<td>扔在面前的→目标/客观的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s33">1️⃣5️⃣ tract = 拉、牵引 🪝</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"tract是拉，attract吸引你，distract拉开你"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣5️⃣ tract = 拉、牵引 🪝</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attract</td>
+<td>at(去)+tract</td>
+<td>拉过来→吸引</td>
+<td>★</td>
+</tr>
+<tr>
+<td>attraction</td>
+<td>attract+ion</td>
+<td>吸引力</td>
+<td>★</td>
+</tr>
+<tr>
+<td>distract</td>
+<td>dis(分开)+tract</td>
+<td>拉开→分心</td>
+<td>★</td>
+</tr>
+<tr>
+<td>extract</td>
+<td>ex(出)+tract</td>
+<td>拉出来→提取</td>
+<td>★</td>
+</tr>
+<tr>
+<td>tractor</td>
+<td>tract+or</td>
+<td>拉东西的→拖拉机</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>subtract</td>
+<td>sub(下)+tract</td>
+<td>往下拉→减去</td>
+<td>★</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>con(共同)+tract</td>
+<td>拉到一起→合同</td>
+<td>★</td>
+</tr>
+<tr>
+<td>abstract</td>
+<td>abs(离开)+tract</td>
+<td>拉开→抽象的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s34">1️⃣6️⃣ press = 压、按 👇</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"press压一压，express压出来表达，impress压进去留印象"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣6️⃣ press = 压、按 👇</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>press</td>
+<td>press</td>
+<td>按压</td>
+<td>★</td>
+</tr>
+<tr>
+<td>express</td>
+<td>ex(出)+press</td>
+<td>压出来→表达</td>
+<td>★</td>
+</tr>
+<tr>
+<td>expression</td>
+<td>express+ion</td>
+<td>表达</td>
+<td>★</td>
+</tr>
+<tr>
+<td>impress</td>
+<td>im(进)+press</td>
+<td>压进去→留下印象</td>
+<td>★</td>
+</tr>
+<tr>
+<td>impression</td>
+<td>impress+ion</td>
+<td>印象</td>
+<td>★</td>
+</tr>
+<tr>
+<td>depress</td>
+<td>de(下)+press</td>
+<td>往下压→使沮丧</td>
+<td>★</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>com(共同)+press</td>
+<td>全压一起→压缩</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>suppress</td>
+<td>sup(从下)+press</td>
+<td>从下压住→压制</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>pressure</td>
+<td>press+ure</td>
+<td>压力</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s35">🎮 拆词练习 #2</h3>
+<ol>
+<li><strong>production</strong> = <strong><em>(前) + </em></strong>(引导) + ___(名词) → ___</li>
+<li><strong>attractive</strong> = <strong><em>(去) + </em></strong>(拉) + ___(形容词) → ___</li>
+<li><strong>impossible</strong> = <strong><em>(不) + </em></strong>(能) → ___</li>
+<li><strong>depression</strong> = <strong><em>(下) + </em></strong>(压) + ___(名词) → ___</li>
+<li><strong>extraction</strong> = <strong><em>(出) + </em></strong>(拉) + ___(名词) → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. pro+duct+ion→生产 2. at+tract+ive→有吸引力的 3. im+possible→不可能的 4. de+press+ion→沮丧 5. ex+tract+ion→提取</p>
+<hr />
+<h3 id="s36">📦 第3组：生命与身体（生命、手、头、牙、心、身体、皮肤）</h3>
+<hr />
+<h4 id="s37">1️⃣7️⃣ bio = 生命 🧬</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"bio是生命，biology研究生命，biography记录生命"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣7️⃣ bio = 生命 🧬</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>biology</td>
+<td>bio+logy(学科)</td>
+<td>生物学</td>
+<td>★</td>
+</tr>
+<tr>
+<td>biography</td>
+<td>bio+graphy(写)</td>
+<td>传记（写生命故事）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>antibiotic</td>
+<td>anti(抗)+bio+tic</td>
+<td>抗生素（对抗生命的）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>biosphere</td>
+<td>bio+sphere(球)</td>
+<td>生物圈</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>symbiosis</td>
+<td>sym(共同)+bio+sis</td>
+<td>共同生活→共生</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>microbe</td>
+<td>micro(小)+be(=bio)</td>
+<td>微生物→细菌</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s38">1️⃣8️⃣ viv / vit = 活、生命 🌱</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"viv是活，survive活过来，vivid活灵活现"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣8️⃣ viv / vit = 活、生命 🌱</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vivid</td>
+<td>viv+id</td>
+<td>活的→生动的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>vital</td>
+<td>vit+al</td>
+<td>生命的→至关重要的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>vitamin</td>
+<td>vit+amin</td>
+<td>维持生命的东西→维生素</td>
+<td>★</td>
+</tr>
+<tr>
+<td>survive</td>
+<td>sur(超过)+viv+e</td>
+<td>活得超过→幸存</td>
+<td>★</td>
+</tr>
+<tr>
+<td>revive</td>
+<td>re(再)+viv+e</td>
+<td>再活→复活</td>
+<td>★</td>
+</tr>
+<tr>
+<td>living</td>
+<td>liv+ing</td>
+<td>活着的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>alive</td>
+<td>a(在)+live</td>
+<td>活着的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s39">1️⃣9️⃣ manu / mani = 手 ✋</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"manu是手，manufacture用手做，manual手动的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">1️⃣9️⃣ manu / mani = 手 ✋</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>manual</td>
+<td>manu+al</td>
+<td>手动的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>manufacture</td>
+<td>manu(手)+fact(做)+ure</td>
+<td>用手做→制造</td>
+<td>★</td>
+</tr>
+<tr>
+<td>manuscript</td>
+<td>manu+script(写)</td>
+<td>手写的→手稿</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>manage</td>
+<td>mani+age</td>
+<td>用手管→管理</td>
+<td>★</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>manag+er</td>
+<td>管理者</td>
+<td>★</td>
+</tr>
+<tr>
+<td>manicure</td>
+<td>mani+cure(关心)</td>
+<td>手部护理→修指甲</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s40">2️⃣0️⃣ cap / capit = 头 🎩</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"cap是头，capital是头等大事，captain是头儿"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣0️⃣ cap / capit = 头 🎩</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capital</td>
+<td>capit+al</td>
+<td>头等的→首都/资本</td>
+<td>★</td>
+</tr>
+<tr>
+<td>captain</td>
+<td>capit+ain</td>
+<td>头儿→队长</td>
+<td>★</td>
+</tr>
+<tr>
+<td>capsule</td>
+<td>caps(盒子)+ule</td>
+<td>头部大小的→胶囊</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>escape</td>
+<td>e(出)+scape</td>
+<td>从头里出去→逃跑</td>
+<td>★</td>
+</tr>
+<tr>
+<td>capture</td>
+<td>capt+ure</td>
+<td>抓头→捕获</td>
+<td>★</td>
+</tr>
+<tr>
+<td>chapter</td>
+<td>capit+er</td>
+<td>书的头→章节</td>
+<td>★</td>
+</tr>
+<tr>
+<td>decapitate</td>
+<td>de(去)+cap+itate</td>
+<td>去头→斩首</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s41">2️⃣1️⃣ dent = 牙 🦷</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"dent是牙，dentist看牙的，dental牙齿的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣1️⃣ dent = 牙 🦷</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dentist</td>
+<td>dent+ist(人)</td>
+<td>牙医</td>
+<td>★</td>
+</tr>
+<tr>
+<td>dental</td>
+<td>dent+al</td>
+<td>牙齿的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>indent</td>
+<td>in(进)+dent</td>
+<td>压出牙印→缩进</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>trident</td>
+<td>tri(三)+dent</td>
+<td>三叉→三叉戟</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>edentate</td>
+<td>e(无)+dent+ate</td>
+<td>没牙的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s42">2️⃣2️⃣ cord = 心 💜</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"cord是心，record重新存于心，accord心在一起"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣2️⃣ cord = 心 💜</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cordial</td>
+<td>cord+ial</td>
+<td>发自内心的→热诚的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>record</td>
+<td>re(再)+cord</td>
+<td>再存于心→记录</td>
+<td>★</td>
+</tr>
+<tr>
+<td>accord</td>
+<td>ac(去)+cord</td>
+<td>心在一起→一致</td>
+<td>★</td>
+</tr>
+<tr>
+<td>accordance</td>
+<td>accord+ance</td>
+<td>一致</td>
+<td>★</td>
+</tr>
+<tr>
+<td>concord</td>
+<td>con(共同)+cord</td>
+<td>同心→和睦</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>discord</td>
+<td>dis(分离)+cord</td>
+<td>心不齐→不和</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s43">2️⃣3️⃣ corp = 身体 🏢</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"corp是身体，corporation是一群人的身体→公司"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣3️⃣ corp = 身体 🏢</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>corporation</td>
+<td>corp+oration</td>
+<td>身体组织→公司</td>
+<td>★</td>
+</tr>
+<tr>
+<td>corporal</td>
+<td>corp+oral</td>
+<td>身体的→肉体的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>corpse</td>
+<td>corp+se</td>
+<td>身体→尸体</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>incorporate</td>
+<td>in(进入)+corp+orate</td>
+<td>纳入团体→合并</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>corporate</td>
+<td>corp+orate</td>
+<td>公司的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s44">2️⃣4️⃣ derm = 皮肤 🧴</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"derm是皮，dermatology研究皮肤"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣4️⃣ derm = 皮肤 🧴</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dermatology</td>
+<td>derm+atology</td>
+<td>皮肤科</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>epidermis</td>
+<td>epi(上)+derm+is</td>
+<td>皮肤上层→表皮</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>hypodermic</td>
+<td>hypo(下)+derm+ic</td>
+<td>皮肤下面的→皮下的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>pachyderm</td>
+<td>pachy(厚)+derm</td>
+<td>厚皮动物</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s45">🎮 拆词练习 #3</h3>
+<ol>
+<li><strong>management</strong> = <strong><em>(手) + </em></strong>(做) + ___(名词) → ___  </li>
+<li><strong>recapture</strong> = <strong><em>(再) + </em></strong>(抓) → ___</li>
+<li><strong>survival</strong> = <strong><em>(超过) + </em></strong>(活) + ___(名词) → ___</li>
+<li><strong>cordially</strong> = <strong><em>(心) + </em></strong>(形容词) + ___(副词) → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. man(手)+age(做)+ment(名词)→管理 2. re(再)+capture(抓)→重新捕获 3. sur(超过)+viv(活)+al(名词)→幸存 4. cord(心)+ial(形)+ly(副)→真诚地</p>
+<hr />
+<h3 id="s46">📦 第4组：形状与结构（形状、建造、界限、关、破、做）</h3>
+<hr />
+<h4 id="s47">2️⃣5️⃣ form = 形状、形成 🔷</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"form是形状，reform重新塑形，transform变形状"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣5️⃣ form = 形状、形成 🔷</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>form</td>
+<td>form</td>
+<td>形式</td>
+<td>★</td>
+</tr>
+<tr>
+<td>reform</td>
+<td>re(再)+form</td>
+<td>重新塑形→改革</td>
+<td>★</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>trans(转变)+form</td>
+<td>变形→转变</td>
+<td>★</td>
+</tr>
+<tr>
+<td>uniform</td>
+<td>uni(一)+form</td>
+<td>统一形状→制服</td>
+<td>★</td>
+</tr>
+<tr>
+<td>inform</td>
+<td>in(进入)+form</td>
+<td>把形状放进脑子→通知</td>
+<td>★</td>
+</tr>
+<tr>
+<td>information</td>
+<td>inform+ation</td>
+<td>信息</td>
+<td>★</td>
+</tr>
+<tr>
+<td>formula</td>
+<td>form+ula</td>
+<td>固定的形状→公式</td>
+<td>★</td>
+</tr>
+<tr>
+<td>perform</td>
+<td>per(贯穿)+form</td>
+<td>做完→表演</td>
+<td>★</td>
+</tr>
+<tr>
+<td>formation</td>
+<td>form+ation</td>
+<td>形成</td>
+<td>★</td>
+</tr>
+<tr>
+<td>formal</td>
+<td>form+al</td>
+<td>有形状的→正式的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s48">2️⃣6️⃣ struct = 建造 🏗️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"struct是建，construct建起来，instruct建知识进去"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣6️⃣ struct = 建造 🏗️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>structure</td>
+<td>struct+ure</td>
+<td>建造出来的→结构</td>
+<td>★</td>
+</tr>
+<tr>
+<td>construct</td>
+<td>con(共同)+struct</td>
+<td>一起建→建造</td>
+<td>★</td>
+</tr>
+<tr>
+<td>instruct</td>
+<td>in(进入)+struct</td>
+<td>把知识建进去→指导</td>
+<td>★</td>
+</tr>
+<tr>
+<td>instruction</td>
+<td>instruct+ion</td>
+<td>指导、说明</td>
+<td>★</td>
+</tr>
+<tr>
+<td>destroy</td>
+<td>de(去除)+stroy(=struct)</td>
+<td>拆掉→破坏</td>
+<td>★</td>
+</tr>
+<tr>
+<td>instrument</td>
+<td>in(进入)+struct+ment</td>
+<td>用来建造的东西→工具</td>
+<td>★</td>
+</tr>
+<tr>
+<td>construction</td>
+<td>construct+ion</td>
+<td>建造</td>
+<td>★</td>
+</tr>
+<tr>
+<td>instructor</td>
+<td>instruct+or</td>
+<td>指导者</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s49">2️⃣7️⃣ fin = 终、界限 🔚</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"fin是终点，final最后的，finish结束"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣7️⃣ fin = 终、界限 🔚</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>final</td>
+<td>fin+al</td>
+<td>最后的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>finish</td>
+<td>fin+ish</td>
+<td>到达终点→结束</td>
+<td>★</td>
+</tr>
+<tr>
+<td>define</td>
+<td>de(下)+fin+e</td>
+<td>定下界限→定义</td>
+<td>★</td>
+</tr>
+<tr>
+<td>definition</td>
+<td>defin+ition</td>
+<td>定义</td>
+<td>★</td>
+</tr>
+<tr>
+<td>infinite</td>
+<td>in(不)+fin+ite</td>
+<td>没有终点的→无限的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>finance</td>
+<td>fin+ance</td>
+<td>到结尾结算→金融</td>
+<td>★</td>
+</tr>
+<tr>
+<td>confine</td>
+<td>con(共同)+fin+e</td>
+<td>共同的界限→限制</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>refine</td>
+<td>re(再)+fin+e</td>
+<td>再精炼→提炼</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s50">2️⃣8️⃣ clud / clus = 关闭、包含 🚪</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"clud关起来，include关在里面，exclude关在外面"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣8️⃣ clud / clus = 关闭、包含 🚪</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>include</td>
+<td>in(里面)+clude</td>
+<td>关在里面→包含</td>
+<td>★</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>ex(外面)+clude</td>
+<td>关在外面→排除</td>
+<td>★</td>
+</tr>
+<tr>
+<td>conclude</td>
+<td>con(全部)+clude</td>
+<td>全部关上→得出结论</td>
+<td>★</td>
+</tr>
+<tr>
+<td>conclusion</td>
+<td>conclus+ion</td>
+<td>结论</td>
+<td>★</td>
+</tr>
+<tr>
+<td>including</td>
+<td>includ+ing</td>
+<td>包括</td>
+<td>★</td>
+</tr>
+<tr>
+<td>exclusive</td>
+<td>exclus+ive</td>
+<td>排外的→独家的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>closet</td>
+<td>clos+et</td>
+<td>关东西的→壁橱</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>close</td>
+<td>clos+e</td>
+<td>关闭</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s51">2️⃣9️⃣ rupt = 破、断裂 💥</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"rupt是破，interrupt打断，erupt爆发出来"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">2️⃣9️⃣ rupt = 破、断裂 💥</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interrupt</td>
+<td>inter(之间)+rupt</td>
+<td>在中间破开→打断</td>
+<td>★</td>
+</tr>
+<tr>
+<td>erupt</td>
+<td>e(出)+rupt</td>
+<td>破出来→爆发</td>
+<td>★</td>
+</tr>
+<tr>
+<td>disruption</td>
+<td>dis(分开)+rupt+ion</td>
+<td>破裂→扰乱</td>
+<td>★</td>
+</tr>
+<tr>
+<td>bankrupt</td>
+<td>bank(银行)+rupt</td>
+<td>银行破了→破产</td>
+<td>★</td>
+</tr>
+<tr>
+<td>corrupt</td>
+<td>cor(共同)+rupt</td>
+<td>全破了→腐败</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>abrupt</td>
+<td>ab(离开)+rupt</td>
+<td>突然断开→突然的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>rupture</td>
+<td>rupt+ure</td>
+<td>破裂</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s52">3️⃣0️⃣ fact / fect / fac = 做、制作 🔨</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"fact是做，factory做事的地方，affect影响你"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣0️⃣ fact / fect / fac = 做、制作 🔨</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>factory</td>
+<td>fact+ory(场所)</td>
+<td>做事的地方→工厂</td>
+<td>★</td>
+</tr>
+<tr>
+<td>fact</td>
+<td>fact</td>
+<td>事实（做过的事）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>affect</td>
+<td>af(去)+fect</td>
+<td>去做→影响</td>
+<td>★</td>
+</tr>
+<tr>
+<td>effect</td>
+<td>ef(出)+fect</td>
+<td>做出来的→效果</td>
+<td>★</td>
+</tr>
+<tr>
+<td>infect</td>
+<td>in(进入)+fect</td>
+<td>做进去→传染</td>
+<td>★</td>
+</tr>
+<tr>
+<td>perfect</td>
+<td>per(完全)+fect</td>
+<td>做完了→完美的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>difficult</td>
+<td>dif(分开)+fic+ult</td>
+<td>难做的→困难的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>efficient</td>
+<td>ef(出)+fic+ient</td>
+<td>做得出的→高效的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>benefit</td>
+<td>bene(好)+fit(=fact)</td>
+<td>做好的事→利益</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s53">🎮 拆词练习 #4</h3>
+<ol>
+<li><strong>destruction</strong> = <strong><em>(去除) + </em></strong>(建造) + ___(名词) → ___</li>
+<li><strong>infection</strong> = <strong><em>(进入) + </em></strong>(做) + ___(名词) → ___</li>
+<li><strong>perfection</strong> = <strong><em>(完全) + </em></strong>(做) + ___(名词) → ___</li>
+<li><strong>interrupted</strong> = <strong><em>(之间) + </em></strong>(破) + ___(过去式) → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. de+struct+ion→破坏 2. in+fect+ion→传染 3. per+fect+ion→完美 4. inter+rupt+ed→被打断了</p>
+<hr />
+<h3 id="s54">📦 第5组：时间与空间（时间、地方、地球、海、流）</h3>
+<hr />
+<h4 id="s55">3️⃣1️⃣ temp / chron = 时间 ⏰</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"temp是时间，temporary暂时的，chronicle按时间记"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣1️⃣ temp / chron = 时间 ⏰</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>temporary</td>
+<td>temp+orary</td>
+<td>时间的→临时的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>temperature</td>
+<td>temp+er+ature</td>
+<td>时间的程度→温度</td>
+<td>★</td>
+</tr>
+<tr>
+<td>tempo</td>
+<td>temp+o</td>
+<td>时间的节奏→节拍</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>contemporary</td>
+<td>con(共同)+temp+orary</td>
+<td>同时间的→当代的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>chronic</td>
+<td>chron+ic</td>
+<td>时间的→慢性的（长期拖的）</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>chronicle</td>
+<td>chron+icle</td>
+<td>按时间记→编年史</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>synchronize</td>
+<td>syn(同步)+chron+ize</td>
+<td>使时间同步</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s56">3️⃣2️⃣ loc = 地方 📍</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"loc是地方，local当地的，location位置"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣2️⃣ loc = 地方 📍</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>local</td>
+<td>loc+al</td>
+<td>地方的→当地的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>location</td>
+<td>loc+ation</td>
+<td>位置</td>
+<td>★</td>
+</tr>
+<tr>
+<td>allocate</td>
+<td>al(去)+loc+ate</td>
+<td>去指定地点→分配</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>relocate</td>
+<td>re(再)+loc+ate</td>
+<td>重新换地方→搬迁</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>locomotive</td>
+<td>loc+o+mot(动)+ive</td>
+<td>能动的→火车头</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s57">3️⃣3️⃣ geo = 地球、土地 🌍</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"geo是地球，geography写地球，geometry量地球"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣3️⃣ geo = 地球、土地 🌍</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>geography</td>
+<td>geo+graphy(写)</td>
+<td>描写地球→地理</td>
+<td>★</td>
+</tr>
+<tr>
+<td>geology</td>
+<td>geo+logy(学科)</td>
+<td>地球学科→地质学</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>geo+metry(测量)</td>
+<td>测量地球→几何</td>
+<td>★</td>
+</tr>
+<tr>
+<td>geocentric</td>
+<td>geo+centric(中心的)</td>
+<td>以地球为中心的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s58">3️⃣4️⃣ mar = 海 🌊</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"mar是海，marine海里的，submarine海下面的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣4️⃣ mar = 海 🌊</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>marine</td>
+<td>mar+ine</td>
+<td>海的→海洋的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>submarine</td>
+<td>sub(下)+marine</td>
+<td>海下面的→潜艇</td>
+<td>★</td>
+</tr>
+<tr>
+<td>mariner</td>
+<td>mar+iner</td>
+<td>水手</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>maritime</td>
+<td>mar+itime</td>
+<td>海事的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>aquarium</td>
+<td>aqua(水)+rium(场所)</td>
+<td>水的世界→水族馆</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s59">3️⃣5️⃣ flu = 流动 💧</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"flu是流，fluent流利流淌，influence流入心里"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣5️⃣ flu = 流动 💧</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fluent</td>
+<td>flu+ent</td>
+<td>流淌的→流利的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>fluency</td>
+<td>flu+ency</td>
+<td>流利</td>
+<td>★</td>
+</tr>
+<tr>
+<td>influence</td>
+<td>in(进入)+flu+ence</td>
+<td>流入→影响</td>
+<td>★</td>
+</tr>
+<tr>
+<td>influential</td>
+<td>influen+ial</td>
+<td>有影响力的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>fluid</td>
+<td>flu+id</td>
+<td>流动的→流体</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>affluent</td>
+<td>af(去)+flu+ent</td>
+<td>不断流入→富裕的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>flush</td>
+<td>flu+sh</td>
+<td>冲洗</td>
+<td>★</td>
+</tr>
+<tr>
+<td>fluctuate</td>
+<td>flu+ctu+ate</td>
+<td>像水一样晃→波动</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s60">📦 第6组：知识与文明（教、说、写、文字、信、法律）</h3>
+<hr />
+<h4 id="s61">3️⃣6️⃣ doc / doct = 教 🎓</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"doc是教，doctor教出来的博士，document教的资料"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣6️⃣ doc / doct = 教 🎓</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>doctor</td>
+<td>doc+tor</td>
+<td>教导者→博士/医生</td>
+<td>★</td>
+</tr>
+<tr>
+<td>document</td>
+<td>doc+ument</td>
+<td>教的东西→文件</td>
+<td>★</td>
+</tr>
+<tr>
+<td>doctrine</td>
+<td>doct+rine</td>
+<td>教的内容→教条</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>documentary</td>
+<td>document+ary</td>
+<td>文件的→纪录片</td>
+<td>★</td>
+</tr>
+<tr>
+<td>docile</td>
+<td>doc+ile</td>
+<td>可教的→温顺的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s62">3️⃣7️⃣ log / logue = 言语、学科 📚</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"log是说，dialogue两人说，biology研究生命的学科"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣7️⃣ log / logue = 言语、学科 📚</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dialogue</td>
+<td>dia(穿过)+logue</td>
+<td>来回说→对话</td>
+<td>★</td>
+</tr>
+<tr>
+<td>apology</td>
+<td>apo(离开)+logy</td>
+<td>说出原因→道歉</td>
+<td>★</td>
+</tr>
+<tr>
+<td>biology</td>
+<td>bio(生命)+logy</td>
+<td>生命学科→生物学</td>
+<td>★</td>
+</tr>
+<tr>
+<td>logic</td>
+<td>log+ic</td>
+<td>说的规律→逻辑</td>
+<td>★</td>
+</tr>
+<tr>
+<td>technology</td>
+<td>techno(技术)+logy</td>
+<td>技术学科→技术</td>
+<td>★</td>
+</tr>
+<tr>
+<td>catalog</td>
+<td>cata(全部)+log</td>
+<td>全记下来→目录</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>prologue</td>
+<td>pro(前)+logue</td>
+<td>前面的话→序言</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>monologue</td>
+<td>mono(单一)+logue</td>
+<td>一个人说→独白</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s63">3️⃣8️⃣ graph / gram = 写、记录 📝</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"graph写出来，photo+graph是照片，telegram是电报"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣8️⃣ graph / gram = 写、记录 📝</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>photograph</td>
+<td>photo(光)+graph</td>
+<td>用光写→照片</td>
+<td>★</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>graph</td>
+<td>图表</td>
+<td>★</td>
+</tr>
+<tr>
+<td>grammar</td>
+<td>gram+mar</td>
+<td>写的规则→语法</td>
+<td>★</td>
+</tr>
+<tr>
+<td>diagram</td>
+<td>dia(穿过)+gram</td>
+<td>画穿的→图表</td>
+<td>★</td>
+</tr>
+<tr>
+<td>program</td>
+<td>pro(前)+gram</td>
+<td>提前写好的→节目/程序</td>
+<td>★</td>
+</tr>
+<tr>
+<td>telegram</td>
+<td>tele(远)+gram</td>
+<td>远处写的→电报</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>graphic</td>
+<td>graph+ic</td>
+<td>写的→图形的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>autobiography</td>
+<td>auto(自己)+bio(生命)+graphy</td>
+<td>写自己一生→自传</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>geography</td>
+<td>geo(地球)+graphy</td>
+<td>写地球→地理</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s64">3️⃣9️⃣ liter = 文字、字母 🔤</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"liter是文字，literature文学，literacy认字能力"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">3️⃣9️⃣ liter = 文字、字母 🔤</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>literature</td>
+<td>liter+ature</td>
+<td>文字作品→文学</td>
+<td>★</td>
+</tr>
+<tr>
+<td>literal</td>
+<td>liter+al</td>
+<td>字面的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>literacy</td>
+<td>liter+acy</td>
+<td>文字能力→读写能力</td>
+<td>★</td>
+</tr>
+<tr>
+<td>literary</td>
+<td>liter+ary</td>
+<td>文学的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>illiterate</td>
+<td>il(不)+liter+ate</td>
+<td>不识字的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s65">4️⃣0️⃣ cred = 相信、信用 💳</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"cred是信，credit信用，incredible难以置信"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣0️⃣ cred = 相信、信用 💳</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>credit</td>
+<td>cred+it</td>
+<td>信用</td>
+<td>★</td>
+</tr>
+<tr>
+<td>credible</td>
+<td>cred+ible</td>
+<td>可信的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>incredible</td>
+<td>in(不)+cred+ible</td>
+<td>不可信的→难以置信的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>credential</td>
+<td>cred+ential</td>
+<td>让人相信的东西→证书</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>credo</td>
+<td>cred+o</td>
+<td>我相信→信条</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s66">4️⃣1️⃣ jur / jud = 法律、判断 ⚖️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"jur/jud是法律判断，judge法官，jury陪审团"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣1️⃣ jur / jud = 法律、判断 ⚖️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>judge</td>
+<td>jud+ge</td>
+<td>判断者→法官</td>
+<td>★</td>
+</tr>
+<tr>
+<td>judgment</td>
+<td>judg+ment</td>
+<td>判断</td>
+<td>★</td>
+</tr>
+<tr>
+<td>jury</td>
+<td>jur+y</td>
+<td>法律之人→陪审团</td>
+<td>★</td>
+</tr>
+<tr>
+<td>justice</td>
+<td>just+ice</td>
+<td>正义</td>
+<td>★</td>
+</tr>
+<tr>
+<td>justify</td>
+<td>just+ify(使…)</td>
+<td>使正当→证明…有理</td>
+<td>★</td>
+</tr>
+<tr>
+<td>prejudice</td>
+<td>pre(前)+jud+ice</td>
+<td>先入为主的判断→偏见</td>
+<td>★</td>
+</tr>
+<tr>
+<td>jurisdiction</td>
+<td>jur+is+diction(说)</td>
+<td>法律权力→管辖权</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>adjudicate</td>
+<td>ad(去)+jud+icate</td>
+<td>去判断→裁决</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s67">🎮 拆词练习 #5</h3>
+<ol>
+<li><strong>photography</strong> = <strong><em>(光) + </em></strong>(写) + ___(名词) → ___</li>
+<li><strong>prejudice</strong> = <strong><em>(前) + </em></strong>(判断) + ___(名词) → ___</li>
+<li><strong>incredibly</strong> = <strong><em>(不) + </em></strong>(信) + ___(副词) → ___</li>
+<li><strong>geographical</strong> = <strong><em>(地球) + </em></strong>(写) + ___(形容词) → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. photo+graph+y→摄影 2. pre+jud+ice→偏见 3. in+cred+ibly→难以置信地 4. geo+graph+ical→地理的</p>
+<hr />
+<h3 id="s68">📦 第7组：数量、等同与步骤（年、产生、等、步、错、坚）</h3>
+<hr />
+<h4 id="s69">4️⃣2️⃣ ann / enn = 年 📅</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"ann是年，annual每年的，anniversary年年转回来的日子"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣2️⃣ ann / enn = 年 📅</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annual</td>
+<td>ann+ual</td>
+<td>每年的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>anniversary</td>
+<td>ann+ivers(转)+ary</td>
+<td>转回来的日子→周年纪念</td>
+<td>★</td>
+</tr>
+<tr>
+<td>millennium</td>
+<td>milli(千)+enn+ium</td>
+<td>千年</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>perennial</td>
+<td>per(贯穿)+enn+ial</td>
+<td>全年→长期的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s70">4️⃣3️⃣ gen = 产生、出生 🌟</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"gen是产生，generate产生，generation一代人"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣3️⃣ gen = 产生、出生 🌟</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generate</td>
+<td>gen+erate</td>
+<td>产生</td>
+<td>★</td>
+</tr>
+<tr>
+<td>generation</td>
+<td>gener+ation</td>
+<td>产生的一批→一代人</td>
+<td>★</td>
+</tr>
+<tr>
+<td>gene</td>
+<td>gen+e</td>
+<td>基因</td>
+<td>★</td>
+</tr>
+<tr>
+<td>genius</td>
+<td>gen+ius</td>
+<td>天生的才能→天才</td>
+<td>★</td>
+</tr>
+<tr>
+<td>gentle</td>
+<td>gen+tle</td>
+<td>出身高贵的→温和的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>genre</td>
+<td>gen+re</td>
+<td>产生的类型→类型</td>
+<td>★</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>gen+der</td>
+<td>产生的区分→性别</td>
+<td>★</td>
+</tr>
+<tr>
+<td>genuine</td>
+<td>gen+uine</td>
+<td>天生的→真正的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>general</td>
+<td>gen+eral</td>
+<td>普遍产生的→总的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>hydrogen</td>
+<td>hydro(水)+gen</td>
+<td>能产生水的→氢</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s71">4️⃣4️⃣ equi = 相等 ⚖️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"equi是等，equal平等的，equation方程式"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣4️⃣ equi = 相等 ⚖️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>equal</td>
+<td>equ+al</td>
+<td>相等的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>equality</td>
+<td>equal+ity</td>
+<td>平等</td>
+<td>★</td>
+</tr>
+<tr>
+<td>equation</td>
+<td>equ+ation</td>
+<td>使相等→方程式</td>
+<td>★</td>
+</tr>
+<tr>
+<td>equivalent</td>
+<td>equi+val(值)+ent</td>
+<td>等值的→等价的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>equator</td>
+<td>equ+ator</td>
+<td>使地球等分→赤道</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>equilibrium</td>
+<td>equi+libr(平衡)+ium</td>
+<td>平衡状态</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s72">4️⃣5️⃣ grad / gress = 步、走 👣</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"grad是步，grade等级，progress往前走"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣5️⃣ grad / gress = 步、走 👣</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grade</td>
+<td>grad+e</td>
+<td>级别→年级</td>
+<td>★</td>
+</tr>
+<tr>
+<td>gradual</td>
+<td>grad+ual</td>
+<td>一步一步的→逐渐的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>pro(前)+gress</td>
+<td>往前走→进步</td>
+<td>★</td>
+</tr>
+<tr>
+<td>graduate</td>
+<td>grad+uate</td>
+<td>走完步骤→毕业</td>
+<td>★</td>
+</tr>
+<tr>
+<td>degree</td>
+<td>de(下)+gree(=grad)</td>
+<td>往下走一步→程度/学位</td>
+<td>★</td>
+</tr>
+<tr>
+<td>aggressive</td>
+<td>ag(去)+gress+ive</td>
+<td>不断往前走的→好斗的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>congress</td>
+<td>con(共同)+gress</td>
+<td>走到一起→国会</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>up(上)+grade</td>
+<td>升级</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s73">4️⃣6️⃣ err = 错误 ❌</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"err是错，error错误，errand跑错路→跑腿"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣6️⃣ err = 错误 ❌</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>error</td>
+<td>err+or</td>
+<td>错误</td>
+<td>★</td>
+</tr>
+<tr>
+<td>err</td>
+<td>err</td>
+<td>犯错</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>erroneous</td>
+<td>err+oneous</td>
+<td>错误的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>aberrant</td>
+<td>ab(离开)+err+ant</td>
+<td>偏离的→反常的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s74">4️⃣7️⃣ dur = 持久、坚硬 💎</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"dur是持久，durable耐用的，endure忍受"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣7️⃣ dur = 持久、坚硬 💎</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>durable</td>
+<td>dur+able</td>
+<td>能持久的→耐用的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>endure</td>
+<td>en(进入)+dur+e</td>
+<td>进入持久→忍受</td>
+<td>★</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>dur+ation</td>
+<td>持续的时间</td>
+<td>★</td>
+</tr>
+<tr>
+<td>during</td>
+<td>dur+ing</td>
+<td>在…期间</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s75">4️⃣8️⃣ firm = 稳固、坚定 🔒</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"firm是稳固，confirm让它更稳固"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣8️⃣ firm = 稳固、坚定 🔒</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firm</td>
+<td>firm</td>
+<td>坚固的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>confirm</td>
+<td>con(加强)+firm</td>
+<td>使更坚固→确认</td>
+<td>★</td>
+</tr>
+<tr>
+<td>firmness</td>
+<td>firm+ness</td>
+<td>坚定</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>affirm</td>
+<td>af(去)+firm</td>
+<td>去坚定→肯定</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>infirm</td>
+<td>in(不)+firm</td>
+<td>不坚固的→虚弱的</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s76">📦 第8组：自然与元素（光、水、火、热、星、花、声）</h3>
+<hr />
+<h4 id="s77">4️⃣9️⃣ bene = 好 💚</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"bene是好，benefit好处，benevolent仁慈的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">4️⃣9️⃣ bene = 好 💚</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>benefit</td>
+<td>bene+fit(做)</td>
+<td>做好的事→利益</td>
+<td>★</td>
+</tr>
+<tr>
+<td>beneficial</td>
+<td>benefici+al</td>
+<td>有益的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>benevolent</td>
+<td>bene+vol(意愿)+ent</td>
+<td>好意的→仁慈的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>benign</td>
+<td>bene+ign</td>
+<td>好的→良性的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>benediction</td>
+<td>bene+dict+ion</td>
+<td>说好话→祝福</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s78">5️⃣0️⃣ luc / lum = 光 💡</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"luc/lum是光，illuminate照亮，luminous发光的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣0️⃣ luc / lum = 光 💡</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lucid</td>
+<td>luc+id</td>
+<td>有光的→清晰的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>illuminate</td>
+<td>il(进入)+lumin+ate</td>
+<td>灌入光→照亮</td>
+<td>★</td>
+</tr>
+<tr>
+<td>luminous</td>
+<td>lumin+ous</td>
+<td>发光的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>translucent</td>
+<td>trans(穿过)+luc+ent</td>
+<td>光能穿过的→半透明的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>illustrate</td>
+<td>il(进入)+lustr(光)+ate</td>
+<td>用光照亮→说明</td>
+<td>★</td>
+</tr>
+<tr>
+<td>illustration</td>
+<td>illustr+ation</td>
+<td>插图、说明</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s79">5️⃣1️⃣ hydr / aqua = 水 💦</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"hydr/aqua都是水，hydrate水合，aquarium水族馆"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣1️⃣ hydr / aqua = 水 💦</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hydrant</td>
+<td>hydr+ant</td>
+<td>出水的东西→消防栓</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>dehydrate</td>
+<td>de(去除)+hydr+ate</td>
+<td>去水→脱水</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>hydrate</td>
+<td>hydr+ate</td>
+<td>加水→水合</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>aquatic</td>
+<td>aqua+tic</td>
+<td>水生的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>aquarium</td>
+<td>aqua+rium(场所)</td>
+<td>水的场所→水族馆</td>
+<td>★</td>
+</tr>
+<tr>
+<td>aqueduct</td>
+<td>aqua+duct(引导)</td>
+<td>引导水→水渠</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s80">5️⃣2️⃣ therm = 热 🔥</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"therm是热，thermometer量热度"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣2️⃣ therm = 热 🔥</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>thermometer</td>
+<td>thermo+meter(测量)</td>
+<td>量热的→温度计</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>thermal</td>
+<td>therm+al</td>
+<td>热的→热量的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>geothermal</td>
+<td>geo(地球)+thermal</td>
+<td>地热的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>thermos</td>
+<td>therm+os</td>
+<td>保温瓶</td>
+<td>★</td>
+</tr>
+<tr>
+<td>thermostat</td>
+<td>thermo+stat(静止)</td>
+<td>控温器</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s81">5️⃣3️⃣ astr = 星 ⭐</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"astr是星，astronomy天文，disaster星位不对→灾难"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣3️⃣ astr = 星 ⭐</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>astronomy</td>
+<td>astr+onomy</td>
+<td>星星学科→天文学</td>
+<td>★</td>
+</tr>
+<tr>
+<td>astronaut</td>
+<td>astro+naut(航海者)</td>
+<td>航星者→宇航员</td>
+<td>★</td>
+</tr>
+<tr>
+<td>disaster</td>
+<td>dis(不吉)+aster(星)</td>
+<td>星位不对→灾难</td>
+<td>★</td>
+</tr>
+<tr>
+<td>astrology</td>
+<td>astro+logy</td>
+<td>占星学</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>asteroid</td>
+<td>aster+oid(像…的)</td>
+<td>像星的→小行星</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s82">5️⃣4️⃣ flor / anth = 花 🌸</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"flor是花，floral花的；anth也是花，anthology选集"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣4️⃣ flor / anth = 花 🌸</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>floral</td>
+<td>flor+al</td>
+<td>花的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>flower</td>
+<td>= flor 的日耳曼对应</td>
+<td>花</td>
+<td>★</td>
+</tr>
+<tr>
+<td>flora</td>
+<td>flor+a</td>
+<td>植物群</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>florist</td>
+<td>flor+ist</td>
+<td>花商</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>anthology</td>
+<td>anth(花)+logy(集合)</td>
+<td>花的集合→选集</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>chrysanthemum</td>
+<td>chrys(金)+anth+emum</td>
+<td>金色的花→菊花</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s83">📦 第9组：声音、爱与恐惧（喊、声、爱、怕、友）</h3>
+<hr />
+<h4 id="s84">5️⃣5️⃣ voc / vok = 声音、喊叫 📣</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"voc是声音，vocabulary词汇集，vocal发声的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣5️⃣ voc / vok = 声音、喊叫 📣</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vocal</td>
+<td>voc+al</td>
+<td>声音的→发声的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>vocabulary</td>
+<td>voc+abulary</td>
+<td>词汇集</td>
+<td>★</td>
+</tr>
+<tr>
+<td>voice</td>
+<td>voc+e</td>
+<td>声音</td>
+<td>★</td>
+</tr>
+<tr>
+<td>provoke</td>
+<td>pro(前)+vok</td>
+<td>向前喊→挑衅</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invoke</td>
+<td>in(进入)+vok+e</td>
+<td>喊进来→祈求</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>evoke</td>
+<td>e(出)+voke</td>
+<td>喊出来→唤起</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>advocate</td>
+<td>ad(去)+voc+ate</td>
+<td>去喊→提倡</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s85">5️⃣6️⃣ claim / clam = 呼喊 📢</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"claim/clam是喊，exclaim大声喊，proclaim宣布"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣6️⃣ claim / clam = 呼喊 📢</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exclaim</td>
+<td>ex(出)+claim</td>
+<td>喊出来→呼喊</td>
+<td>★</td>
+</tr>
+<tr>
+<td>proclaim</td>
+<td>pro(前)+claim</td>
+<td>向前喊→宣布</td>
+<td>★</td>
+</tr>
+<tr>
+<td>claim</td>
+<td>claim</td>
+<td>声称</td>
+<td>★</td>
+</tr>
+<tr>
+<td>declaim</td>
+<td>de(下)+claim</td>
+<td>大声朗诵</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>clamor</td>
+<td>clam+or</td>
+<td>喧闹</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>acclaim</td>
+<td>ac(去)+claim</td>
+<td>朝你喊→欢呼</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>reclaim</td>
+<td>re(回)+claim</td>
+<td>喊回来→回收</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s86">5️⃣7️⃣ phil = 爱 ❤️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"phil是爱，philosophy爱智慧=哲学"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣7️⃣ phil = 爱 ❤️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>philosophy</td>
+<td>phil+o+sophy(智慧)</td>
+<td>爱智慧→哲学</td>
+<td>★</td>
+</tr>
+<tr>
+<td>philanthropy</td>
+<td>phil+anthrop(人类)+y</td>
+<td>爱人类→慈善</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>philharmonic</td>
+<td>phil+harmonic(和谐)</td>
+<td>爱音乐的→爱乐的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>bibliography</td>
+<td>biblio(书)+phil+y</td>
+<td>爱书→书目学</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s87">5️⃣8️⃣ phob = 恐惧 😱</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"phob是怕，phobia恐惧症"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣8️⃣ phob = 恐惧 😱</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phobia</td>
+<td>phob+ia</td>
+<td>恐惧症</td>
+<td>★</td>
+</tr>
+<tr>
+<td>claustrophobia</td>
+<td>claustr(封闭)+phobia</td>
+<td>幽闭恐惧症</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>hydrophobia</td>
+<td>hydro(水)+phobia</td>
+<td>恐水症</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>acrophobia</td>
+<td>acro(高)+phobia</td>
+<td>恐高症</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s88">5️⃣9️⃣ amic / car = 朋友 🤝</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"amic是朋友，amicable友好的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">5️⃣9️⃣ amic / car = 朋友 🤝</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amicable</td>
+<td>amic+able</td>
+<td>可交友的→友好的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>amiable</td>
+<td>ami+able</td>
+<td>可爱的→和蔼的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>enemy</td>
+<td>en(不)+emy(=amic)</td>
+<td>不是朋友的→敌人</td>
+<td>★</td>
+</tr>
+<tr>
+<td>amity</td>
+<td>amic+ity</td>
+<td>友好关系</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s89">📦 第10组：更多高频词根（真、转、空、来、词、放、称、正、力、量）</h3>
+<hr />
+<h4 id="s90">6️⃣0️⃣ ver = 真 ✅</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"ver是真，very真的，verify去验证"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣0️⃣ ver = 真 ✅</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>very</td>
+<td>ver+y</td>
+<td>真的→非常</td>
+<td>★</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>ver+ify</td>
+<td>使成真→验证</td>
+<td>★</td>
+</tr>
+<tr>
+<td>verdict</td>
+<td>ver(真)+dict(说)</td>
+<td>说真话→裁决</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>verity</td>
+<td>ver+ity</td>
+<td>真实</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s91">6️⃣1️⃣ vert / vers = 转 🔄</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"vert/vers是转，convert转过来，universe全转在一起"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣1️⃣ vert / vers = 转 🔄</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>convert</td>
+<td>con(共同)+vert</td>
+<td>转到一起→转变</td>
+<td>★</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>re(回)+vers+e</td>
+<td>转回去→反转</td>
+<td>★</td>
+</tr>
+<tr>
+<td>universe</td>
+<td>uni(一)+vers+e</td>
+<td>转成一体的→宇宙</td>
+<td>★</td>
+</tr>
+<tr>
+<td>diverse</td>
+<td>di(分开)+vers+e</td>
+<td>转向不同→多样的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>advertise</td>
+<td>ad(去)+vert+ise</td>
+<td>让人转向看→做广告</td>
+<td>★</td>
+</tr>
+<tr>
+<td>controversy</td>
+<td>contro(相反)+vers+y</td>
+<td>转成对立的→争论</td>
+<td>★</td>
+</tr>
+<tr>
+<td>versatile</td>
+<td>vers+atile</td>
+<td>能转的→多才多艺的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>in(里面)+vert</td>
+<td>向内转→倒转</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>divert</td>
+<td>di(分开)+vert</td>
+<td>转开→转移</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s92">6️⃣2️⃣ vac / void = 空 🔳</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"vac是空，vacation空出来的时间=假期，void空的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣2️⃣ vac / void = 空 🔳</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vacation</td>
+<td>vac+ation</td>
+<td>空出来的时间→假期</td>
+<td>★</td>
+</tr>
+<tr>
+<td>vacant</td>
+<td>vac+ant</td>
+<td>空的→空缺的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>vacuum</td>
+<td>vac+uum</td>
+<td>真空</td>
+<td>★</td>
+</tr>
+<tr>
+<td>void</td>
+<td>void</td>
+<td>空的→无效</td>
+<td>★</td>
+</tr>
+<tr>
+<td>avoid</td>
+<td>a(去)+void</td>
+<td>走向空的→避开</td>
+<td>★</td>
+</tr>
+<tr>
+<td>evacuate</td>
+<td>e(出)+vac+uate</td>
+<td>弄空→撤离</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s93">6️⃣3️⃣ val = 价值 💰</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"val是值，value价值，valuable有价值的"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣3️⃣ val = 价值 💰</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>val+ue</td>
+<td>价值</td>
+<td>★</td>
+</tr>
+<tr>
+<td>valuable</td>
+<td>val+u+able</td>
+<td>有价值的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invaluable</td>
+<td>in(加强)+val+u+able</td>
+<td>极有价值的（不是"没价值"！）</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invalid</td>
+<td>in(不)+val+id</td>
+<td>没价值的→无效的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>valid</td>
+<td>val+id</td>
+<td>有价值的→有效的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>prevail</td>
+<td>pre(前)+vail</td>
+<td>更有价值→占优势</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>evaluate</td>
+<td>e(出)+val+uate</td>
+<td>算出价值→评估</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s94">6️⃣4️⃣ ven / vent = 来 🚪</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"ven/vent是来，event出来的事=事件，invent先来到=发明"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣4️⃣ ven / vent = 来 🚪</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event</td>
+<td>e(出)+vent</td>
+<td>出来的事→事件</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invent</td>
+<td>in(进入)+vent</td>
+<td>进来→发明</td>
+<td>★</td>
+</tr>
+<tr>
+<td>invention</td>
+<td>invent+ion</td>
+<td>发明</td>
+<td>★</td>
+</tr>
+<tr>
+<td>adventure</td>
+<td>ad(去)+vent+ure</td>
+<td>去来的事→冒险</td>
+<td>★</td>
+</tr>
+<tr>
+<td>avenue</td>
+<td>a(去)+ven+ue</td>
+<td>走来的路→大街</td>
+<td>★</td>
+</tr>
+<tr>
+<td>prevent</td>
+<td>pre(前)+vent</td>
+<td>先来→预防</td>
+<td>★</td>
+</tr>
+<tr>
+<td>convention</td>
+<td>con(共同)+vent+ion</td>
+<td>来到一起→大会/惯例</td>
+<td>★</td>
+</tr>
+<tr>
+<td>revenue</td>
+<td>re(回)+ven+ue</td>
+<td>回来的东西→收入</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>intervene</td>
+<td>inter(之间)+ven+e</td>
+<td>来到中间→干预</td>
+<td>☆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s95">6️⃣5️⃣ verb = 词语 📖</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"verb是词，verbal文字的，verb本身就是动词"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣5️⃣ verb = 词语 📖</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>verb</td>
+<td>verb</td>
+<td>动词</td>
+<td>★</td>
+</tr>
+<tr>
+<td>verbal</td>
+<td>verb+al</td>
+<td>文字的→口头的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>proverb</td>
+<td>pro(前)+verb</td>
+<td>前面说的话→谚语</td>
+<td>★</td>
+</tr>
+<tr>
+<td>verbose</td>
+<td>verb+ose</td>
+<td>话多的→啰嗦的</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>adverb</td>
+<td>ad(去)+verb</td>
+<td>加在动词上的→副词</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s96">6️⃣6️⃣ pon / pos = 放置 📌</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"pon/pos是放，post放的地方，position摆放的位置"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣6️⃣ pon / pos = 放置 📌</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td>pos+ition</td>
+<td>放置的位置→位置</td>
+<td>★</td>
+</tr>
+<tr>
+<td>positive</td>
+<td>pos+itive</td>
+<td>放置好的→积极的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>oppose</td>
+<td>op(对面)+pos+e</td>
+<td>放在对面→反对</td>
+<td>★</td>
+</tr>
+<tr>
+<td>suppose</td>
+<td>sup(下)+pos+e</td>
+<td>放在下面→假设</td>
+<td>★</td>
+</tr>
+<tr>
+<td>compose</td>
+<td>com(共同)+pos+e</td>
+<td>放到一起→组成/作曲</td>
+<td>★</td>
+</tr>
+<tr>
+<td>expose</td>
+<td>ex(出)+pos+e</td>
+<td>放出来→暴露</td>
+<td>★</td>
+</tr>
+<tr>
+<td>impose</td>
+<td>im(进入)+pos+e</td>
+<td>放进去→强加</td>
+<td>★</td>
+</tr>
+<tr>
+<td>postpone</td>
+<td>post(后)+pon+e</td>
+<td>放到后面→推迟</td>
+<td>★</td>
+</tr>
+<tr>
+<td>component</td>
+<td>com(共同)+pon+ent</td>
+<td>放在一起的东西→组件</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s97">6️⃣7️⃣ pend / pens = 悬挂、称量 ⚖️</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"pend是挂，pens是称，depend挂在上面=依赖"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣7️⃣ pend / pens = 悬挂、称量 ⚖️</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>depend</td>
+<td>de(下)+pend</td>
+<td>挂在下面→依赖</td>
+<td>★</td>
+</tr>
+<tr>
+<td>dependent</td>
+<td>depend+ent</td>
+<td>依赖的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>independent</td>
+<td>in(不)+depend+ent</td>
+<td>不依赖的→独立的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>sus(下)+pend</td>
+<td>挂起来→暂停</td>
+<td>★</td>
+</tr>
+<tr>
+<td>expense</td>
+<td>ex(出)+pens+e</td>
+<td>称出去的钱→花费</td>
+<td>★</td>
+</tr>
+<tr>
+<td>expensive</td>
+<td>expens+ive</td>
+<td>花费多的→昂贵的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>compensate</td>
+<td>com(共同)+pens+ate</td>
+<td>称平→补偿</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>pendant</td>
+<td>pend+ant</td>
+<td>挂着的东西→吊坠</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>pending</td>
+<td>pend+ing</td>
+<td>悬挂着的→待定的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s98">6️⃣8️⃣ rect = 正、直 📏</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"rect是直，correct纠正，direct直指方向"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣8️⃣ rect = 正、直 📏</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>correct</td>
+<td>cor(共同)+rect</td>
+<td>完全直的→正确的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>direct</td>
+<td>di(贯穿)+rect</td>
+<td>直的→直接的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>direct+ion</td>
+<td>方向</td>
+<td>★</td>
+</tr>
+<tr>
+<td>director</td>
+<td>direct+or</td>
+<td>指导者→导演</td>
+<td>★</td>
+</tr>
+<tr>
+<td>rectify</td>
+<td>rect+ify</td>
+<td>使变直→纠正</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>rectangle</td>
+<td>rect+angle</td>
+<td>直角→矩形</td>
+<td>★</td>
+</tr>
+<tr>
+<td>indirect</td>
+<td>in(不)+direct</td>
+<td>不直的→间接的</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s99">6️⃣9️⃣ fort = 力量 💪</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"fort是力量，force力量，effort努力"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">6️⃣9️⃣ fort = 力量 💪</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>force</td>
+<td>forc+e</td>
+<td>力量</td>
+<td>★</td>
+</tr>
+<tr>
+<td>effort</td>
+<td>ef(出)+fort</td>
+<td>出力→努力</td>
+<td>★</td>
+</tr>
+<tr>
+<td>comfortable</td>
+<td>com(共同)+fort+able</td>
+<td>有力量的→舒适的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>uncomfortable</td>
+<td>un(不)+comfortable</td>
+<td>不舒服的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>fortify</td>
+<td>fort+ify</td>
+<td>使有力→加强</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>reinforce</td>
+<td>re(再)+in(进入)+force</td>
+<td>再注入力量→增援</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="s100">7️⃣0️⃣ mens / met = 测量 📐</h4>
+<blockquote>
+<p>🧩 口诀：<strong>"mens/met是量，meter计量器，dimension测量的范围"</strong></p>
+</blockquote>
+<table><caption class="visually-hidden">7️⃣0️⃣ mens / met = 测量 📐</caption>
+<thead>
+<tr>
+<th>例词</th>
+<th>拆解</th>
+<th>含义</th>
+<th>级别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>meter</td>
+<td>metr+e</td>
+<td>计量器/米</td>
+<td>★</td>
+</tr>
+<tr>
+<td>thermometer</td>
+<td>thermo(热)+meter</td>
+<td>量热的→温度计</td>
+<td>☆</td>
+</tr>
+<tr>
+<td>dimension</td>
+<td>di(贯穿)+mens+ion</td>
+<td>测量的范围→维度</td>
+<td>★</td>
+</tr>
+<tr>
+<td>immense</td>
+<td>im(不)+mens+e</td>
+<td>无法测量的→巨大的</td>
+<td>★</td>
+</tr>
+<tr>
+<td>symmetry</td>
+<td>sym(相同)+metry</td>
+<td>等测量→对称</td>
+<td>★</td>
+</tr>
+<tr>
+<td>geometry</td>
+<td>geo(地)+metry</td>
+<td>测量大地→几何</td>
+<td>★</td>
+</tr>
+<tr>
+<td>diameter</td>
+<td>dia(穿过)+meter</td>
+<td>穿过的测量→直径</td>
+<td>★</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s101">🎮 拆词练习 #6（综合大挑战！）</h3>
+<p>用学过的词根拆解这些单词：</p>
+<ol>
+<li><strong>unpredictable</strong> = ___ + ___ + ___ + ___ → ___</li>
+<li><strong>transformation</strong> = ___ + ___ + ___ → ___</li>
+<li><strong>independently</strong> = ___ + ___ + ___ + ___ → ___</li>
+<li><strong>comfortable</strong> = ___ + ___ + ___ → ___</li>
+<li><strong>reconstruction</strong> = ___ + ___ + ___ → ___</li>
+<li><strong>unbelievable</strong> = ___ + ___ + ___ → ___</li>
+<li><strong>disagreement</strong> = ___ + ___ + ___ → ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. un(不)+pre(前)+dict(说)+able(可…的)→不可预测的 2. trans(转变)+form(形)+ation(名)→转变 3. in(不)+depend(依赖)+ent(形)+ly(副)→独立地 4. com(共)+fort(力)+able(能)→舒适的 5. re(再)+struct(建)+ion(名)→重建 6. un(不)+believ(信)+able(可)→难以置信 7. dis(不)+agree(同意)+ment(名)→分歧</p>
+<hr />
+<h2 id="s102">📙 第三章：30+前缀——学会"改方向"</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 认识 30+ 个常用前缀
+- 看到一个带前缀的单词，能判断前缀在"改什么"
+- 掌握前缀 in- 的两种截然不同的含义</p>
+</blockquote>
+<hr />
+<h3 id="s103">🧭 前缀是什么？</h3>
+<p>前缀就像单词的 <strong>"方向盘"</strong> 🎮——它不改变单词的核心意思，但改变方向：
+- 加个 <code>un-</code> → 反方向（happy → unhappy）
+- 加个 <code>re-</code> → 倒回来（write → rewrite）
+- 加个 <code>super-</code> → 往上走（market → supermarket）</p>
+<hr />
+<h3 id="s104">🚫 第一组：否定前缀——说"不"</h3>
+<table><caption class="visually-hidden">🚫 第一组：否定前缀——说&quot;不&quot;</caption>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>例词</th>
+<th>使用规则</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>un-</strong></td>
+<td>不/相反</td>
+<td>★unhappy, ★unlike, ★unusual, ★unfair, ★unable, ★uncomfortable, ★unlock, ★uncover</td>
+<td>最常用！加在形容词/动词前</td>
+</tr>
+<tr>
+<td><strong>in-/im-/il-/ir-</strong></td>
+<td>不/无</td>
+<td>★impossible, ★impolite, ★inactive, ★incomplete, ★illegal, ★irregular, ★irresponsible</td>
+<td>im-用在b/p/m前，il-在l前，ir-在r前</td>
+</tr>
+<tr>
+<td><strong>dis-</strong></td>
+<td>不/相反/分开</td>
+<td>★disagree, ★dislike, ★disappear, ★discover, ★dishonest, ★disconnect, ★disorder</td>
+<td>常加在动词前</td>
+</tr>
+<tr>
+<td><strong>mis-</strong></td>
+<td>错误/不当</td>
+<td>★misunderstand, ★mislead, ★mistake, ★misbehave, ★misplace</td>
+<td>"做错了"的感觉</td>
+</tr>
+<tr>
+<td><strong>non-</strong></td>
+<td>非/无</td>
+<td>non-fiction, non-violent, ★nonstop, ★nonsense</td>
+<td>单纯否定，没有贬义</td>
+</tr>
+</tbody>
+</table>
+<p>💡 <strong>小窍门</strong>：un- 是"万能否定"，拿不准就先试 un-！</p>
+<hr />
+<h3 id="s105">🔄 第二组：方位与方向前缀——改方向</h3>
+<table><caption class="visually-hidden">🔄 第二组：方位与方向前缀——改方向</caption>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>re-</strong></td>
+<td>再/回/重新</td>
+<td>★rewrite, ★reuse, ★return, ★review, ★rebuild, ★recall, ★react, ★replace</td>
+</tr>
+<tr>
+<td><strong>pre-</strong></td>
+<td>前/预先</td>
+<td>★prepay, ★predict, ★preview, ★prevent, ★prefer, ★preschool</td>
+</tr>
+<tr>
+<td><strong>post-</strong></td>
+<td>后</td>
+<td>★postcard, ★postpone, postwar, postgraduate</td>
+</tr>
+<tr>
+<td><strong>sub-</strong></td>
+<td>下/次级</td>
+<td>★subway, ★suburb, ★subject, ★submarine, ★substitute</td>
+</tr>
+<tr>
+<td><strong>inter-</strong></td>
+<td>之间/相互</td>
+<td>★international, ★interview, ★internet, ★interrupt, ★interact</td>
+</tr>
+<tr>
+<td><strong>trans-</strong></td>
+<td>跨越/转变</td>
+<td>★translate, ★transport, ★transform, ★transplant, ★transparent</td>
+</tr>
+<tr>
+<td><strong>ex-</strong></td>
+<td>出/外</td>
+<td>★export, ★express, ★exit, ★examine, ★exclude</td>
+</tr>
+<tr>
+<td><strong>de-</strong></td>
+<td>向下/去除</td>
+<td>★depress, ★decrease, ★decode, ★descend, ★destroy</td>
+</tr>
+<tr>
+<td><strong>over-</strong></td>
+<td>过度/在上</td>
+<td>★overwork, ★overcome, overhead, ★overlook</td>
+</tr>
+<tr>
+<td><strong>under-</strong></td>
+<td>在下/不足</td>
+<td>★understand, ★underline, ★underground, ★underestimate</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s106">🔢 第三组：程度与数量前缀——说多少</h3>
+<table><caption class="visually-hidden">🔢 第三组：程度与数量前缀——说多少</caption>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>super-</strong></td>
+<td>超/超级</td>
+<td>★supermarket, ★superstar, supernatural, surface</td>
+</tr>
+<tr>
+<td><strong>anti-</strong></td>
+<td>反/抗</td>
+<td>anti-smoking, antibody, antivirus, antifreeze</td>
+</tr>
+<tr>
+<td><strong>multi-</strong></td>
+<td>多</td>
+<td>multi-color, ★multiply, multicultural</td>
+</tr>
+<tr>
+<td><strong>uni-/mono-</strong></td>
+<td>单/一</td>
+<td>★uniform, ★unit, ★universe, ★monologue</td>
+</tr>
+<tr>
+<td><strong>bi-</strong></td>
+<td>双/二</td>
+<td>★bicycle, bilingual, biweekly</td>
+</tr>
+<tr>
+<td><strong>tri-</strong></td>
+<td>三</td>
+<td>★triangle, tricolor, trident</td>
+</tr>
+<tr>
+<td><strong>mini-/micro-</strong></td>
+<td>小/微</td>
+<td>★minimum, ★minister, ★microscope, ★microwave</td>
+</tr>
+<tr>
+<td><strong>macro-</strong></td>
+<td>大</td>
+<td>macroeconomics, macroscopic</td>
+</tr>
+<tr>
+<td><strong>tele-</strong></td>
+<td>远距离</td>
+<td>★telephone, ★television, ★telescope, telegram</td>
+</tr>
+<tr>
+<td><strong>auto-</strong></td>
+<td>自我/自动</td>
+<td>★automatic, ★automobile, autobiography</td>
+</tr>
+<tr>
+<td><strong>semi-</strong></td>
+<td>半</td>
+<td>★semicircle, semiconductor</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s107">🤝 第四组：共同与反对前缀</h3>
+<table><caption class="visually-hidden">🤝 第四组：共同与反对前缀</caption>
+<thead>
+<tr>
+<th>前缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>co-/com-/con-/col-/cor-</strong></td>
+<td>共同/一起</td>
+<td>coauthor, ★combine, ★connect, ★collect, ★correct, ★cooperate</td>
+</tr>
+<tr>
+<td><strong>pro-</strong></td>
+<td>向前/赞成</td>
+<td>★progress, ★project, ★protect, ★provide, ★promote</td>
+</tr>
+<tr>
+<td><strong>counter-/contra-</strong></td>
+<td>反对/对立</td>
+<td>counterattack, ★contradict, ★contrary, ★contrast</td>
+</tr>
+<tr>
+<td><strong>mal-</strong></td>
+<td>坏/不良</td>
+<td>malfunction, ★malnutrition, maltreat</td>
+</tr>
+<tr>
+<td><strong>bene-</strong></td>
+<td>好</td>
+<td>★benefit, ★beneficial, benevolent</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s108">⚠️ 特别注意：in- 的两种面孔</h3>
+<p>这是初中最重要的前缀知识点之一！<code>in-</code> 有 <strong>两个完全不同的意思</strong>：</p>
+<table><caption class="visually-hidden">⚠️ 特别注意：in- 的两种面孔</caption>
+<thead>
+<tr>
+<th>含义</th>
+<th>例子</th>
+<th>怎么判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❶ 否定（=不）</td>
+<td>impossible(不可能的), inactive(不活跃的)</td>
+<td>后面是形容词词根</td>
+</tr>
+<tr>
+<td>❷ 进入/加强</td>
+<td>inspect(检查), inspire(鼓舞), include(包含)</td>
+<td>后面是动词词根</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📖 <strong>词源故事②：advocate——凯撒大帝也干过的行当</strong></p>
+<p>advocate = ad（去）+ voc（呼喊）+ ate（动词后缀）→ 上前大声疾呼 → 提倡</p>
+<p>古罗马法庭上，专门为他人辩护的专业人士叫做 advocatus。凯撒大帝发迹前就干过这种行当！肯为某人在法庭上大声疾呼辩护，自然就是支持这个人了。所以 advocate 从"法庭辩护人"引申为"提倡者、拥护者"。</p>
+<p>→ 同族词：vocal(发声的), vocabulary(词汇), voice(声音), evoke(唤起)</p>
+</blockquote>
+<hr />
+<h3 id="s109">🎮 前缀练习</h3>
+<p><strong>练习1：给下面的词加上否定前缀</strong></p>
+<ol>
+<li>happy → ___（用un-）</li>
+<li>possible → ___（用im-）</li>
+<li>polite → ___（用im-）</li>
+<li>honest → ___（用dis-）</li>
+<li>regular → ___（用ir-）</li>
+</ol>
+<p><strong>练习2：判断 in- 是什么意思（否定 or 进入？）</strong></p>
+<ol>
+<li>invisible → in- = ？</li>
+<li>inspect → in- = ？</li>
+<li>include → in- = ？</li>
+<li>incorrect → in- = ？</li>
+<li>inflate → in- = ？</li>
+</ol>
+<p><strong>练习3：用前缀改写句子</strong></p>
+<ol>
+<li>"He did the homework again." → He ___ his homework.</li>
+<li>"The two countries signed an agreement between them." → They signed an ___ agreement.</li>
+<li>"The bus runs under the ground." → The ___ bus.</li>
+</ol>
+<p>🔑 <strong>答案</strong>：练习1：1. unhappy 2. impossible 3. impolite 4. dishonest 5. irregular<br />
+练习2：1. 否定 2. 进入 3. 进入 4. 否定 5. 进入/加强<br />
+练习3：1. redid 2. international 3. underground</p>
+<hr />
+<h2 id="s110">📕 第四章：30+后缀——学会"改词性"</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 认识 30+ 个常用后缀
+- 看到一个陌生单词的后缀，能判断它是名词、动词、形容词还是副词
+- 知道同一个词根加不同后缀会变成不同的词性</p>
+</blockquote>
+<hr />
+<h3 id="s111">🧭 后缀是什么？</h3>
+<p>后缀就像单词的 <strong>"身份证"</strong> 🪪——它告诉你这个词是什么词性：
+- 看到 <code>-tion</code> → 这是名词
+- 看到 <code>-ful</code> → 这是形容词
+- 看到 <code>-ize</code> → 这是动词
+- 看到 <code>-ly</code> → 这是副词</p>
+<hr />
+<h3 id="s112">📛 第一组：名词后缀——给人、事、状态命名</h3>
+<table><caption class="visually-hidden">📛 第一组：名词后缀——给人、事、状态命名</caption>
+<thead>
+<tr>
+<th>后缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-er/-or</strong></td>
+<td>人/做…的东西</td>
+<td>★teacher, ★player, ★actor, ★inventor, ★visitor, ★director, ★monitor</td>
+</tr>
+<tr>
+<td><strong>-ist</strong></td>
+<td>人/…家</td>
+<td>★pianist, ★artist, ★scientist, ★tourist, ★chemist</td>
+</tr>
+<tr>
+<td><strong>-tion/-sion/-ation</strong></td>
+<td>动作/状态</td>
+<td>★education, ★invention, ★decision, ★information, ★invitation, ★operation, ★discussion</td>
+</tr>
+<tr>
+<td><strong>-ment</strong></td>
+<td>行为/结果</td>
+<td>★development, ★government, ★movement, ★enjoyment, ★agreement, ★achievement</td>
+</tr>
+<tr>
+<td><strong>-ness</strong></td>
+<td>性质/状态</td>
+<td>★happiness, ★kindness, ★illness, ★sadness, ★darkness, ★weakness</td>
+</tr>
+<tr>
+<td><strong>-ity/-ty</strong></td>
+<td>性质/状态</td>
+<td>★ability, ★safety, ★possibility, ★university, ★reality, ★activity</td>
+</tr>
+<tr>
+<td><strong>-ance/-ence</strong></td>
+<td>状态/行为</td>
+<td>★importance, ★difference, ★confidence, ★independence, ★appearance, ★silence</td>
+</tr>
+<tr>
+<td><strong>-dom</strong></td>
+<td>领域/状态</td>
+<td>★freedom, ★kingdom, ★wisdom</td>
+</tr>
+<tr>
+<td><strong>-ship</strong></td>
+<td>身份/状态</td>
+<td>★friendship, ★leadership, ★membership, ★relationship</td>
+</tr>
+<tr>
+<td><strong>-hood</strong></td>
+<td>身份/时期</td>
+<td>★childhood, ★neighborhood, ★brotherhood</td>
+</tr>
+<tr>
+<td><strong>-ism</strong></td>
+<td>主义/现象</td>
+<td>★tourism, heroism, criticism</td>
+</tr>
+<tr>
+<td><strong>-ology/-logy</strong></td>
+<td>学科</td>
+<td>★biology, ★geology, ★technology, ★psychology</td>
+</tr>
+<tr>
+<td><strong>-ure</strong></td>
+<td>行为/结果</td>
+<td>★nature, ★culture, ★picture, ★pressure, ★pleasure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s113">🎨 第二组：形容词后缀——描述事物的特征</h3>
+<table><caption class="visually-hidden">🎨 第二组：形容词后缀——描述事物的特征</caption>
+<thead>
+<tr>
+<th>后缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-ful</strong></td>
+<td>充满…的</td>
+<td>★beautiful, ★careful, ★helpful, ★useful, ★wonderful, ★powerful</td>
+</tr>
+<tr>
+<td><strong>-less</strong></td>
+<td>缺少…的</td>
+<td>★homeless, ★careless, ★useless, ★helpless, ★endless, ★hopeless</td>
+</tr>
+<tr>
+<td><strong>-able/-ible</strong></td>
+<td>能够/可…的</td>
+<td>★comfortable, ★enjoyable, ★possible, ★horrible, ★terrible, ★valuable, ★suitable</td>
+</tr>
+<tr>
+<td><strong>-ous</strong></td>
+<td>具有…性质的</td>
+<td>★dangerous, ★famous, ★nervous, ★serious, ★various, ★curious, ★humorous</td>
+</tr>
+<tr>
+<td><strong>-al</strong></td>
+<td>属于…的</td>
+<td>★national, ★traditional, ★natural, ★personal, ★international, ★educational</td>
+</tr>
+<tr>
+<td><strong>-ic/-ical</strong></td>
+<td>…的</td>
+<td>★scientific, ★historic, ★electronic, ★musical, ★magical, ★practical</td>
+</tr>
+<tr>
+<td><strong>-ive</strong></td>
+<td>有…性质的</td>
+<td>★active, ★creative, ★attractive, ★effective, ★expensive, ★positive</td>
+</tr>
+<tr>
+<td><strong>-y</strong></td>
+<td>具有…性质的</td>
+<td>★rainy, ★lucky, ★noisy, ★sunny, ★funny, ★healthy, ★hungry, ★angry</td>
+</tr>
+<tr>
+<td><strong>-en</strong></td>
+<td>由…制成的</td>
+<td>★golden, ★wooden, ★woolen</td>
+</tr>
+<tr>
+<td><strong>-ish</strong></td>
+<td>像…的</td>
+<td>★foolish, ★childish, ★selfish, ★British, ★Spanish</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s114">⚡ 第三组：动词后缀——表示动作</h3>
+<table><caption class="visually-hidden">⚡ 第三组：动词后缀——表示动作</caption>
+<thead>
+<tr>
+<th>后缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-ize/-ise</strong></td>
+<td>使…化</td>
+<td>★realize, ★modernize, ★organize, ★recognize, ★apologize</td>
+</tr>
+<tr>
+<td><strong>-fy</strong></td>
+<td>使…化</td>
+<td>★beautify, ★purify, ★simplify, ★identify, ★satisfy</td>
+</tr>
+<tr>
+<td><strong>-en</strong></td>
+<td>使变得</td>
+<td>★widen, ★sharpen, ★strengthen, ★shorten, ★deepen, ★soften</td>
+</tr>
+<tr>
+<td><strong>-ate</strong></td>
+<td>使…</td>
+<td>★educate, ★generate, ★motivate, ★translate, ★operate</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s115">🏃 第四组：副词后缀</h3>
+<table><caption class="visually-hidden">🏃 第四组：副词后缀</caption>
+<thead>
+<tr>
+<th>后缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-ly</strong></td>
+<td>…地</td>
+<td>★quickly, ★carefully, ★happily, ★usually, ★really, ★finally, ★probably, ★especially</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>陷阱警示</strong>：少数以 -ly 结尾的词是<strong>形容词</strong>而非副词！</p>
+<p>friendly, lovely, lonely, lively, ugly → 这些都是形容词！
+- a friendly person ✅（形容词）
+- He spoke friendly ❌ → He spoke in a friendly way ✅</p>
+</blockquote>
+<hr />
+<h3 id="s116">🎮 后缀练习</h3>
+<p><strong>练习1：判断词性</strong></p>
+<ol>
+<li>development → 名词（-ment）</li>
+<li>beautiful → ___</li>
+<li>carefully → ___</li>
+<li>invention → ___</li>
+<li>strengthen → ___</li>
+<li>homeless → ___</li>
+<li>gradually → ___</li>
+<li>organize → ___</li>
+</ol>
+<p><strong>练习2：同一个词根，加不同后缀</strong></p>
+<p>以 <strong>care</strong>（关心）为例：
+- care + ful = careful（形容词）→ 仔细的
+- care + less = careless（形容词）→ 粗心的
+- care + fully = carefully（副词）→ 仔细地</p>
+<p>现在你来：</p>
+<ol>
+<li>help + ___ = 有帮助的 / help + ___ = 无助的</li>
+<li>use + ___ = 有用的 / use + ___ = 无用的</li>
+<li>hope + ___ = 充满希望的 / hope + ___ = 绝望的</li>
+<li>create → creative（形容词）→ <strong><em>（名词）→ </em></strong>（副词）</li>
+</ol>
+<p><strong>练习3：词性转换</strong></p>
+<p>把下面的词变成不同的词性：</p>
+<ol>
+<li>happy → 名词 ___ → 副词 ___</li>
+<li>invent → 人 ___ → 名词 ___ → 形容词 ___</li>
+<li>danger → 形容词 ___ → 副词 ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：练习1：2. 形容词 3. 副词 4. 名词 5. 动词 6. 形容词 7. 副词 8. 动词<br />
+练习2：1. helpful, helpless 2. useful, useless 3. hopeful, hopeless 4. creativity, creatively<br />
+练习3：1. happiness, happily 2. inventor, invention, inventive 3. dangerous, dangerously</p>
+<hr />
+<h2 id="s117">📒 第五章：六种构词法——单词是怎么"拼"出来的</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 说出六种构词法并各举一例
+- 看到一个陌生单词，能判断它是用哪种方法构的
+- 掌握"派生法"（占70%以上！）</p>
+</blockquote>
+<hr />
+<h3 id="s118">5.1 拼法①：派生 = 前缀 + 词根 + 后缀 🧩</h3>
+<p><strong>这是最重要的构词法，占了 70% 以上！</strong></p>
+<p>就像中文的"偏旁部首"：三点水(氵) + 可 = 河，三点水 + 胡 = 湖——英语也一样，固定的字母组合 = 固定的意思。</p>
+<p><strong>口诀</strong>：
+- 前缀 = 改方向（否定、重复、上下…）
+- 词根 = 核心意思
+- 后缀 = 改词性</p>
+<p><strong>你已经学过很多派生词了</strong>！比如：
+- un + happy + ness = unhappiness
+- inter + national = international
+- re + construct + ion = reconstruction</p>
+<hr />
+<h3 id="s119">5.2 拼法②：合成 = 两个词直接拼 🔗</h3>
+<table><caption class="visually-hidden">5.2 拼法②：合成 = 两个词直接拼 🔗</caption>
+<thead>
+<tr>
+<th>合成词</th>
+<th>拆解</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★waterfall</td>
+<td>water + fall</td>
+<td>水+落下 = 瀑布</td>
+</tr>
+<tr>
+<td>★classroom</td>
+<td>class + room</td>
+<td>课+房间 = 教室</td>
+</tr>
+<tr>
+<td>★basketball</td>
+<td>basket + ball</td>
+<td>篮+球 = 篮球</td>
+</tr>
+<tr>
+<td>★sunshine</td>
+<td>sun + shine</td>
+<td>阳光</td>
+</tr>
+<tr>
+<td>★notebook</td>
+<td>note + book</td>
+<td>笔记本</td>
+</tr>
+<tr>
+<td>★homework</td>
+<td>home + work</td>
+<td>家庭作业</td>
+</tr>
+<tr>
+<td>★grandfather</td>
+<td>grand + father</td>
+<td>祖父</td>
+</tr>
+<tr>
+<td>★everybody</td>
+<td>every + body</td>
+<td>每个人</td>
+</tr>
+<tr>
+<td>★understand</td>
+<td>under + stand</td>
+<td>站在下面→理解</td>
+</tr>
+<tr>
+<td>★breakfast</td>
+<td>break + fast</td>
+<td>打破斋戒→早餐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s120">5.3 拼法③：混合 = 一半 + 一半 🧪</h3>
+<table><caption class="visually-hidden">5.3 拼法③：混合 = 一半 + 一半 🧪</caption>
+<thead>
+<tr>
+<th>混合词</th>
+<th>来源</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brunch</td>
+<td>breakfast + lunch</td>
+<td>早午餐 🥞</td>
+</tr>
+<tr>
+<td>smog</td>
+<td>smoke + fog</td>
+<td>烟雾</td>
+</tr>
+<tr>
+<td>webinar</td>
+<td>web + seminar</td>
+<td>线上研讨会</td>
+</tr>
+<tr>
+<td>motel</td>
+<td>motor + hotel</td>
+<td>汽车旅馆</td>
+</tr>
+<tr>
+<td>bit</td>
+<td>binary + digit</td>
+<td>比特</td>
+</tr>
+<tr>
+<td>emoji</td>
+<td>e(电子) + moji(图)</td>
+<td>表情符号</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s121">5.4 拼法④：截短 = 把长的剪短 ✂️</h3>
+<table><caption class="visually-hidden">5.4 拼法④：截短 = 把长的剪短 ✂️</caption>
+<thead>
+<tr>
+<th>截短词</th>
+<th>原词</th>
+<th>怎么截的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★phone</td>
+<td>telephone</td>
+<td>去头</td>
+</tr>
+<tr>
+<td>★plane</td>
+<td>airplane</td>
+<td>去头</td>
+</tr>
+<tr>
+<td>★exam</td>
+<td>examination</td>
+<td>去尾</td>
+</tr>
+<tr>
+<td>★app</td>
+<td>application</td>
+<td>只留头</td>
+</tr>
+<tr>
+<td>fridge</td>
+<td>refrigerator</td>
+<td>头尾都砍</td>
+</tr>
+<tr>
+<td>flu</td>
+<td>influenza</td>
+<td>只留中间</td>
+</tr>
+<tr>
+<td>math</td>
+<td>mathematics</td>
+<td>去尾</td>
+</tr>
+<tr>
+<td>gym</td>
+<td>gymnasium</td>
+<td>去尾</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s122">5.5 拼法⑤：缩写 = 取首字母 🔤</h3>
+<table><caption class="visually-hidden">5.5 拼法⑤：缩写 = 取首字母 🔤</caption>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIP</td>
+<td>Very Important Person</td>
+<td>贵宾</td>
+</tr>
+<tr>
+<td>NBA</td>
+<td>National Basketball Association</td>
+<td>美职篮</td>
+</tr>
+<tr>
+<td>DNA</td>
+<td>Deoxyribonucleic Acid</td>
+<td>脱氧核糖核酸</td>
+</tr>
+<tr>
+<td>UFO</td>
+<td>Unidentified Flying Object</td>
+<td>不明飞行物</td>
+</tr>
+<tr>
+<td>DIY</td>
+<td>Do It Yourself</td>
+<td>自己动手做</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s123">5.6 拼法⑥：转化 = 词性直接换 🔄</h3>
+<table><caption class="visually-hidden">5.6 拼法⑥：转化 = 词性直接换 🔄</caption>
+<thead>
+<tr>
+<th>词</th>
+<th>名词用法</th>
+<th>动词用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>★water</td>
+<td>水</td>
+<td>I water the plants. 我浇水</td>
+</tr>
+<tr>
+<td>★book</td>
+<td>书</td>
+<td>I'll book a table. 我订桌</td>
+</tr>
+<tr>
+<td>★google</td>
+<td>谷歌</td>
+<td>Let me google it. 我搜一下</td>
+</tr>
+<tr>
+<td>★email</td>
+<td>电子邮件</td>
+<td>I'll email you. 我发邮件</td>
+</tr>
+<tr>
+<td>★park</td>
+<td>公园</td>
+<td>I park the car. 我停车</td>
+</tr>
+<tr>
+<td>★face</td>
+<td>脸</td>
+<td>face the problem 面对问题</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s124">🎮 构词法练习</h3>
+<p><strong>判断下面这些词用了哪种构词法</strong>（派生/合成/混合/截短/缩写/转化）：</p>
+<ol>
+<li>misunderstanding → ___</li>
+<li>bedroom → ___</li>
+<li>app → ___</li>
+<li>brunch → ___</li>
+<li>UNESCO → ___</li>
+<li>transportation → ___</li>
+<li>homework → ___</li>
+<li>fridge → ___</li>
+<li>beautiful → ___</li>
+<li>email（作动词用时）→ ___</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. 派生 2. 合成 3. 截短 4. 混合 5. 缩写 6. 派生 7. 合成 8. 截短 9. 派生 10. 转化</p>
+<hr />
+<h2 id="s125">📓 第六章："加减换"规律——看出单词的亲戚关系</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 理解元音互换和辅音互换的规律
+- 看出 foot / ped / pod 其实是一家人
+- 面对"拼写变形"不再困惑</p>
+</blockquote>
+<hr />
+<h3 id="s126">6.1 加字母：为了好发音 ➕</h3>
+<p>直接拼起来读不顺，就中间加个字母让它顺一点。</p>
+<ul>
+<li>pent(五) + gon(角) → 直接拼是 pentgon，读不顺 → 加个 a → pentagon(五角形)</li>
+<li>red(红) + ish(偏…的) → 双写 d → reddish(偏红的)</li>
+<li>swim + ing → 双写 m → swimming</li>
+<li>begin + ing → 双写 n → beginning</li>
+<li>run + ing → 双写 n → running</li>
+</ul>
+<hr />
+<h3 id="s127">6.2 减字母：为了简洁顺口 ➖</h3>
+<p>几个字母挨在一起读起来累赘，就砍掉一个。</p>
+<ul>
+<li>maintain + ance → maintenance（去掉了一个 ai）</li>
+<li>describe + tion → description（be → p，又少了一个 e）</li>
+<li>argue + ment → argument（去掉了 e）</li>
+<li>true + ly → truly（去掉了 e）</li>
+<li>nine + th → ninth（去掉了 e）</li>
+</ul>
+<hr />
+<h3 id="s128">6.3 换字母（最关键！）🔄</h3>
+<p>同一个意思，在不同语言里发音变了，字母也跟着换。这是英语里最常见、最有用的一招。</p>
+<h4 id="s129">A. 元音互换（a / e / i / o / u）</h4>
+<p>五个元音字母在英语里经常"换班"，尤其在不规则动词里：</p>
+<table><caption class="visually-hidden">A. 元音互换（a / e / i / o / u）</caption>
+<thead>
+<tr>
+<th>原形</th>
+<th>过去式</th>
+<th>过去分词</th>
+<th>规律</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sing</td>
+<td>sang</td>
+<td>sung</td>
+<td>i → a → u</td>
+</tr>
+<tr>
+<td>drink</td>
+<td>drank</td>
+<td>drunk</td>
+<td>i → a → u</td>
+</tr>
+<tr>
+<td>swim</td>
+<td>swam</td>
+<td>swum</td>
+<td>i → a → u</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>began</td>
+<td>begun</td>
+<td>i → a → u</td>
+</tr>
+<tr>
+<td>ring</td>
+<td>rang</td>
+<td>rung</td>
+<td>i → a → u</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 一旦你意识到"元音可以换"，这一类不规则动词其实是同一个词的三个变形，而不是三个完全不同的词！</p>
+</blockquote>
+<h4 id="s130">B. 辅音也可以互换</h4>
+<table><caption class="visually-hidden">B. 辅音也可以互换</caption>
+<thead>
+<tr>
+<th>互换组</th>
+<th>为什么</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b / p / f / v</td>
+<td>都是嘴唇发出的音</td>
+<td>★father ↔ paternal; have ↔ habit</td>
+</tr>
+<tr>
+<td>c / k / g</td>
+<td>都是喉咙后部的音</td>
+<td>cap ↔ catch</td>
+</tr>
+<tr>
+<td>s / z</td>
+<td>只是声带振不振动</td>
+<td>organise(英式) ↔ organize(美式)</td>
+</tr>
+<tr>
+<td>t / d → s</td>
+<td>加后缀时变s让读音更顺</td>
+<td>expand → expansive</td>
+</tr>
+<tr>
+<td>l / r / n / m</td>
+<td>舌头或鼻腔音，容易混</td>
+<td>中文里"老奶奶"有人念"老来来"，同理</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s131">🤯 同源大彩蛋：foot、ped、pod 其实是一家人！</h3>
+<p>💥 还记得第一章的表格吗？现在来揭秘：</p>
+<ul>
+<li><strong>foot</strong>（脚，日耳曼）</li>
+<li><strong>ped</strong>（脚，拉丁）→ pedestrian 行人、pedal 踏板、pedicure 修脚</li>
+<li><strong>pod</strong>（脚，希腊）→ tripod 三脚架、octopus 章鱼（八只脚）</li>
+</ul>
+<p>它们都是"脚"！因为 f ↔ p（都是嘴唇音），t ↔ d（都是舌尖音），按辅音互换规律，这三个词根其实是同一个远古词的三个版本。</p>
+<blockquote>
+<p>📖 <strong>词源故事③：echo——一个失恋仙女的最后声音</strong></p>
+<p>希腊神话中，话多的仙女 Echo 被天后赫拉惩罚，只能重复别人说的话。她爱上了美少年 Narcissus，对方却不理她。她日渐消瘦，最后只剩下一缕声音飘在山谷里。</p>
+<p>所以现在山里的回声，是 Echo 在等你喊她。而 Narcissus 后来爱上了自己的水中倒影，变成了水边的一朵花——这就是"自恋"(narcissism) 这个词的来源。</p>
+</blockquote>
+<hr />
+<h3 id="s132">🎮 "加减换"练习</h3>
+<p><strong>练习1：找出下面这些词的"亲戚"</strong></p>
+<ol>
+<li>fish 的拉丁语亲戚是？（提示：p → f）→ ___</li>
+<li>three 的拉丁语亲戚是？（提示：t → th）→ ___</li>
+<li>foot 的拉丁语亲戚是？→ ___</li>
+<li>father 的拉丁语亲戚是？→ ___</li>
+</ol>
+<p><strong>练习2：用元音互换规律解释</strong></p>
+<p>sing → sang → sung 的关系是什么？它们其实是 ___ 个词的不同变形。</p>
+<p>🔑 <strong>答案</strong>：练习1：1. piscis（p→f） 2. tres（t→th） 3. ped/pod 4. pater<br />
+练习2：1个词，元音i→a→u互换</p>
+<hr />
+<h2 id="s133">📔 第七章：陷阱词警示——这些词看起来像但意思不同</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 避开 8 个最常见的"假朋友"单词
+- 不再被前缀 in- 骗到
+- 考试中看到陷阱词能条件反射地警惕</p>
+</blockquote>
+<hr />
+<h3 id="s134">🚨 8 个常见陷阱词详解</h3>
+<table><caption class="visually-hidden">🚨 8 个常见陷阱词详解</caption>
+<thead>
+<tr>
+<th>陷阱词</th>
+<th>❌ 你可能以为</th>
+<th>✅ 实际含义</th>
+<th>🔍 为什么误导</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>inflammable</strong></td>
+<td>不可燃的</td>
+<td><strong>易燃的</strong> 🔥</td>
+<td>in-此处=进入/加强，非否定！= flammable</td>
+</tr>
+<tr>
+<td><strong>invaluable</strong></td>
+<td>无价值的</td>
+<td><strong>极其宝贵的</strong> 💎</td>
+<td>in-=强调，非否定；比 valuable 程度更强</td>
+</tr>
+<tr>
+<td><strong>priceless</strong></td>
+<td>一文不值的</td>
+<td><strong>无价的/极珍贵的</strong> 👑</td>
+<td>-less此处=无比，非"没有"</td>
+</tr>
+<tr>
+<td><strong>disinterested</strong></td>
+<td>不感兴趣的</td>
+<td><strong>公正的/不偏不倚的</strong> ⚖️</td>
+<td>dis-=分离，非否定；"不感兴趣"= uninterested</td>
+</tr>
+<tr>
+<td><strong>infamous</strong></td>
+<td>非常著名的</td>
+<td><strong>臭名昭著的</strong> 😈</td>
+<td>in-=否定，但否定的是"好名声"</td>
+</tr>
+<tr>
+<td><strong>restive</strong></td>
+<td>安静休息的</td>
+<td><strong>焦躁不安的</strong> 😤</td>
+<td>与 rest(休息)无关，源出"抗拒控制"</td>
+</tr>
+<tr>
+<td><strong>ingenious</strong></td>
+<td>天真的</td>
+<td><strong>灵巧的/有创意的</strong> 🧠</td>
+<td>来自 ingenium(天赋)</td>
+</tr>
+<tr>
+<td><strong>terrific</strong></td>
+<td>可怕的(terror)</td>
+<td><strong>极好的/非常棒的</strong> 🎉</td>
+<td>词义漂移，从"可怕"变"棒"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s135">📖 最重要的规律</h3>
+<p>当前缀 in- 遇到以下情况时 <strong>不表否定</strong>：</p>
+<ol>
+<li><strong>in- 表示"进入/加强"</strong>：incense(激怒), inborn(天生的), inbound(到达的)</li>
+<li><strong>in- 作为"使动"前缀</strong>：inflame(点燃), illuminate(照亮)</li>
+</ol>
+<p><strong>识破陷阱的方法</strong>：
+- ✅ 把推测的含义放到句子中检验是否通顺
+- ✅ 如果词根推测的含义与上下文矛盾，<strong>优先信任上下文</strong></p>
+<blockquote>
+<p>📖 <strong>词源故事④：inflammable——美国消防部门的教训</strong></p>
+<p>inflammable 看起来像"不(in) + 可燃(flam) + able"，但实际上 in- 在这里是"进入/加强"的意思！所以 inflammable = 非常容易燃烧的 = flammable。</p>
+<p>这个混淆曾经造成严重的安全事故——人们以为 inflammable 的东西是"不可燃的"，放松了防火警惕。为此，美国消防部门专门改用 flammable / non-flammable 作为安全标签，避免混淆。</p>
+<p>💡 <strong>记住</strong>：inflammable = 易燃 🔥，non-flammable = 不可燃 ✅</p>
+</blockquote>
+<hr />
+<h3 id="s136">🎮 陷阱词练习</h3>
+<ol>
+<li>The chemical is highly ___. Be careful with fire! (inflammable / non-flammable)</li>
+<li>Her advice was ___ to our success. (invaluable / valueless)</li>
+<li>The judge must be completely ___. (disinterested / uninterested)</li>
+<li>The diamond ring is absolutely ___. (priceless / worthless)</li>
+<li>He is known as the ___ dictator in history. (infamous / famous)</li>
+</ol>
+<p>🔑 <strong>答案</strong>：1. inflammable 2. invaluable 3. disinterested 4. priceless 5. infamous</p>
+<hr />
+<h2 id="s137">📕 第八章：实战拆词四步法</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 熟练运用"四步拆词法"拆解任何陌生单词
+- 在中考阅读理解中用词根词缀推测超纲词的含义</p>
+</blockquote>
+<hr />
+<h3 id="s138">8.1 四步拆词法详解 🔍</h3>
+<table><caption class="visually-hidden">8.1 四步拆词法详解 🔍</caption>
+<thead>
+<tr>
+<th>步骤</th>
+<th>名称</th>
+<th>动作</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>❶</td>
+<td><strong>识别</strong></td>
+<td>找到前缀、词根、后缀</td>
+<td>un + comfort + able</td>
+</tr>
+<tr>
+<td>❷</td>
+<td><strong>定义</strong></td>
+<td>确定每部分含义</td>
+<td>un(不) + comfort(舒适) + able(可…的)</td>
+</tr>
+<tr>
+<td>❸</td>
+<td><strong>组合</strong></td>
+<td>拼在一起</td>
+<td>"不可舒适的"</td>
+</tr>
+<tr>
+<td>❹</td>
+<td><strong>验证</strong></td>
+<td>放到句子中看是否通顺</td>
+<td>"The chair is uncomfortable." → 通顺 ✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心心法</strong>：永远先拆，再猜，最后验证。</p>
+<hr />
+<h3 id="s139">8.2 面对超纲词的三步推测法</h3>
+<p>当中考阅读理解出现超纲词时：</p>
+<p><strong>第一步：词根词缀拆解</strong> → 获取"方向性猜测"</p>
+<p><strong>第二步：上下文线索</strong> → 获取"精确含义"
+- 同义/解释线索：The scientist was meticulous, or very careful, in her research.
+- 反义/对比线索：It wasn't a hassle; it was a basket of fun.
+- 因果线索：The heavy rain inundated the streets, making them impassable.</p>
+<p><strong>第三步：组合验证</strong> → 得出最终判断</p>
+<hr />
+<h3 id="s140">8.3 中考真题模拟练习（10题）</h3>
+<p><strong>第1题</strong>：The new policy was <strong>controversial</strong>; some people supported it while others strongly opposed it.</p>
+<p>推测 controversial = ___</p>
+<p><strong>第2题</strong>：The old bridge was <strong>dilapidated</strong>; pieces of concrete were falling off.</p>
+<p>提示：di-(分散) + lapid(石头) + -ated → ___</p>
+<p><strong>第3题</strong>：She was very <strong>meticulous</strong> in her work; she checked every detail three times.</p>
+<p>推测 meticulous = ___</p>
+<p><strong>第4题</strong>：The teacher's explanation <strong>illuminated</strong> the difficult concept, and suddenly everything made sense.</p>
+<p>拆解：il-(加强) + lumin(光) + -ate(动词) → ___</p>
+<p><strong>第5题</strong>：The company's <strong>revenue</strong> has increased by 30% this year.</p>
+<p>拆解：re(回) + ven(来) + ue → ___</p>
+<p><strong>第6题</strong>：The evidence was <strong>incontrovertible</strong>; everyone had to agree.</p>
+<p>拆解：in(不) + contro(相反) + vert(转) + ible(能…的) → ___</p>
+<p><strong>第7题</strong>：He showed great <strong>perseverance</strong> in learning English; he practiced every day for three years.</p>
+<p>提示：上下文说"每天练习三年" → ___</p>
+<p><strong>第8题</strong>：The <strong>benevolent</strong> old man donated all his money to the school.</p>
+<p>拆解：bene(好) + vol(意愿) + ent → ___</p>
+<p><strong>第9题</strong>：The <strong>ubiquitous</strong> smartphone has changed our lives.</p>
+<p>提示：上下文说"改变了我们的生活" → ___</p>
+<p><strong>第10题</strong>：Her <strong>eloquent</strong> speech moved the entire audience to tears.</p>
+<p>拆解：e(出) + loqu(说) + ent → ___</p>
+<p>🔑 <strong>答案与详解</strong>：</p>
+<ol>
+<li><strong>controversial = 有争议的</strong> — contro(相反) + vers(转) + ial → "向相反方向转的"。上下文：有人支持有人反对 → 确认 ✅</li>
+<li><strong>dilapidated = 破旧的</strong> — di(分散) + lapid(石头) + ated → 石头散落的。上下文：混凝土掉落 → 确认 ✅</li>
+<li><strong>meticulous = 一丝不苟的</strong> — 上下文：检查每个细节三次 → 确认 ✅</li>
+<li><strong>illuminated = 阐明</strong> — 给…照光。上下文：解释后一切都说得通了 → 确认 ✅</li>
+<li><strong>revenue = 收入</strong> — 回来的东西。上下文：增长30% → 确认 ✅</li>
+<li><strong>incontrovertible = 无可辩驳的</strong> — 不能反着转的。上下文：所有人都同意 → 确认 ✅</li>
+<li><strong>perseverance = 毅力/坚持</strong> — per(贯穿) + severe(严格) → 贯穿严格 → 坚持 ✅</li>
+<li><strong>benevolent = 仁慈的</strong> — 好意的。上下文：捐出全部金钱 → 确认 ✅</li>
+<li><strong>ubiquitous = 无处不在的</strong> — 上下文：改变了生活 → 到处都有 ✅</li>
+<li><strong>eloquent = 雄辩的</strong> — e(出) + loqu(说) + ent → 能说的。上下文：感动全场 → 确认 ✅</li>
+</ol>
+<hr />
+<h2 id="s141">📒 第九章：词簇卡片制作指南</h2>
+<blockquote>
+<p>🎯 <strong>学完这章你能</strong>：
+- 亲手制作词簇卡片
+- 建立自己的"词根网络"
+- 让复习变得高效有趣</p>
+</blockquote>
+<hr />
+<h3 id="s142">9.1 词簇卡片模板 📇</h3>
+<p>每张卡片就 6 行，别贪多：</p>
+<pre><code>┌─────────────────────────────────┐
+│ 🗂 词根：vis(看)                │
+│ 核心意思：看 / 视               │
+│                                 │
+│ 词簇兄弟（5个）：               │
+│ ① visible(能看见的)             │
+│ ② invisible(看不见的)           │
+│ ③ vision(视力、视野)            │
+│ ④ television(电视)              │
+│ ⑤ supervise(监督=在上面看)      │
+│                                 │
+│ 造一句：                        │
+│ The wind is invisible,          │
+│ but I can feel it.              │
+│                                 │
+│ 易混点：                        │
+│ invisible(看不见) vs             │
+│ invincible(无敌的)——别看错！    │
+└─────────────────────────────────┘
+</code></pre>
+<hr />
+<h3 id="s143">9.2 示范三张卡片</h3>
+<p><strong>卡片1：port（搬运）</strong></p>
+<pre><code>┌─────────────────────────────────┐
+│ 🗂 词根：port(搬运)             │
+│ 核心意思：拿 / 带 / 运          │
+│                                 │
+│ 词簇兄弟（6个）：               │
+│ ① import(进口=搬进来)           │
+│ ② export(出口=搬出去)           │
+│ ③ transport(运输=跨着搬)        │
+│ ④ portable(便携的=能搬的)       │
+│ ⑤ support(支持=在下面托着)      │
+│ ⑥ report(报告=把信息搬回来)     │
+│                                 │
+│ 造一句：                        │
+│ They import tea and             │
+│ export electronics by           │
+│ transport.                      │
+│                                 │
+│ 易混点：                        │
+│ portable(便携的) vs              │
+│ portal(入口)——portal来自         │
+│ 另一个port(门)！                │
+└─────────────────────────────────┘
+</code></pre>
+<p><strong>卡片2：struct（建造）</strong></p>
+<pre><code>┌─────────────────────────────────┐
+│ 🗂 词根：struct(建造)           │
+│ 核心意思：建 / 构造             │
+│                                 │
+│ 词簇兄弟（6个）：               │
+│ ① structure(结构)               │
+│ ② construct(建造)               │
+│ ③ instruct(指导=建知识进去)     │
+│ ④ destroy(破坏=拆掉)            │
+│ ⑤ instrument(工具)              │
+│ ⑥ construction(建造/建筑)       │
+│                                 │
+│ 造一句：                        │
+│ Workers construct the           │
+│ structure with instruments.     │
+│                                 │
+│ 易混点：                        │
+│ destroy 里的 stroy = struct     │
+│ 是同一个词根的变体！            │
+└─────────────────────────────────┘
+</code></pre>
+<p><strong>卡片3：dict（说）</strong></p>
+<pre><code>┌─────────────────────────────────┐
+│ 🗂 词根：dict(说)               │
+│ 核心意思：说 / 讲 / 宣布        │
+│                                 │
+│ 词簇兄弟（5个）：               │
+│ ① dictionary(字典=说的集合)     │
+│ ② predict(预言=提前说)          │
+│ ③ contradict(反驳=反着说)       │
+│ ④ dictate(口述/听写)            │
+│ ⑤ indicate(指出=说进去)         │
+│                                 │
+│ 造一句：                        │
+│ I predict you will              │
+│ contradict everything           │
+│ the dictionary dictates.        │
+│                                 │
+│ 易混点：                        │
+│ dictator(独裁者)来自dictate     │
+│ (发号施令的人)                  │
+└─────────────────────────────────┘
+</code></pre>
+<hr />
+<h3 id="s144">9.3 推荐优先制作的 30 张卡片清单</h3>
+<table><caption class="visually-hidden">9.3 推荐优先制作的 30 张卡片清单</caption>
+<thead>
+<tr>
+<th>序号</th>
+<th>词根</th>
+<th>意思</th>
+<th>序号</th>
+<th>词根</th>
+<th>意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>vis/vid</td>
+<td>看</td>
+<td>16</td>
+<td>ann</td>
+<td>年</td>
+</tr>
+<tr>
+<td>2</td>
+<td>spect</td>
+<td>看</td>
+<td>17</td>
+<td>gen</td>
+<td>产生</td>
+</tr>
+<tr>
+<td>3</td>
+<td>aud</td>
+<td>听</td>
+<td>18</td>
+<td>equi</td>
+<td>等</td>
+</tr>
+<tr>
+<td>4</td>
+<td>dict</td>
+<td>说</td>
+<td>19</td>
+<td>grad/gress</td>
+<td>步</td>
+</tr>
+<tr>
+<td>5</td>
+<td>scrib/script</td>
+<td>写</td>
+<td>20</td>
+<td>ver</td>
+<td>真</td>
+</tr>
+<tr>
+<td>6</td>
+<td>sens/sent</td>
+<td>感觉</td>
+<td>21</td>
+<td>vert/vers</td>
+<td>转</td>
+</tr>
+<tr>
+<td>7</td>
+<td>act/ag</td>
+<td>做</td>
+<td>22</td>
+<td>vac</td>
+<td>空</td>
+</tr>
+<tr>
+<td>8</td>
+<td>duc/duct</td>
+<td>引导</td>
+<td>23</td>
+<td>val</td>
+<td>价值</td>
+</tr>
+<tr>
+<td>9</td>
+<td>port</td>
+<td>搬运</td>
+<td>24</td>
+<td>ven/vent</td>
+<td>来</td>
+</tr>
+<tr>
+<td>10</td>
+<td>mov/mot</td>
+<td>移动</td>
+<td>25</td>
+<td>pon/pos</td>
+<td>放</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ced/cess</td>
+<td>走</td>
+<td>26</td>
+<td>pend/pens</td>
+<td>挂/称</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ject</td>
+<td>投掷</td>
+<td>27</td>
+<td>rect</td>
+<td>正/直</td>
+</tr>
+<tr>
+<td>13</td>
+<td>tract</td>
+<td>拉</td>
+<td>28</td>
+<td>fort</td>
+<td>力量</td>
+</tr>
+<tr>
+<td>14</td>
+<td>press</td>
+<td>压</td>
+<td>29</td>
+<td>form</td>
+<td>形状</td>
+</tr>
+<tr>
+<td>15</td>
+<td>struct</td>
+<td>建造</td>
+<td>30</td>
+<td>claim/clam</td>
+<td>喊</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s145">9.4 不痛苦的复习节奏 ⏰</h3>
+<table><caption class="visually-hidden">9.4 不痛苦的复习节奏 ⏰</caption>
+<thead>
+<tr>
+<th>时间</th>
+<th>做什么</th>
+<th>用时</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>当天</td>
+<td>做一张词簇卡片 + 造一个句子</td>
+<td>3 分钟</td>
+</tr>
+<tr>
+<td>第 2 天</td>
+<td>只看词根，回忆 5 个兄弟词</td>
+<td>1 分钟</td>
+</tr>
+<tr>
+<td>第 7 天</td>
+<td>用本周词根写一段 50 字英文</td>
+<td>5 分钟</td>
+</tr>
+<tr>
+<td>第 21 天</td>
+<td>翻出所有卡片，写一段 100 字小短文</td>
+<td>10 分钟</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="s146">📚 附录</h2>
+<hr />
+<h3 id="s147">附录 A：100+ 词根速查表</h3>
+<table><caption class="visually-hidden">附录 A：100+ 词根速查表</caption>
+<thead>
+<tr>
+<th>编号</th>
+<th>词根</th>
+<th>含义</th>
+<th>核心例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>vis/vid</td>
+<td>看</td>
+<td>visit, visible, vision, video, evidence</td>
+</tr>
+<tr>
+<td>2</td>
+<td>spect/spic</td>
+<td>看</td>
+<td>respect, expect, inspect, suspect</td>
+</tr>
+<tr>
+<td>3</td>
+<td>aud/audit</td>
+<td>听</td>
+<td>audio, audience, audible</td>
+</tr>
+<tr>
+<td>4</td>
+<td>dict</td>
+<td>说</td>
+<td>dictionary, predict, contradict, indicate</td>
+</tr>
+<tr>
+<td>5</td>
+<td>scrib/script</td>
+<td>写</td>
+<td>describe, prescription, manuscript</td>
+</tr>
+<tr>
+<td>6</td>
+<td>sens/sent</td>
+<td>感觉</td>
+<td>sense, sensitive, sentence, consent</td>
+</tr>
+<tr>
+<td>7</td>
+<td>cogn/gnos</td>
+<td>知道</td>
+<td>recognize, cognitive, ignore</td>
+</tr>
+<tr>
+<td>8</td>
+<td>sign</td>
+<td>标记</td>
+<td>sign, signal, signature, design</td>
+</tr>
+<tr>
+<td>9</td>
+<td>act/ag</td>
+<td>做</td>
+<td>act, active, react, agent, agenda</td>
+</tr>
+<tr>
+<td>10</td>
+<td>duc/duct</td>
+<td>引导</td>
+<td>educate, produce, introduce, reduce</td>
+</tr>
+<tr>
+<td>11</td>
+<td>port</td>
+<td>搬运</td>
+<td>import, export, transport, support</td>
+</tr>
+<tr>
+<td>12</td>
+<td>mov/mot/mob</td>
+<td>移动</td>
+<td>move, motor, emotion, promote</td>
+</tr>
+<tr>
+<td>13</td>
+<td>ced/cess</td>
+<td>走</td>
+<td>process, succeed, access, necessary</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ject</td>
+<td>投掷</td>
+<td>object, subject, project, inject</td>
+</tr>
+<tr>
+<td>15</td>
+<td>tract</td>
+<td>拉</td>
+<td>attract, distract, extract, subtract</td>
+</tr>
+<tr>
+<td>16</td>
+<td>press</td>
+<td>压</td>
+<td>press, express, impress, depress</td>
+</tr>
+<tr>
+<td>17</td>
+<td>bio</td>
+<td>生命</td>
+<td>biology, biography, antibiotic</td>
+</tr>
+<tr>
+<td>18</td>
+<td>viv/vit</td>
+<td>活</td>
+<td>vivid, vital, vitamin, survive</td>
+</tr>
+<tr>
+<td>19</td>
+<td>manu/mani</td>
+<td>手</td>
+<td>manual, manufacture, manage</td>
+</tr>
+<tr>
+<td>20</td>
+<td>cap/capit</td>
+<td>头</td>
+<td>capital, captain, capture, chapter</td>
+</tr>
+<tr>
+<td>21</td>
+<td>dent</td>
+<td>牙</td>
+<td>dentist, dental</td>
+</tr>
+<tr>
+<td>22</td>
+<td>cord</td>
+<td>心</td>
+<td>record, accord, cordial</td>
+</tr>
+<tr>
+<td>23</td>
+<td>corp</td>
+<td>身体</td>
+<td>corporation, corporate</td>
+</tr>
+<tr>
+<td>24</td>
+<td>derm</td>
+<td>皮肤</td>
+<td>dermatology, epidermis</td>
+</tr>
+<tr>
+<td>25</td>
+<td>form</td>
+<td>形状</td>
+<td>form, reform, transform, uniform</td>
+</tr>
+<tr>
+<td>26</td>
+<td>struct</td>
+<td>建造</td>
+<td>structure, construct, instruct, destroy</td>
+</tr>
+<tr>
+<td>27</td>
+<td>fin</td>
+<td>终/界限</td>
+<td>final, finish, define, infinite</td>
+</tr>
+<tr>
+<td>28</td>
+<td>clud/clus</td>
+<td>关</td>
+<td>include, exclude, conclude, close</td>
+</tr>
+<tr>
+<td>29</td>
+<td>rupt</td>
+<td>破</td>
+<td>interrupt, erupt, bankrupt, corrupt</td>
+</tr>
+<tr>
+<td>30</td>
+<td>fact/fect/fac</td>
+<td>做</td>
+<td>factory, affect, effect, perfect</td>
+</tr>
+<tr>
+<td>31</td>
+<td>temp/chron</td>
+<td>时间</td>
+<td>temporary, temperature, chronic</td>
+</tr>
+<tr>
+<td>32</td>
+<td>loc</td>
+<td>地方</td>
+<td>local, location, allocate</td>
+</tr>
+<tr>
+<td>33</td>
+<td>geo</td>
+<td>地球</td>
+<td>geography, geology, geometry</td>
+</tr>
+<tr>
+<td>34</td>
+<td>mar</td>
+<td>海</td>
+<td>marine, submarine, mariner</td>
+</tr>
+<tr>
+<td>35</td>
+<td>flu</td>
+<td>流</td>
+<td>fluent, influence, fluid</td>
+</tr>
+<tr>
+<td>36</td>
+<td>doc/doct</td>
+<td>教</td>
+<td>doctor, document, documentary</td>
+</tr>
+<tr>
+<td>37</td>
+<td>log/logue</td>
+<td>言语</td>
+<td>dialogue, apology, biology, logic</td>
+</tr>
+<tr>
+<td>38</td>
+<td>graph/gram</td>
+<td>写</td>
+<td>photograph, grammar, diagram, program</td>
+</tr>
+<tr>
+<td>39</td>
+<td>liter</td>
+<td>文字</td>
+<td>literature, literacy, literary</td>
+</tr>
+<tr>
+<td>40</td>
+<td>cred</td>
+<td>相信</td>
+<td>credit, incredible, credible</td>
+</tr>
+<tr>
+<td>41</td>
+<td>jur/jud</td>
+<td>法律</td>
+<td>judge, jury, justice, justify</td>
+</tr>
+<tr>
+<td>42</td>
+<td>ann/enn</td>
+<td>年</td>
+<td>annual, anniversary, millennium</td>
+</tr>
+<tr>
+<td>43</td>
+<td>gen</td>
+<td>产生</td>
+<td>generate, generation, gene, genius</td>
+</tr>
+<tr>
+<td>44</td>
+<td>equi</td>
+<td>等</td>
+<td>equal, equality, equation, equivalent</td>
+</tr>
+<tr>
+<td>45</td>
+<td>grad/gress</td>
+<td>步</td>
+<td>grade, gradual, progress, graduate</td>
+</tr>
+<tr>
+<td>46</td>
+<td>err</td>
+<td>错</td>
+<td>error, erroneous</td>
+</tr>
+<tr>
+<td>47</td>
+<td>dur</td>
+<td>持久</td>
+<td>durable, endure, duration</td>
+</tr>
+<tr>
+<td>48</td>
+<td>firm</td>
+<td>稳固</td>
+<td>firm, confirm</td>
+</tr>
+<tr>
+<td>49</td>
+<td>bene</td>
+<td>好</td>
+<td>benefit, beneficial</td>
+</tr>
+<tr>
+<td>50</td>
+<td>luc/lum</td>
+<td>光</td>
+<td>illuminate, luminous, illustrate</td>
+</tr>
+<tr>
+<td>51</td>
+<td>hydr/aqua</td>
+<td>水</td>
+<td>hydrate, aquatic, aquarium</td>
+</tr>
+<tr>
+<td>52</td>
+<td>therm</td>
+<td>热</td>
+<td>thermometer, thermal</td>
+</tr>
+<tr>
+<td>53</td>
+<td>astr</td>
+<td>星</td>
+<td>astronomy, astronaut, disaster</td>
+</tr>
+<tr>
+<td>54</td>
+<td>flor/anth</td>
+<td>花</td>
+<td>floral, anthology</td>
+</tr>
+<tr>
+<td>55</td>
+<td>voc/vok</td>
+<td>声音</td>
+<td>vocabulary, voice, provoke</td>
+</tr>
+<tr>
+<td>56</td>
+<td>claim/clam</td>
+<td>喊</td>
+<td>exclaim, proclaim, claim</td>
+</tr>
+<tr>
+<td>57</td>
+<td>phil</td>
+<td>爱</td>
+<td>philosophy, philanthropy</td>
+</tr>
+<tr>
+<td>58</td>
+<td>phob</td>
+<td>怕</td>
+<td>phobia, claustrophobia</td>
+</tr>
+<tr>
+<td>59</td>
+<td>amic</td>
+<td>友</td>
+<td>amicable, amiable</td>
+</tr>
+<tr>
+<td>60</td>
+<td>ver</td>
+<td>真</td>
+<td>very, verify, verdict</td>
+</tr>
+<tr>
+<td>61</td>
+<td>vert/vers</td>
+<td>转</td>
+<td>convert, reverse, universe, diverse</td>
+</tr>
+<tr>
+<td>62</td>
+<td>vac/void</td>
+<td>空</td>
+<td>vacation, vacant, vacuum, avoid</td>
+</tr>
+<tr>
+<td>63</td>
+<td>val</td>
+<td>价值</td>
+<td>value, valuable, evaluate, valid</td>
+</tr>
+<tr>
+<td>64</td>
+<td>ven/vent</td>
+<td>来</td>
+<td>event, invent, adventure, prevent</td>
+</tr>
+<tr>
+<td>65</td>
+<td>verb</td>
+<td>词</td>
+<td>verb, verbal, proverb</td>
+</tr>
+<tr>
+<td>66</td>
+<td>pon/pos</td>
+<td>放</td>
+<td>position, oppose, suppose, compose</td>
+</tr>
+<tr>
+<td>67</td>
+<td>pend/pens</td>
+<td>挂/称</td>
+<td>depend, suspend, expense, expensive</td>
+</tr>
+<tr>
+<td>68</td>
+<td>rect</td>
+<td>正</td>
+<td>correct, direct, rectangle</td>
+</tr>
+<tr>
+<td>69</td>
+<td>fort</td>
+<td>力量</td>
+<td>force, effort, comfortable</td>
+</tr>
+<tr>
+<td>70</td>
+<td>mens/met</td>
+<td>测量</td>
+<td>meter, dimension, immense, symmetry</td>
+</tr>
+<tr>
+<td>71</td>
+<td>ped/pod</td>
+<td>脚</td>
+<td>pedestrian, pedal, tripod, octopus</td>
+</tr>
+<tr>
+<td>72</td>
+<td>scope</td>
+<td>看</td>
+<td>telescope, microscope, scope</td>
+</tr>
+<tr>
+<td>73</td>
+<td>tele</td>
+<td>远</td>
+<td>telephone, television, telescope</td>
+</tr>
+<tr>
+<td>74</td>
+<td>auto</td>
+<td>自</td>
+<td>automatic, automobile</td>
+</tr>
+<tr>
+<td>75</td>
+<td>hydro</td>
+<td>水</td>
+<td>hydrogen, hydroelectric</td>
+</tr>
+<tr>
+<td>76</td>
+<td>psycho</td>
+<td>精神</td>
+<td>psychology, psychiatric</td>
+</tr>
+<tr>
+<td>77</td>
+<td>demo</td>
+<td>人民</td>
+<td>democracy, demographic</td>
+</tr>
+<tr>
+<td>78</td>
+<td>path</td>
+<td>感受</td>
+<td>sympathy, apathy</td>
+</tr>
+<tr>
+<td>79</td>
+<td>soph</td>
+<td>智慧</td>
+<td>philosophy, sophisticated</td>
+</tr>
+<tr>
+<td>80</td>
+<td>morph</td>
+<td>形状</td>
+<td>metamorphosis, morphology</td>
+</tr>
+<tr>
+<td>81</td>
+<td>phon</td>
+<td>声音</td>
+<td>phonetics, symphony, telephone</td>
+</tr>
+<tr>
+<td>82</td>
+<td>cracy</td>
+<td>统治</td>
+<td>democracy, bureaucracy</td>
+</tr>
+<tr>
+<td>83</td>
+<td>metry</td>
+<td>测量</td>
+<td>geometry, symmetry</td>
+</tr>
+<tr>
+<td>84</td>
+<td>naut</td>
+<td>航</td>
+<td>astronaut, nautical</td>
+</tr>
+<tr>
+<td>85</td>
+<td>fer</td>
+<td>带</td>
+<td>transfer, refer, different</td>
+</tr>
+<tr>
+<td>86</td>
+<td>sist/st</td>
+<td>站</td>
+<td>assist, consist, persist, resist</td>
+</tr>
+<tr>
+<td>87</td>
+<td>tain/ten/tin</td>
+<td>持有</td>
+<td>maintain, contain, continue</td>
+</tr>
+<tr>
+<td>88</td>
+<td>mit/miss</td>
+<td>发送</td>
+<td>admit, miss, transmit, permit</td>
+</tr>
+<tr>
+<td>89</td>
+<td>pel/puls</td>
+<td>推</td>
+<td>compel, expel, pulse</td>
+</tr>
+<tr>
+<td>90</td>
+<td>fid</td>
+<td>信</td>
+<td>confident, fiduciary</td>
+</tr>
+<tr>
+<td>91</td>
+<td>grat</td>
+<td>高兴</td>
+<td>grateful, gratitude, congratulate</td>
+</tr>
+<tr>
+<td>92</td>
+<td>memor</td>
+<td>记忆</td>
+<td>memory, memorable, memorize</td>
+</tr>
+<tr>
+<td>93</td>
+<td>nom/nym</td>
+<td>名</td>
+<td>name, nominal, anonymous</td>
+</tr>
+<tr>
+<td>94</td>
+<td>lig/lect</td>
+<td>选择/读</td>
+<td>legend, lecture, eligible</td>
+</tr>
+<tr>
+<td>95</td>
+<td>par</td>
+<td>同等</td>
+<td>compare, par, parallel</td>
+</tr>
+<tr>
+<td>96</td>
+<td>tend/tens/tent</td>
+<td>伸展</td>
+<td>extend, tension, intend</td>
+</tr>
+<tr>
+<td>97</td>
+<td>curr/cur/cours</td>
+<td>跑</td>
+<td>current, occur, course</td>
+</tr>
+<tr>
+<td>98</td>
+<td>nov</td>
+<td>新</td>
+<td>novel, innovate, renovate</td>
+</tr>
+<tr>
+<td>99</td>
+<td>lat</td>
+<td>带来</td>
+<td>translate, relate</td>
+</tr>
+<tr>
+<td>100</td>
+<td>loqu/locut</td>
+<td>说</td>
+<td>eloquent, soliloquy, colloquial</td>
+</tr>
+<tr>
+<td>101</td>
+<td>ign</td>
+<td>火</td>
+<td>ignite, igneous</td>
+</tr>
+<tr>
+<td>102</td>
+<td>stell</td>
+<td>星</td>
+<td>stellar, constellation</td>
+</tr>
+<tr>
+<td>103</td>
+<td>pyr/pyro</td>
+<td>火</td>
+<td>pyrotechnics, pyre</td>
+</tr>
+<tr>
+<td>104</td>
+<td>chron</td>
+<td>时间</td>
+<td>chronicle, synchronize</td>
+</tr>
+<tr>
+<td>105</td>
+<td>thes/thet</td>
+<td>放置</td>
+<td>synthesis, thesis, synthetic</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s148">附录 B：30+ 前缀速查表</h3>
+<table><caption class="visually-hidden">附录 B：30+ 前缀速查表</caption>
+<thead>
+<tr>
+<th>编号</th>
+<th>前缀</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>un-</td>
+<td>不/相反</td>
+<td>unhappy, unusual, unlock</td>
+</tr>
+<tr>
+<td>2</td>
+<td>in-/im-/il-/ir-</td>
+<td>不/无</td>
+<td>impossible, illegal, irregular</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dis-</td>
+<td>不/相反</td>
+<td>disagree, dislike, discover</td>
+</tr>
+<tr>
+<td>4</td>
+<td>mis-</td>
+<td>错误</td>
+<td>misunderstand, mistake, mislead</td>
+</tr>
+<tr>
+<td>5</td>
+<td>non-</td>
+<td>非</td>
+<td>nonstop, nonsense, non-fiction</td>
+</tr>
+<tr>
+<td>6</td>
+<td>re-</td>
+<td>再/回</td>
+<td>rewrite, return, review, rebuild</td>
+</tr>
+<tr>
+<td>7</td>
+<td>pre-</td>
+<td>前/预先</td>
+<td>predict, preview, prevent, prefer</td>
+</tr>
+<tr>
+<td>8</td>
+<td>post-</td>
+<td>后</td>
+<td>postcard, postpone, postwar</td>
+</tr>
+<tr>
+<td>9</td>
+<td>sub-</td>
+<td>下/次级</td>
+<td>subway, subject, submarine</td>
+</tr>
+<tr>
+<td>10</td>
+<td>inter-</td>
+<td>之间</td>
+<td>international, interview, internet</td>
+</tr>
+<tr>
+<td>11</td>
+<td>trans-</td>
+<td>跨越</td>
+<td>translate, transport, transform</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ex-</td>
+<td>出/外</td>
+<td>export, express, exit, exclude</td>
+</tr>
+<tr>
+<td>13</td>
+<td>de-</td>
+<td>向下/去除</td>
+<td>decrease, destroy, depress</td>
+</tr>
+<tr>
+<td>14</td>
+<td>over-</td>
+<td>过度</td>
+<td>overwork, overcome, overlook</td>
+</tr>
+<tr>
+<td>15</td>
+<td>under-</td>
+<td>在下</td>
+<td>understand, underline, underground</td>
+</tr>
+<tr>
+<td>16</td>
+<td>super-</td>
+<td>超</td>
+<td>supermarket, superstar</td>
+</tr>
+<tr>
+<td>17</td>
+<td>anti-</td>
+<td>反</td>
+<td>anti-smoking, antivirus</td>
+</tr>
+<tr>
+<td>18</td>
+<td>multi-</td>
+<td>多</td>
+<td>multiply, multicultural</td>
+</tr>
+<tr>
+<td>19</td>
+<td>uni-/mono-</td>
+<td>单</td>
+<td>uniform, unit, universe</td>
+</tr>
+<tr>
+<td>20</td>
+<td>bi-</td>
+<td>双</td>
+<td>bicycle, bilingual</td>
+</tr>
+<tr>
+<td>21</td>
+<td>tri-</td>
+<td>三</td>
+<td>triangle, trident</td>
+</tr>
+<tr>
+<td>22</td>
+<td>mini-/micro-</td>
+<td>小</td>
+<td>minimum, microscope, microwave</td>
+</tr>
+<tr>
+<td>23</td>
+<td>tele-</td>
+<td>远</td>
+<td>telephone, television, telescope</td>
+</tr>
+<tr>
+<td>24</td>
+<td>auto-</td>
+<td>自我</td>
+<td>automatic, automobile</td>
+</tr>
+<tr>
+<td>25</td>
+<td>semi-</td>
+<td>半</td>
+<td>semicircle</td>
+</tr>
+<tr>
+<td>26</td>
+<td>co-/com-/con-</td>
+<td>共同</td>
+<td>connect, collect, cooperate</td>
+</tr>
+<tr>
+<td>27</td>
+<td>pro-</td>
+<td>向前</td>
+<td>progress, project, protect</td>
+</tr>
+<tr>
+<td>28</td>
+<td>counter-/contra-</td>
+<td>反对</td>
+<td>contradict, contrary</td>
+</tr>
+<tr>
+<td>29</td>
+<td>mal-</td>
+<td>坏</td>
+<td>malfunction, malnutrition</td>
+</tr>
+<tr>
+<td>30</td>
+<td>bene-</td>
+<td>好</td>
+<td>benefit, beneficial</td>
+</tr>
+<tr>
+<td>31</td>
+<td>en-/em-</td>
+<td>使</td>
+<td>enable, enrich, empower</td>
+</tr>
+<tr>
+<td>32</td>
+<td>out-</td>
+<td>超过</td>
+<td>outcome, outnumber, outdoor</td>
+</tr>
+<tr>
+<td>33</td>
+<td>fore-</td>
+<td>前</td>
+<td>foresee, forecast, forehead</td>
+</tr>
+<tr>
+<td>34</td>
+<td>mid-</td>
+<td>中</td>
+<td>midnight, midpoint, midterm</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s149">附录 C：30+ 后缀速查表</h3>
+<table><caption class="visually-hidden">附录 C：30+ 后缀速查表</caption>
+<thead>
+<tr>
+<th>编号</th>
+<th>后缀</th>
+<th>词性</th>
+<th>含义</th>
+<th>例词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-er/-or</td>
+<td>名</td>
+<td>人/物</td>
+<td>teacher, actor</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-ist</td>
+<td>名</td>
+<td>…家</td>
+<td>artist, scientist</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-tion/-sion</td>
+<td>名</td>
+<td>动作/状态</td>
+<td>education, decision</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-ment</td>
+<td>名</td>
+<td>行为/结果</td>
+<td>development, agreement</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-ness</td>
+<td>名</td>
+<td>性质</td>
+<td>happiness, illness</td>
+</tr>
+<tr>
+<td>6</td>
+<td>-ity/-ty</td>
+<td>名</td>
+<td>性质</td>
+<td>ability, safety</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-ance/-ence</td>
+<td>名</td>
+<td>状态</td>
+<td>importance, confidence</td>
+</tr>
+<tr>
+<td>8</td>
+<td>-dom</td>
+<td>名</td>
+<td>领域</td>
+<td>freedom, kingdom</td>
+</tr>
+<tr>
+<td>9</td>
+<td>-ship</td>
+<td>名</td>
+<td>身份</td>
+<td>friendship, leadership</td>
+</tr>
+<tr>
+<td>10</td>
+<td>-hood</td>
+<td>名</td>
+<td>时期</td>
+<td>childhood, neighborhood</td>
+</tr>
+<tr>
+<td>11</td>
+<td>-ism</td>
+<td>名</td>
+<td>主义</td>
+<td>tourism, heroism</td>
+</tr>
+<tr>
+<td>12</td>
+<td>-ology</td>
+<td>名</td>
+<td>学科</td>
+<td>biology, technology</td>
+</tr>
+<tr>
+<td>13</td>
+<td>-ure</td>
+<td>名</td>
+<td>结果</td>
+<td>nature, culture, pressure</td>
+</tr>
+<tr>
+<td>14</td>
+<td>-ful</td>
+<td>形</td>
+<td>充满</td>
+<td>beautiful, helpful</td>
+</tr>
+<tr>
+<td>15</td>
+<td>-less</td>
+<td>形</td>
+<td>缺少</td>
+<td>homeless, careless</td>
+</tr>
+<tr>
+<td>16</td>
+<td>-able/-ible</td>
+<td>形</td>
+<td>能够</td>
+<td>comfortable, possible</td>
+</tr>
+<tr>
+<td>17</td>
+<td>-ous</td>
+<td>形</td>
+<td>具有</td>
+<td>dangerous, famous</td>
+</tr>
+<tr>
+<td>18</td>
+<td>-al</td>
+<td>形</td>
+<td>属于</td>
+<td>national, natural</td>
+</tr>
+<tr>
+<td>19</td>
+<td>-ic/-ical</td>
+<td>形</td>
+<td>…的</td>
+<td>scientific, musical</td>
+</tr>
+<tr>
+<td>20</td>
+<td>-ive</td>
+<td>形</td>
+<td>有…性质</td>
+<td>active, creative</td>
+</tr>
+<tr>
+<td>21</td>
+<td>-y</td>
+<td>形</td>
+<td>具有</td>
+<td>rainy, lucky, sunny</td>
+</tr>
+<tr>
+<td>22</td>
+<td>-en</td>
+<td>形</td>
+<td>由…制成</td>
+<td>golden, wooden</td>
+</tr>
+<tr>
+<td>23</td>
+<td>-ish</td>
+<td>形</td>
+<td>像…的</td>
+<td>foolish, childish</td>
+</tr>
+<tr>
+<td>24</td>
+<td>-ize/-ise</td>
+<td>动</td>
+<td>使…化</td>
+<td>realize, organize</td>
+</tr>
+<tr>
+<td>25</td>
+<td>-fy</td>
+<td>动</td>
+<td>使…化</td>
+<td>beautify, simplify</td>
+</tr>
+<tr>
+<td>26</td>
+<td>-en</td>
+<td>动</td>
+<td>使变得</td>
+<td>widen, strengthen</td>
+</tr>
+<tr>
+<td>27</td>
+<td>-ate</td>
+<td>动</td>
+<td>使</td>
+<td>educate, generate</td>
+</tr>
+<tr>
+<td>28</td>
+<td>-ly</td>
+<td>副</td>
+<td>…地</td>
+<td>quickly, carefully</td>
+</tr>
+<tr>
+<td>29</td>
+<td>-ward(s)</td>
+<td>副/形</td>
+<td>方向</td>
+<td>forward(s), backward(s)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>-some</td>
+<td>形</td>
+<td>引起</td>
+<td>troublesome, awesome</td>
+</tr>
+<tr>
+<td>31</td>
+<td>-let</td>
+<td>名</td>
+<td>小</td>
+<td>booklet, piglet</td>
+</tr>
+<tr>
+<td>32</td>
+<td>-eer</td>
+<td>名</td>
+<td>从事…的人</td>
+<td>engineer, volunteer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="s150">附录 D：30天学习计划表 📅</h3>
+<table><caption class="visually-hidden">附录 D：30天学习计划表 📅</caption>
+<thead>
+<tr>
+<th>天数</th>
+<th>学习内容</th>
+<th>每日用时</th>
+<th>关键动作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Day 1</td>
+<td>第一章：三套词汇</td>
+<td>30min</td>
+<td>能说出英语三套词汇的区别</td>
+</tr>
+<tr>
+<td>Day 2</td>
+<td>第二章第1组词根(vis-spect-aud-dict)</td>
+<td>30min</td>
+<td>做第一张词簇卡片</td>
+</tr>
+<tr>
+<td>Day 3</td>
+<td>第二章第2组词根(scrib-sens-cogn-sign)</td>
+<td>30min</td>
+<td>复习昨天的卡片+做新卡片</td>
+</tr>
+<tr>
+<td>Day 4</td>
+<td>第二章第3组词根(act-port-mov)</td>
+<td>30min</td>
+<td>用3个词根各造1个句子</td>
+</tr>
+<tr>
+<td>Day 5</td>
+<td>第二章第4组词根(ced-ject-tract-press)</td>
+<td>30min</td>
+<td>拆词练习 #1-#4</td>
+</tr>
+<tr>
+<td>Day 6</td>
+<td>第二章第5组词根(bio-viv-manu-cap)</td>
+<td>30min</td>
+<td>做词簇卡片</td>
+</tr>
+<tr>
+<td>Day 7</td>
+<td>第二章第6组词根(dent-cord-corp-derm)</td>
+<td>30min</td>
+<td>复习全部卡片+写50字短文</td>
+</tr>
+<tr>
+<td>Day 8</td>
+<td>第二章第7组词根(form-struct-fin-clud-rupt-fact)</td>
+<td>30min</td>
+<td>做词簇卡片</td>
+</tr>
+<tr>
+<td>Day 9</td>
+<td>第二章第8组词根(temp-loc-geo-mar-flu)</td>
+<td>30min</td>
+<td>在阅读中标出含已学词根的词</td>
+</tr>
+<tr>
+<td>Day 10</td>
+<td>第二章第9组词根(doc-log-graph-liter-cred-jur)</td>
+<td>30min</td>
+<td>做词簇卡片</td>
+</tr>
+<tr>
+<td>Day 11</td>
+<td>第二章第10组词根(ann-gen-equi-grad-err-dur-firm)</td>
+<td>30min</td>
+<td>综合拆词练习 #6</td>
+</tr>
+<tr>
+<td>Day 12</td>
+<td>第三章：前缀（否定+方位）</td>
+<td>30min</td>
+<td>前缀练习1-3</td>
+</tr>
+<tr>
+<td>Day 13</td>
+<td>第三章：前缀（数量+共同）</td>
+<td>30min</td>
+<td>重点掌握in-的双重含义</td>
+</tr>
+<tr>
+<td>Day 14</td>
+<td>第四章：后缀（名词+形容词）</td>
+<td>30min</td>
+<td>后缀练习1-3</td>
+</tr>
+<tr>
+<td>Day 15</td>
+<td>第四章：后缀（动词+副词）+ 复习</td>
+<td>30min</td>
+<td>⭐ 中期复习日</td>
+</tr>
+<tr>
+<td>Day 16</td>
+<td>第五章：六种构词法</td>
+<td>30min</td>
+<td>构词法练习</td>
+</tr>
+<tr>
+<td>Day 17</td>
+<td>第六章：加减换规律</td>
+<td>30min</td>
+<td>找出3对同源词</td>
+</tr>
+<tr>
+<td>Day 18</td>
+<td>第七章：陷阱词</td>
+<td>30min</td>
+<td>陷阱词练习</td>
+</tr>
+<tr>
+<td>Day 19</td>
+<td>第八章：拆词四步法</td>
+<td>30min</td>
+<td>完成10道模拟练习</td>
+</tr>
+<tr>
+<td>Day 20</td>
+<td>复习 Day 2-7 的词根</td>
+<td>30min</td>
+<td>翻出所有卡片</td>
+</tr>
+<tr>
+<td>Day 21</td>
+<td>复习 Day 8-11 的词根</td>
+<td>30min</td>
+<td>写100字英文短文</td>
+</tr>
+<tr>
+<td>Day 22</td>
+<td>复习前缀+后缀</td>
+<td>30min</td>
+<td>给10个词根各加2个前缀+2个后缀</td>
+</tr>
+<tr>
+<td>Day 23</td>
+<td>复习构词法+加减换</td>
+<td>30min</td>
+<td>判断20个词的构词法</td>
+</tr>
+<tr>
+<td>Day 24</td>
+<td>综合练习：拆词+推测</td>
+<td>30min</td>
+<td>做5道中考模拟阅读</td>
+</tr>
+<tr>
+<td>Day 25</td>
+<td>词簇卡片补充到30张</td>
+<td>30min</td>
+<td>查漏补缺</td>
+</tr>
+<tr>
+<td>Day 26</td>
+<td>附录A词根速查表复习</td>
+<td>30min</td>
+<td>遮住含义自测</td>
+</tr>
+<tr>
+<td>Day 27</td>
+<td>附录B前缀速查表复习</td>
+<td>30min</td>
+<td>遮住含义自测</td>
+</tr>
+<tr>
+<td>Day 28</td>
+<td>附录C后缀速查表复习</td>
+<td>30min</td>
+<td>遮住含义自测</td>
+</tr>
+<tr>
+<td>Day 29</td>
+<td>综合模拟测试</td>
+<td>30min</td>
+<td>做一套完整中考阅读</td>
+</tr>
+<tr>
+<td>Day 30</td>
+<td>总复习+庆祝 🎉</td>
+<td>30min</td>
+<td>回顾30天成长</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="s151">📖 词源故事集锦</h2>
+<blockquote>
+<p>以下是正文中穿插的所有词源故事汇总，方便你集中阅读！</p>
+</blockquote>
+<h3 id="s152">故事①：英语的三次"大混血"</h3>
+<p>英语是日耳曼语打底，被法语"入侵"了一波（1066年诺曼征服），又在文艺复兴时期大量吸收拉丁语和希腊语。三次"混血"造就了今天英语"三套词汇"的格局。</p>
+<h3 id="s153">故事②：advocate——凯撒大帝也干过的行当</h3>
+<p>古罗马法庭上，advocatus 专门替人在法庭上大声疾呼。凯撒大帝发迹前就干过这行！后来这个词从"法庭辩护人"引申为"提倡者"。→ 同族词：vocal, vocabulary, voice, evoke</p>
+<h3 id="s154">故事③：echo——一个失恋仙女的最后声音</h3>
+<p>希腊神话中话多的仙女 Echo 被赫拉惩罚只能重复别人的话。她爱上美少年 Narcissus，对方不理她。她最后只剩一缕声音飘在山谷。→ 同族词：narcissism（自恋）</p>
+<h3 id="s155">故事④：inflammable——美国消防部门的教训</h3>
+<p>inflammable 看起来像"不可燃"，实际上是"易燃"！in-在这里是"进入/加强"而非否定。美国消防部门因此改用 flammable/non-flammable 作安全标签。</p>
+<h3 id="s156">故事⑤：salary——盐比金子还贵的时代</h3>
+<p>古罗马时期，盐极其珍贵。军队为士兵提供"买盐津贴"(salarium)，后来演变成"工资"(salary)。→ 同族词：salt, salad（古罗马用盐水拌蔬菜）</p>
+<h3 id="s157">故事⑥：academy——一个泄密者命名了全世界的学校</h3>
+<p>希腊神话中，小神 Akademos 泄露了美女海伦的囚禁处，帮助她脱困。雅典人建公园纪念他。柏拉图恰好在这座公园旁创办了西方第一所学院。从此 academy 就成了"学院"。</p>
+<h3 id="s158">故事⑦：sandwich——赌桌上的发明</h3>
+<p>桑威奇伯爵沉迷赌博，不愿离开赌桌吃饭。他让仆人把肉夹在两片面包中间，边赌边吃。从此这种食物就以他的头衔命名。</p>
+<h3 id="s159">故事⑧：robot——从"苦工"到"机器人"</h3>
+<p>robot 来自捷克语 robota（苦工/奴役）。1920年捷克作家恰佩克在科幻剧中首次使用这个词。剧本中人造工人最终反抗了人类。从此"苦工"变成了"机器人"。</p>
+<h3 id="s160">故事⑨：berserk——穿熊皮的狂战士</h3>
+<p>北欧传说中，战士在战斗前穿上熊皮（ber-serkr = 熊皮衬衫），进入狂怒状态。今天"狂怒的"竟然和"熊皮"有关！</p>
+<h3 id="s161">故事⑩：nice——从"蠢"到"好"的800年</h3>
+<p>nice 的词义在800年间发生了180度大转弯——从"无知/愚蠢"变成了"好"。这是"语义漂移"的经典案例，就像传话游戏一样。</p>
+<hr />
+<h2 id="s162">🏁 结语：你已经拥有了"看穿"单词的超能力</h2>
+<p>恭喜你读完了整本教程！🎉</p>
+<p>现在你已经知道了：
+- 英语的三套词汇从哪来
+- 100+ 个核心词根的含义和例词
+- 30+ 个前缀和后缀的功能
+- 六种构词法
+- 加减换规律
+- 8 个陷阱词
+- 四步拆词法</p>
+<p><strong>记住最后一句话</strong>：</p>
+<blockquote>
+<p>🔥 学英语不是比谁记得多，而是比谁拆得快、猜得准、用得熟。
+你不是在背单词，你是在搭一个属于自己的英语乐高城堡。
+搭得越久，越好玩。👊</p>
+</blockquote>
+<p>从今天开始，每遇到一个生词，先别急着查字典——先试试拆！</p>
+<hr />
+<p><em>本教程基于词根词缀教学法和中考考纲编写，词根词缀释义参考 Merriam-Webster、<a href="https://www.oxfordlearnersdictionaries.com" target="_blank" rel="noopener noreferrer">Oxford</a> 等权威词典。</em></p>
+<hr />
+<blockquote>
+<p>本内容由 Coze AI 生成，请遵循相关法律法规及《人工智能生成合成内容标识办法》使用与传播。</p>
+</blockquote>
+    </article>
+  </div>
+  <footer class="footer">© 2026 顺·行者学苑 · 持续更新中 · 本文档为内部教学资料</footer>
+</main>
+
+<button class="backtop" id="backtop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var tocEl=document.getElementById('toc');
+  var mask=document.getElementById('tocMask');
+  var burger=document.getElementById('burger');
+  function closeToc(){tocEl.classList.remove('open');mask.classList.remove('show');}
+  burger.addEventListener('click',function(){tocEl.classList.toggle('open');mask.classList.toggle('show');});
+  mask.addEventListener('click',closeToc);
+
+  var links=document.querySelectorAll('.toc a');
+  links.forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href').slice(1);
+      var t=document.getElementById(id);
+      if(t){
+        e.preventDefault();
+        t.scrollIntoView({behavior:'smooth',block:'start'});
+        closeToc();
+      }
+    });
+  });
+
+  var search=document.getElementById('tocSearch');
+  var empty=document.getElementById('tocEmpty');
+  search.addEventListener('input',function(){
+    var q=search.value.trim().toLowerCase();
+    links.forEach(function(a){
+      a.style.display=(!q||a.textContent.toLowerCase().indexOf(q)>-1)?'':'none';
+    });
+    if(q){
+      document.querySelectorAll('#tocTree li').forEach(function(li){
+        var a=li.querySelector(':scope > a');
+        var visible=a&&a.style.display!=='none';
+        li.style.display=visible?'':'none';
+      });
+    }else{
+      document.querySelectorAll('#tocTree li').forEach(function(li){li.style.display='';});
+    }
+    var any=document.querySelectorAll('.toc a').length>0;
+    empty.style.display=(q&&!any)?'':'none';
+  });
+
+  var sections=[];
+  document.querySelectorAll('.article h1,.article h2,.article h3,.article h4').forEach(function(h){sections.push(h);});
+  function spy(){
+    var pos=window.scrollY+90;
+    var current=null;
+    sections.forEach(function(s){if(s.offsetTop<=pos)current=s;});
+    links.forEach(function(a){a.classList.remove('active');});
+    if(current&&current.id){
+      var active=document.querySelector('.toc a[href="#'+current.id+'"]');
+      if(active)active.classList.add('active');
+    }
+  }
+  window.addEventListener('scroll',spy,{passive:true});
+  spy();
+
+  var bt=document.getElementById('backtop');
+  window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>500);},{passive:true});
+  bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
+</body>
+</html>
