@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026年深圳公办高中录取分数线（AC类·D类·指标生·自招控制线）</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="2026年深圳公办高中录取分数线（AC类·D类·指标生·自招控制线）">
+<meta property="og:description" content="覆盖100所公办高中，深户(AC类)/非深户(D类)住宿分·走读分、指标生、一类自招控制线，由网络公开数据整理">
+<meta property="og:image" content="https://sxzjl.github.io/public-item/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  :root{
+    --bg:#F8F6F0;
+    --surface:#FFFFFF;
+    --deep:#102A43;
+    --blue:#2978B5;
+    --orange:#F59E0B;
+    --ink:#1D2733;
+    --sub:#667085;
+    --line:#E6E1D8;
+    --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;font-size:15px}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{margin:0;color:var(--deep);line-height:1.3}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:4px}
+
+  /* ===== 顶部报告 ===== */
+  header.report{background:var(--deep);color:#fff;padding:40px 0 34px;border-radius:0 0 24px 24px}
+  header.report .kicker{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:3px 14px;border-radius:999px;font-size:13px;letter-spacing:1px;margin-bottom:12px}
+  header.report h1{color:#fff;font-size:clamp(24px,3.6vw,36px)}
+  header.report p.lead{color:rgba(255,255,255,.85);max-width:900px;margin:10px 0 0;font-size:15px}
+  .kv{display:flex;flex-wrap:wrap;gap:22px;margin-top:22px}
+  .kv .item b{display:block;font-size:24px;color:#fff}
+  .kv .item span{font-size:13px;color:rgba(255,255,255,.7)}
+
+  /* ===== 说明区 ===== */
+  .legend{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:22px 0}
+  .legend h2{font-size:17px;margin-bottom:8px}
+  .legend ul{margin:8px 0 0;padding-left:22px}
+  .legend li{margin:4px 0}
+  .tag{display:inline-block;background:#EAF2F8;color:var(--blue);font-size:12px;font-weight:600;padding:2px 10px;border-radius:999px;margin:2px 4px 2px 0}
+
+  /* ===== 工具栏 ===== */
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:18px 0;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px rgba(16,42,67,.05)}
+  .toolbar input[type=search]{flex:1;min-width:220px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;background:var(--bg)}
+  .toolbar button{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:10px;font-size:14px;cursor:pointer}
+  .toolbar button:hover{background:#1f5f8f}
+  .toolbar .count{font-size:13px;color:var(--sub)}
+
+  /* ===== 表格 ===== */
+  .table-scroll{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:0 1px 4px rgba(16,42,67,.05)}
+  table{width:100%;border-collapse:collapse;min-width:1180px;font-size:14px}
+  caption{caption-side:top;text-align:left;font-weight:600;color:var(--deep);padding:14px 16px 6px}
+  thead th{background:var(--deep);color:#fff;padding:10px 10px;text-align:center;font-size:13px;position:sticky;top:0;z-index:2;cursor:pointer;white-space:nowrap;user-select:none}
+  thead th:hover{background:#1c4a70}
+  thead th .arrow{font-size:11px;opacity:.7}
+  tbody td{padding:8px 10px;border-bottom:1px solid #F0ECE4;text-align:center;white-space:nowrap}
+  tbody tr:nth-child(even){background:#FCFBF8}
+  tbody tr:hover{background:#F1F6FB}
+  td.school{text-align:left;font-weight:600;color:var(--deep);white-space:normal;min-width:200px}
+  td.num{font-variant-numeric:tabular-nums;font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace}
+  td.na{color:#B9B4AA}
+  td.hl{background:#FFF6E5}
+  .diff{color:#B45309}
+  tbody tr.top3 td{background:#EAF7EF}
+  .footnote{margin-top:10px;font-size:12px;color:var(--sub)}
+
+  /* ===== 页脚 ===== */
+  footer{background:var(--deep);color:#cfd8e3;margin-top:34px;padding:26px 0;text-align:center;font-size:13px;border-radius:24px 24px 0 0}
+
+  /* ===== 打印 ===== */
+  @media print{
+    body{background:#fff;font-size:11px}
+    header.report{border-radius:0;padding:16px 0}
+    .toolbar,.kv,.tag{display:none}
+    .table-scroll{border:none;box-shadow:none}
+    table{min-width:0;font-size:9.5px}
+    thead th{position:static;background:var(--deep)}
+    tbody tr{break-inside:avoid}
+    a{color:var(--ink)}
+  }
+  @media(max-width:640px){
+    header.report{padding:28px 0}
+    .kv .item b{font-size:20px}
+  }
+</style>
+</head>
+<body>
+
+<header class="report">
+  <div class="wrap">
+    <span class="kicker">深圳中考 · 2026年公办高中录取线</span>
+    <h1>2026年深圳公办高中录取分数线</h1>
+    <p class="lead">覆盖 100 所公办高中，含深户（AC类）与非深户（D类）的住宿分/走读分、指标生分数、一类自招控制线及分差，方便横向对比学校录取门槛。</p>
+    <div class="kv">
+      <div class="item"><b>100</b><span>公办高中</span></div>
+      <div class="item"><b>AC类</b><span>深户考生</span></div>
+      <div class="item"><b>D类</b><span>非深户考生</span></div>
+      <div class="item"><b>2 类</b><span>住宿 / 走读</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <main>
+  <section class="legend">
+    <h2>📌 表格字段说明</h2>
+    <ul>
+      <li><strong>深户（AC类）</strong>：深圳户籍考生的录取分数线；<strong>非深户（D类）</strong>：非深圳户籍考生的录取分数线。</li>
+      <li><strong>住宿分 / 走读分</strong>：学校按是否住宿分别划定的录取线。标注 <code>/</code> 表示该校该类型无对应招生或数据。</li>
+      <li><strong>指标生（名额分配）</strong>：名额分配批次的录取控制线（AC类、D类），非当年第一批录取线。</li>
+      <li><strong>一类自招控制线</strong>：自主招生（一类）中考成绩控制线。</li>
+      <li><strong>自招与住宿分差</strong>：一类自招控制线相对住宿录取线的差值（负值表示自招线低于统招住宿线）。</li>
+    </ul>
+    <div style="margin-top:10px">
+      <span class="tag">📊 默认按录取线从高到低排列</span>
+      <span class="tag">🔍 支持按学校名搜索</span>
+      <span class="tag">↕️ 点击表头排序</span>
+      <span class="tag">🖨️ 支持打印 / 存 PDF</span>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <input type="search" id="searchInput" placeholder="🔍 输入学校名称，如「深圳中学」「红岭」「科学高中」…" aria-label="搜索学校" enterkeyhint="search">
+    <button type="button" id="searchBtn">搜索</button>
+    <button type="button" id="clearBtn">清空</button>
+    <span class="count" id="countLabel">共 100 所</span>
+  </div>
+
+  <div class="table-scroll">
+    <table id="mainTable">
+      <caption>2026年深圳公办高中录取分数线（100所）</caption>
+      <thead>
+        <tr>
+          <th data-key="idx" aria-sort="none">序号<span class="arrow"></span></th>
+          <th data-key="school" aria-sort="none">学校全称<span class="arrow"></span></th>
+          <th data-key="ac_z" aria-sort="none">深户(AC)住宿分<span class="arrow"></span></th>
+          <th data-key="ac_w" aria-sort="none">深户(AC)走读分<span class="arrow"></span></th>
+          <th data-key="d_z" aria-sort="none">非深户(D)住宿分<span class="arrow"></span></th>
+          <th data-key="d_w" aria-sort="none">非深户(D)走读分<span class="arrow"></span></th>
+          <th data-key="zb_ac" aria-sort="none">指标生AC类<span class="arrow"></span></th>
+          <th data-key="zb_d" aria-sort="none">指标生D类<span class="arrow"></span></th>
+          <th data-key="zz" aria-sort="none">一类自招控制线<span class="arrow"></span></th>
+          <th data-key="diff_ac" aria-sort="none">自招-住宿差(AC)<span class="arrow"></span></th>
+          <th data-key="diff_d" aria-sort="none">自招-住宿差(D)<span class="arrow"></span></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <p class="footnote">注：数据由网络公开数据整理，个别校名或数据以官方发布为准；自招分差 = 一类自招控制线 − 住宿录取分。</p>
+
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>顺·行者学苑 · 深圳中考数据参考</p>
+    <p style="margin:4px 0 0;color:#93a3b8;font-size:12px">2026年深圳公办高中录取分数线 · 100所 · AC类/D类/指标生/自招控制线</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DATA = [
+[1,"深圳中学",592,586,592,586,570,571,534,-58,-58],
+    [2,"深圳实验学校(高中部)",590,587,590,587,568,569,530,-60,-60],
+    [3,"深圳市高级中学中心校区",587,585,587,581,567,567,529,-58,-58],
+    [4,"深圳外国语学校",587,584,587,584,566,566,528,-59,-59],
+    [5,"红岭中学",584,582,584,578,563,563,545,-39,-39],
+    [6,"宝安中学(集团)高中部",583,581,581,575,562,562,525,-58,-56],
+    [7,"育才中学",583,579,583,579,561,561,525,-58,-58],
+    [8,"深圳大学附属中学中心校区(深大附中中心校区)",582,579,582,570,560,560,525,-57,-57],
+    [9,"北京师范大学南山附属学校",581,577,581,569,558,558,530,-51,-51],
+    [10,"南山外国语学校(集团)高级中学",579,577,580,577,555,555,530,-49,-50],
+    [11,"深圳科学高中",579,576,579,571,558,559,521,-58,-58],
+    [12,"翠园中学(爱国路校区)",579,577,578,576,552,552,530,-49,-48],
+    [13,"龙城高级中学",576,573,576,571,553,554,518,-58,-58],
+    [14,"南方科技大学附属中学",576,572,576,572,553,554,535,-41,-41],
+    [15,"深圳市第二高级中学",575,573,575,567,554,553,515,-60,-60],
+    [16,"深圳市第二实验学校",574,571,574,565,550,549,512,-62,-62],
+    [17,"龙华高级中学",574,571,572,567,550,550,514,-60,-58],
+    [18,"人大附中深圳学校",573,"/",574,"/",549,549,530,-43,-44],
+    [19,"育才一中",572,571,572,569,478,501,510,-62,-62],
+    [20,"翠园中学(东门北路校区)",571,564,574,565,447,482,530,-41,-44],
+    [21,"深圳实验学校(光明高中部)",571,565,572,568,547,550,511,-60,-61],
+    [22,"新安中学(集团)高中部",570,566,570,561,544,546,509,-61,-61],
+    [23,"深圳外国语学校龙华高中部",569,562,568,556,547,545,511,-58,-57],
+    [24,"南头中学",567,555,567,546,538,541,510,-57,-57],
+    [25,"深圳科学高中龙岗分校",567,559,567,559,542,544,507,-60,-60],
+    [26,"深圳市高级中学东校区",567,560,565,558,545,543,508,-59,-57],
+    [27,"中国科学院深圳理工大学附属实验高级中学(中科附高)",566,558,565,555,534,537,503,-63,-62],
+    [28,"广东实验中学深圳学校",565,555,570,553,546,547,511,-54,-59],
+    [29,"深圳大学附属实验中学",565,556,567,557,541,543,508,-57,-59],
+    [30,"深圳北理莫斯科大学附属实验中学",563,552,566,551,539,539,506,-57,-60],
+    [31,"香港中文大学(深圳)附属明德高级中学",562,558,565,557,533,534,520,-42,-45],
+    [32,"华侨城高级中学",561,556,558,554,535,536,510,-51,-48],
+    [33,"华中师范大学龙岗附属中学",561,556,562,552,542,542,507,-54,-55],
+    [34,"盐田高级中学",561,550,559,543,538,540,528,-33,-31],
+    [35,"东北师范大学附属中学深圳学校",559,550,561,553,538,539,505,-54,-56],
+    [36,"龙岗区实验高级中学",559,548,560,550,527,535,500,-59,-60],
+    [37,"深圳理工大学附属中学",559,526,560,539,447,482,427,-132,-133],
+    [38,"深圳市红山中学",559,551,558,546,534,537,500,-59,-58],
+    [39,"罗湖外语学校",558,551,559,553,529,533,505,-53,-54],
+    [40,"松岗中学",557,554,561,559,532,535,495,-62,-66],
+    [41,"深圳市高级中学创新高中",557,543,558,545,531,533,495,-62,-63],
+    [42,"福田中学",554,548,556,548,528,532,520,-34,-36],
+    [43,"深圳大学附属中学盐田校区(深大附中盐田校区)",553,538,556,528,447,482,459,-94,-97],
+    [44,"深圳市格致中学",553,546,554,541,534,538,500,-53,-54],
+    [45,"宝安第一外国语学校",553,544,554,544,531,535,494,-59,-60],
+    [46,"深圳市龙津中学",552,535,553,542,525,531,491,-61,-62],
+    [47,"深圳技术大学附属中学",550,534,554,541,522,530,494,-56,-60],
+    [48,"深圳市高级中学理慧高中",550,526,550,534,519,520,488,-62,-62],
+    [49,"深圳第二外国语学校",550,540,549,541,528,531,493,-57,-56],
+    [50,"深圳市燕川中学",546,519,550,534,510,528,485,-61,-65],
+    [51,"深圳市高级中学有为高中",546,522,546,529,506,513,481,-65,-65],
+    [52,"罗湖高级中学",546,542,544,541,516,520,513,-33,-31],
+    [53,"深圳外国语学校弘知高中",545,532,542,533,507,510,478,-67,-64],
+    [54,"深圳市第三高级中学(国内高考班)",544,538,540,534,520,524,488,-56,-52],
+    [55,"西交利物浦大学基础教育集团外国语高级中学",543,537,543,536,519,521,488,-55,-55],
+    [56,"平冈中学",540,534,546,540,510,527,"/","/","/"],
+    [57,"深圳市第二高级中学宝安高中部",539,526,545,540,447,482,486,-53,-59],
+    [58,"深圳市龙华外国语高级中学",538,531,542,538,491,512,472,-66,-70],
+    [59,"红岭教育集团大鹏华侨中学",538,512,541,529,513,524,490,-48,-51],
+    [60,"西乡中学",538,532,538,535,502,518,477,-61,-61],
+    [61,"深圳市高级中学文博高中",537,517,539,527,511,515,476,-61,-63],
+    [62,"深圳市福海中学",535,518,544,535,493,516,472,-63,-72],
+    [63,"光明区高级中学",533,520,540,532,497,521,480,-53,-60],
+    [64,"北京大学附属中学深圳学校",533,529,539,534,475,505,461,-72,-78],
+    [65,"深圳市致理中学",532,514,540,530,485,513,466,-66,-74],
+    [66,"深圳市第七高级中学",530,519,535,532,493,516,469,-61,-66],
+    [67,"深圳实验学校明理高中",526,504,530,525,514,517,475,-51,-55],
+    [68,"深圳外国语学校致远高中",526,510,529,523,480,505,461,-65,-68],
+    [69,"深圳实验学校至臻高中",526,502,524,515,484,504,466,-60,-58],
+    [70,"深圳实验学校卓越高中",524,505,527,517,489,505,468,-56,-59],
+    [71,"石岩外国语学校",522,503,531,524,456,492,449,-73,-82],
+    [72,"深圳市龙华科技实验高级中学",519,500,532,524,465,494,470,-49,-62],
+    [73,"深圳外国语学校博雅高中",519,505,531,524,492,507,466,-53,-65],
+    [74,"深圳外国语学校理工高中",519,505,528,523,477,503,455,-64,-73],
+    [75,"坪山高级中学",518,499,534,523,480,508,458,-60,-76],
+    [76,"观澜中学",518,501,532,523,486,512,461,-57,-71],
+    [77,"深圳益新中学",517,486,536,518,447,482,427,-90,-109],
+    [78,"龙华中学",517,503,528,520,459,501,"/","/","/"],
+    [79,"深圳市第一职业技术学校(综合高中班)",516,"/",516,"/","/","/","/","/","/"],
+    [80,"深圳市聚龙科学中学",516,497,532,521,475,508,466,-50,-66],
+    [81,"光明中学",516,507,528,524,469,503,447,-69,-81],
+    [82,"深圳启元中学",510,494,529,518,447,482,427,-83,-102],
+    [83,"横岗高级中学",510,503,525,521,468,503,"/","/","/"],
+    [84,"沙井中学",509,503,526,523,459,500,"/","/","/"],
+    [85,"深圳市盐港中学(综合高中班)",508,"/",508,"/","/","/","/","/","/"],
+    [86,"深圳市第二实验学校明远高中",507,493,525,517,470,501,441,-66,-84],
+    [87,"深圳实验学校崇文高中",506,471,529,515,498,505,475,-31,-54],
+    [88,"平湖外国语学校",506,493,524,517,460,499,"/","/","/"],
+    [89,"深圳市龙岗区第二高级中学",504,497,522,518,463,500,441,-63,-81],
+    [90,"深圳市艺术高中",503,496,518,514,456,494,"/","/","/"],
+    [91,"深圳市第二高级中学深汕实验学校",499,"/",521,"/",454,497,435,-64,-86],
+    [92,"深圳中学科技高中",498,"/",521,"/",458,490,437,-61,-84],
+    [93,"深圳中学实验高中",497,"/",521,"/",458,490,436,-61,-85],
+    [94,"深圳市曙光中学(综合高中)",497,470,526,512,447,482,427,-70,-99],
+    [95,"深圳市美术学校",496,485,504,496,452,482,"/","/","/"],
+    [96,"深圳中学数理高中",492,"/",517,"/",489,516,436,-56,-81],
+    [97,"布吉中学","/",492,"/",515,449,492,"/","/","/"],
+    [98,"深圳创新高级中学(综合高中)",487,"/",518,"/",447,482,430,-57,-88],
+    [99,"深圳市行知职业技术学校(综合高中班)",485,"/",485,"/","/","/","/","/","/"],
+    [100,"深圳市第三高级中学(国家留学基金委自费出国留学班)",449,"/",449,"/",423,423,400,-49,-49],
+  ];
+
+  var keys = ["idx","school","ac_z","ac_w","d_z","d_w","zb_ac","zb_d","zz","diff_ac","diff_d"];
+  var tbody = document.getElementById("tbody");
+  var searchInput = document.getElementById("searchInput");
+  var countLabel = document.getElementById("countLabel");
+  var clearBtn = document.getElementById("clearBtn");
+
+  function fmt(v){
+    if(v === "/" || v === null || v === undefined || v === "") return '<span class="na">/</span>';
+    return v;
+  }
+
+  function render(list){
+    var html = "";
+    for(var i=0;i<list.length;i++){
+      var r = list[i];
+      var cls = r[0] <= 3 ? ' class="top3"' : "";
+      html += "<tr"+cls+">";
+      html += "<td class=\"num\">"+r[0]+"</td>";
+      html += "<td class=\"school\">"+r[1]+"</td>";
+      for(var c=2;c<=8;c++){
+        html += "<td class=\"num\">"+fmt(r[c])+"</td>";
+      }
+      for(var c=9;c<=10;c++){
+        html += "<td class=\"num diff\">"+fmt(r[c])+"</td>";
+      }
+      html += "</tr>";
+    }
+    tbody.innerHTML = html;
+  }
+
+  var filtered = DATA.slice();
+
+  function apply(){
+    var kw = searchInput.value.trim().toLowerCase();
+    if(!kw){
+      filtered = DATA.slice();
+    }else{
+      filtered = DATA.filter(function(r){ return r[1].toLowerCase().indexOf(kw) !== -1; });
+    }
+    render(filtered);
+    countLabel.textContent = "共 " + filtered.length + " 所";
+  }
+
+  searchInput.addEventListener("input", apply);
+  searchBtn.addEventListener("click", function(){
+    apply();
+    searchInput.blur();
+  });
+  searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){
+      e.preventDefault();
+      apply();
+      searchInput.blur();
+    }
+  });
+  clearBtn.addEventListener("click", function(){
+    searchInput.value = "";
+    apply();
+    searchInput.blur();
+  });
+
+  var sortKey = null;
+  var sortDir = 1;
+
+  document.querySelectorAll("thead th").forEach(function(th){
+    th.addEventListener("click", function(){
+      var key = th.getAttribute("data-key");
+      if(!key) return;
+      if(sortKey === key){
+        sortDir = -sortDir;
+      }else{
+        sortKey = key;
+        sortDir = 1;
+      }
+      var colIdx = keys.indexOf(key);
+      var numeric = (key !== "school" && key !== "idx") || key === "idx";
+      filtered.sort(function(a,b){
+        var va = a[colIdx], vb = b[colIdx];
+        if(va === "/") va = null;
+        if(vb === "/") vb = null;
+        if(va === null && vb === null) return 0;
+        if(va === null) return 1;
+        if(vb === null) return -1;
+        if(numeric) return (va - vb) * sortDir;
+        return String(va).localeCompare(String(vb), "zh") * sortDir;
+      });
+      render(filtered);
+      document.querySelectorAll("thead th").forEach(function(h){
+        var arrow = h.querySelector(".arrow");
+        if(h === th){
+          arrow.textContent = sortDir === 1 ? " ▲" : " ▼";
+        }else{
+          arrow.textContent = "";
+        }
+      });
+    });
+  });
+
+  render(DATA);
+})();
+</script>
+
+</body>
+</html>
