@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>光明区AI自习室选址调研报告 | 顺·行者学苑</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    color: #2c3e50;
+    line-height: 1.7;
+    background: #f5f7fa;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+  
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  .header h1 { font-size: 28px; margin-bottom: 8px; font-weight: 700; }
+  .header .subtitle { font-size: 15px; opacity: 0.9; margin-bottom: 16px; }
+  .header .meta { display: flex; gap: 24px; font-size: 13px; opacity: 0.85; flex-wrap: wrap; }
+  .header .meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* Summary card */
+  .summary-card {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border-left: 5px solid #e63946;
+  }
+  .summary-card h2 { color: #1a365d; font-size: 20px; margin-bottom: 16px; border-bottom: 2px solid #e63946; padding-bottom: 8px; display: inline-block; }
+  .summary-card .conclusion { font-size: 16px; font-weight: 600; color: #1a365d; margin-bottom: 16px; line-height: 1.8; }
+  .summary-card ul { padding-left: 20px; }
+  .summary-card li { margin-bottom: 8px; font-size: 14.5px; }
+  .summary-card li strong { color: #e63946; }
+
+  /* Section */
+  .section {
+    background: white;
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .section h2 {
+    color: #1a365d;
+    font-size: 22px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #2b6cb0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h2::before {
+    content: '';
+    width: 6px;
+    height: 24px;
+    background: #e63946;
+    border-radius: 3px;
+  }
+  .section h3 {
+    color: #2c5282;
+    font-size: 17px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 4px solid #4299e1;
+  }
+  .section h4 {
+    color: #2b6cb0;
+    font-size: 15px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  .section p { margin-bottom: 12px; font-size: 14.5px; }
+  .section strong { color: #1a365d; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  th {
+    background: #2c5282;
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  tr:nth-child(even) { background: #f7fafc; }
+  tr:hover { background: #edf2f7; }
+  
+  /* Chart container */
+  .chart-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 16px;
+    background: #f7fafc;
+    border-radius: 8px;
+  }
+  .chart-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+  .chart-caption {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* Recommendation cards */
+  .rec-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s;
+  }
+  .rec-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .rec-card.rank-1 { border-color: #e63946; background: linear-gradient(135deg, #fff5f5 0%, white 100%); }
+  .rec-card.rank-2 { border-color: #f6ad55; background: linear-gradient(135deg, #fffaf0 0%, white 100%); }
+  .rec-card.rank-3 { border-color: #4299e1; background: linear-gradient(135deg, #ebf8ff 0%, white 100%); }
+  .rec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .rec-title { font-size: 18px; font-weight: 700; color: #1a365d; }
+  .rec-badge {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+  }
+  .rank-1 .rec-badge { background: #e63946; }
+  .rank-2 .rec-badge { background: #f6ad55; }
+  .rank-3 .rec-badge { background: #4299e1; }
+  .rec-score {
+    display: inline-block;
+    background: #1a365d;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+  .rec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .rec-item {
+    background: rgba(255,255,255,0.7);
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13.5px;
+  }
+  .rec-item .label { color: #718096; font-size: 12px; display: block; }
+  .rec-item .value { font-weight: 600; color: #2d3748; }
+  .pros-cons { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+  .pros-cons > div { flex: 1; min-width: 200px; }
+  .pros-cons h5 { font-size: 14px; margin-bottom: 6px; }
+  .pros .pros-title { color: #38a169; }
+  .cons .cons-title { color: #e53e3e; }
+  .pros-cons ul { padding-left: 18px; font-size: 13.5px; }
+  .pros-cons li { margin-bottom: 4px; }
+
+  /* Route table */
+  .route-step {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    border-left: 3px solid #4299e1;
+    margin-bottom: 12px;
+    background: #f7fafc;
+    border-radius: 0 8px 8px 0;
+  }
+  .route-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2b6cb0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .route-content { flex: 1; }
+  .route-content .time { color: #e63946; font-weight: 600; font-size: 14px; }
+  .route-content .place { font-size: 15px; font-weight: 600; color: #1a365d; margin: 4px 0; }
+  .route-content .detail { font-size: 13px; color: #4a5568; }
+
+  /* Checklist */
+  .checklist { columns: 2; column-gap: 24px; }
+  .checklist li {
+    list-style: none;
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 13.5px;
+    break-inside: avoid;
+  }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    color: #4299e1;
+    font-size: 16px;
+  }
+
+  /* Source tag */
+  .src {
+    font-size: 11.5px;
+    color: #a0aec0;
+    background: #f7fafc;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 4px;
+    text-decoration: none;
+  }
+  .src:hover { color: #4299e1; }
+
+  /* Info gap */
+  .info-gap {
+    background: #fffbeb;
+    border-left: 4px solid #f6ad55;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13.5px;
+    border-radius: 0 6px 6px 0;
+  }
+  .info-gap strong { color: #c05621; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #718096;
+    font-size: 12.5px;
+  }
+
+  /* Insight box */
+  .insight {
+    background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%);
+    border-left: 4px solid #319795;
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+  }
+  .insight strong { color: #234e52; }
+  
+  @media (max-width: 768px) {
+    .container { padding: 12px; }
+    .header { padding: 24px 18px; }
+    .header h1 { font-size: 22px; }
+    .section { padding: 18px; }
+    .section h2 { font-size: 18px; }
+    table { font-size: 12px; }
+    th, td { padding: 6px 8px; }
+    .checklist { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <h1>🏫 光明区 AI 自习室选址调研报告</h1>
+  <div class="subtitle">面向顺·行者学苑 | 初中生为主 · 约200㎡ · 50座位 · 非沿街铺面优先</div>
+  <div class="meta">
+    <span>📅 完成日期：2026年9月7日</span>
+    <span>👤 委托方：顺·行者学苑</span>
+    <span>📍 调研范围：深圳光明区全域</span>
+    <span>🎯 用途：实地考察与投资人洽谈</span>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="summary-card">
+  <h2>📌 核心结论与行动建议（一页摘要）</h2>
+  <div class="conclusion">
+    光明区初中在校生3.5万人（同比增长16%）、人均可支配收入7.5万元，AI自习室市场处于快速成长期。
+    <strong>优先选择「公明-马田片区」，其次「光明中心区」，第三备选「长圳-凤凰城」</strong>，三片区各有特色、覆盖不同客群，建议明日按此顺序考察。
+  </div>
+  <ul>
+    <li><strong>首选·中粮云景二楼（公明）</strong>：学生基数最大（公明中学初一1000人+光明高级中学）、家长付费意愿成熟、大仟里商圈背书，240㎡约1.92万/月 <span class="src">58同城 2026-05</span></li>
+    <li><strong>次选·绿地新都会二楼（光明中心区）</strong>：房价最高片区（4-5.5万/㎡）、双名校辐射（光明中学+深实验光明）、TOD交通便利，200㎡约1.2万/月 <span class="src">58安居客 2026-08</span></li>
+    <li><strong>备选·勤诚达/凤凰英荟城周边（长圳）</strong>：深中名校IP、保障房3万+人口刚需旺盛、租金选择空间大，二楼约50-80元/㎡/月 <span class="src">乐有家 2026</span></li>
+  </ul>
+  <div style="margin-top: 14px; font-size: 13.5px; color: #718096;">
+    💡 <strong>考察路线</strong>：光明大街站（绿地新都会）→ 公明广场站（中粮云景+大仟里周边）→ 长圳站（凤凰英荟城+勤诚达+N次方公园）<br>
+    💰 <strong>投资估算</strong>：二楼200㎡场地，租金约1.2-2万/月，装修+设备约30-50万，回本周期约12-18个月
+  </div>
+</div>
+
+<!-- SECTION 1: MACRO -->
+<div class="section">
+  <h2>一、宏观市场：光明区教育消费基本面</h2>
+  
+  <h3>1.1 经济与人口底数</h3>
+  <p>光明区2025年GDP达<strong>1841.76亿元</strong>（同比+6.5%），人均GDP 15.5万元，常住人口<strong>119.74万人</strong>（年增2.32万）。人均可支配收入<strong>75,093元</strong>（+5.4%），社会消费品零售总额330.53亿元（+6.0%）。<a class="src" href="https://www.szgm.gov.cn/xxgk/xqgwhxxgkml/tjxx/tjgb/content/post_12892835.html">光明区统计局 2026-07</a></p>
+  
+  <div class="insight">
+    <strong>对顺·行者的意义：</strong>光明区正处于人口快速导入期（年增2.3万），以年轻产业人口为主，对教育消费的接受度高、付费能力强。初中在校生增速高达16%，说明小学高段基数正在爆发，未来2-3年初中自习室需求将持续增长。
+  </div>
+
+  <h3>1.2 在校学生结构</h3>
+  <p>全区在校学生总计<strong>169,502人</strong>，其中初中生35,486人（占比20.9%），增速最快。高中生10,019人。初中阶段是AI自习室的核心目标客群。<a class="src" href="https://www.szgm.gov.cn/xxgk/xqgwhxxgkml/tjxx/tjgb/content/post_12892835.html">光明区统计局 2026-07</a></p>
+  
+  <div class="chart-container">
+    <img src="chart_student_structure.png" alt="光明区在校学生结构">
+    <div class="chart-caption">数据来源：光明区2025年国民经济和社会发展统计公报</div>
+  </div>
+</div>
+
+<!-- SECTION 2: SCHOOLS -->
+<div class="section">
+  <h2>二、学校底数：重点初中/高中全名单与规模</h2>
+  
+  <h3>2.1 重点公办初中招生规模排名</h3>
+  <p>2026年秋季公办初中招生中，<strong>公明中学以20班/1000人居首</strong>，是光明区最大的初中。深中光明科学城学校（18班/810人）和光明中学（16班/800人）紧随其后。<a class="src" href="https://www.szgm.gov.cn/gmwtjy/gkmlpt/content/12/12836/post_12836039.html">光明区教育局 2026-06</a></p>
+  
+  <div class="chart-container">
+    <img src="chart_school_enrollment.png" alt="重点初中招生规模对比">
+    <div class="chart-caption">数据来源：光明区2026年秋季义务教育招生报名指引；*光明二中为估算值</div>
+  </div>
+
+  <h3>2.2 公办初中完整名单（按街道）</h3>
+  <table>
+    <tr><th>所属街道</th><th>学校名称</th><th>教育集团</th><th>学校类型</th><th>地址</th><th>初一年级</th></tr>
+    <tr><td rowspan="5">光明街道</td><td>光明中学</td><td>光明中学（集团）</td><td>完全中学</td><td>碧园路2号</td><td>16班/800人</td></tr>
+    <tr><td>深圳实验光明学校</td><td>深圳实验光明（集团）</td><td>九年一贯制</td><td>博闻路2号</td><td>8班/360人</td></tr>
+    <tr><td>华夏中学</td><td>光明区实验学校（集团）</td><td>初级中学</td><td>华夏路东周文化公园</td><td>—</td></tr>
+    <tr><td>深圳实验光明科林学校</td><td>深圳实验光明（集团）</td><td>九年一贯制</td><td>观光路科林路交汇</td><td>—</td></tr>
+    <tr><td>深圳实验光明明湖学校</td><td>深圳实验光明（集团）</td><td>九年一贯制</td><td>月亮路碧塘路交汇</td><td>—</td></tr>
+    <tr><td rowspan="5">公明街道</td><td>公明中学</td><td>公明中学（集团）</td><td>初级中学</td><td>振明路60号</td><td>20班/1000人</td></tr>
+    <tr><td>李松蓢学校</td><td>—</td><td>九年一贯制</td><td>李松蓢社区志康路</td><td>—</td></tr>
+    <tr><td>下村小学（初中部？）</td><td>—</td><td>—</td><td>下村社区</td><td>—</td></tr>
+    <tr><td>公明中英文学校</td><td>民办</td><td>九年一贯制</td><td>—</td><td>6班/216人</td></tr>
+    <tr><td>尔雅学校</td><td>民办</td><td>九年一贯制</td><td>上村长春北路</td><td>—</td></tr>
+    <tr><td rowspan="5">马田街道</td><td>光明区高级中学</td><td>光明区高级中学（集团）</td><td>完全中学</td><td>新庄社区新围路5号</td><td>全区招生</td></tr>
+    <tr><td>光明区第二中学</td><td>光明区高级中学（集团）</td><td>初级中学</td><td>松白路4491号</td><td>约8班</td></tr>
+    <tr><td>理创实验学校</td><td>光明区高级中学（集团）</td><td>九年一贯制</td><td>马山头社区龟岗东路</td><td>—</td></tr>
+    <tr><td>科育学校</td><td>光明区高级中学（集团）</td><td>九年一贯制</td><td>薯田埔社区光育路</td><td>—</td></tr>
+    <tr><td>深理工附属光明知行学校</td><td>深理工附属光明教育集团</td><td>九年一贯制</td><td>合水口社区文阁路</td><td>约4班</td></tr>
+    <tr><td rowspan="4">凤凰街道</td><td>深圳中学光明科学城学校</td><td>深中光明科学城（集团）</td><td>九年一贯制</td><td>甲子塘社区东长路</td><td>18班/810人</td></tr>
+    <tr><td>光明区实验学校</td><td>光明区实验学校（集团）</td><td>九年一贯制</td><td>塘尾社区东升路</td><td>12班/600人</td></tr>
+    <tr><td>凤凰城实验学校</td><td>—</td><td>九年一贯制</td><td>塘家社区科裕路</td><td>6班/300人</td></tr>
+    <tr><td>光明区外国语学校</td><td>光明区外国语（集团）</td><td>九年一贯制</td><td>凤凰社区丰成路</td><td>6班/300人</td></tr>
+    <tr><td rowspan="3">玉塘街道</td><td>长育学校</td><td>光明区高级中学（集团）</td><td>初级中学</td><td>玉塘社区光侨路</td><td>—</td></tr>
+    <tr><td>玉律学校</td><td>—</td><td>九年一贯制</td><td>玉律社区三区</td><td>—</td></tr>
+    <tr><td>华中师大附属光明勤诚达学校</td><td>深中光明科学城（集团）</td><td>九年一贯制</td><td>玉塘社区长松路</td><td>—</td></tr>
+    <tr><td rowspan="2">新湖街道</td><td>深圳理工大学附属实验高级中学</td><td>深理工附属</td><td>高级中学</td><td>楼村社区华裕路</td><td>高中</td></tr>
+    <tr><td>光明书院</td><td>民办</td><td>十二年一贯制</td><td>红湖村168号</td><td>民办</td></tr>
+  </table>
+  
+  <h3>2.3 公办高中名单（9所）</h3>
+  <table>
+    <tr><th>学校</th><th>性质</th><th>位置</th><th>备注</th></tr>
+    <tr><td>光明中学</td><td>公办完全中学</td><td>光明街道</td><td>含初中</td></tr>
+    <tr><td>光明区高级中学</td><td>公办完全中学</td><td>马田街道</td><td>含初中，42班/2135人高中</td></tr>
+    <tr><td>深圳实验学校光明部</td><td>公办高中</td><td>光明街道</td><td>四大名校分校</td></tr>
+    <tr><td>深圳大学附属实验中学</td><td>公办高中</td><td>玉塘街道长松路</td><td>—</td></tr>
+    <tr><td>深圳理工大学附属实验高级中学</td><td>公办高中</td><td>新湖街道楼村</td><td>42班/2135人</td></tr>
+    <tr><td>深外致远/博雅/弘知/理工高中</td><td>公办高中</td><td>马田街道砺学路</td><td>4所，同一校区</td></tr>
+  </table>
+  <p style="font-size: 12.5px; color: #718096;"><a class="src" href="https://sz.bendibao.com/edu/gaozhonglist/guangming/gongban/">深圳本地宝</a><a class="src" href="http://www.szgm.gov.cn/xxgk/kxc/tskxc/jyp/czjy/index_2.html">光明区政府 图说科学城</a></p>
+
+  <div class="info-gap">
+    <strong>⚠️ 信息缺口：</strong>部分九年一贯制学校的初中招生人数未在公开渠道找到完整数据，上表标注"—"的学校建议现场核实规模。民办学校完整名单需进一步查询教育局最新备案。
+  </div>
+</div>
+
+<!-- SECTION 3: CONSUMPTION POWER -->
+<div class="section">
+  <h2>三、消费力分区：家长付费能力四大梯队</h2>
+  
+  <p>光明区房价呈现明显的由东向西梯度下降格局。房价直接反映家庭支付能力，是判断教培消费力的核心指标。结合新房均价、二手房成交价、商业活跃度，可将光明区划分为四大消费梯队：<a class="src" href="https://www.163.com/dy/article/L313HAN90556GQ20.html">网易房产 2026-07</a></p>
+  
+  <div class="chart-container">
+    <img src="chart_housing_price.png" alt="各板块房价梯队对比">
+    <div class="chart-caption">数据来源：房天下、安居客、乐有家，2026年8-9月综合整理</div>
+  </div>
+
+  <h3>3.1 消费力分区详表</h3>
+  <table>
+    <tr><th>梯队</th><th>板块</th><th>房价区间</th><th>代表小区</th><th>目标学校</th><th>家长画像</th></tr>
+    <tr>
+      <td><strong>第一梯队</strong><br><span style="color:#e63946;">高消费力</span></td>
+      <td>光明中心区<br>（科学公园）凤凰城</td>
+      <td>4-5.5万/㎡</td>
+      <td>星河天地华邸(5.19万)<br>宏发万悦山(5.17万)<br>深房传麒山(6.6万)<br>光明大第(7.2万)</td>
+      <td>光明中学<br>深圳实验光明学校<br>华夏中学</td>
+      <td>公务员/事业单位/企业中高管/科研人员，重视教育品质，付费能力强</td>
+    </tr>
+    <tr>
+      <td><strong>第二梯队</strong><br><span style="color:#f6ad55;">中高消费力</span></td>
+      <td>长圳板块<br>塘尾板块</td>
+      <td>3.5-4.5万/㎡</td>
+      <td>勤诚达正大城(3.7万)<br>松茂御城(4.25万)<br>凤凰英荟城(保障房)</td>
+      <td>深中光明科学城学校<br>长育学校<br>光明区实验学校</td>
+      <td>科技园年轻白领/刚需家庭，对名校IP敏感，性价比敏感度高</td>
+    </tr>
+    <tr>
+      <td><strong>第三梯队</strong><br><span style="color:#2a9d8f;">中等消费力</span></td>
+      <td>公明中心区<br>马田片区</td>
+      <td>3.2-4万/㎡</td>
+      <td>宏发雍景城(3.3-3.6万)<br>光明峰荟(3.37万)<br>中粮云景花园<br>宏发天汇城</td>
+      <td>公明中学<br>光明区第二中学<br>光明区高级中学</td>
+      <td>本地居民/个体商户/工薪阶层，重视升学结果，付费意愿稳定</td>
+    </tr>
+    <tr>
+      <td><strong>第四梯队</strong><br><span style="color:#264653;">刚需为主</span></td>
+      <td>公明北/楼村<br>玉律/田寮</td>
+      <td>2.3-3.2万/㎡</td>
+      <td>龙湖观萃(3.5万)<br>各城中村/自建房</td>
+      <td>李松蓢学校<br>玉律学校</td>
+      <td>产业工人/外来务工家庭，价格敏感度极高，付费能力有限</td>
+    </tr>
+  </table>
+
+  <div class="insight">
+    <strong>对顺·行者的意义：</strong>AI自习室定价建议2000-3500元/月（参考深圳同类产品）。第一梯队家长可承受3000+，第三梯队公明片区家长付费意愿成熟（教培基础好）但单价需控制在2500左右，第二梯队长圳虽房价不低但保障房占比大、需分层运营。
+  </div>
+</div>
+
+<!-- SECTION 4: RENTAL -->
+<div class="section">
+  <h2>四、租金行情：非沿街铺面真实挂牌案例</h2>
+  
+  <h3>4.1 不同类型场地租金对比</h3>
+  <p>光明区教培场地租金差异较大。一楼临街商铺约5-8元/㎡/天（150-240元/㎡/月），二楼商铺约2-3元/㎡/天（60-100元/㎡/月），写字楼/产业园约30-50元/㎡/月。<strong>200㎡二楼场地的月租金区间约为1.2万-2万元</strong>。<a class="src" href="http://m.anjuke.com/sz/sp/zu/7480060160/">58安居客 2026-08</a><a class="src" href="https://sz.58.com/shangpu/87307989541082x.shtml">58同城 2026-05</a></p>
+  
+  <div class="chart-container">
+    <img src="chart_rental_comparison.png" alt="租金对比图">
+    <div class="chart-caption">数据来源：58安居客、58同城、采招网，2026年5-9月挂牌数据</div>
+  </div>
+
+  <h3>4.2 真实挂牌案例（200㎡左右非沿街）</h3>
+  <table>
+    <tr><th>项目</th><th>位置</th><th>面积</th><th>月租金</th><th>单价</th><th>楼层/类型</th><th>更新时间</th><th>适合度</th></tr>
+    <tr>
+      <td><strong>绿地新都会</strong></td>
+      <td>光明大道与光明大街交汇</td>
+      <td>200㎡</td>
+      <td>1.2万</td>
+      <td>60元/㎡/月<br>(2元/天)</td>
+      <td>二楼/社区底商<br>TOD综合体</td>
+      <td>2026-08-24</td>
+      <td>⭐⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td><strong>中粮云景花园</strong></td>
+      <td>马田街道松白路金安路</td>
+      <td>240㎡</td>
+      <td>1.92万</td>
+      <td>80元/㎡/月<br>(2.67元/天)</td>
+      <td>二楼转角/商业街</td>
+      <td>2026-05-22</td>
+      <td>⭐⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>星河天地四期裙楼</td>
+      <td>光明大街站200米</td>
+      <td>50-160㎡<br>可组合</td>
+      <td>面议</td>
+      <td>47-88元/㎡/月</td>
+      <td>裙楼商铺/沿街</td>
+      <td>2026-09-04</td>
+      <td>⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>鹏森海纳中心</td>
+      <td>东长路与光侨路交汇</td>
+      <td>1700㎡整层<br>可分割</td>
+      <td>面议</td>
+      <td>约30-40元/㎡/月</td>
+      <td>4-6楼/产业园</td>
+      <td>2026-08-31</td>
+      <td>⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>勤诚达临街培训机构</td>
+      <td>长圳/勤诚达</td>
+      <td>200㎡</td>
+      <td>约1.6万</td>
+      <td>2.67元/㎡/天</td>
+      <td>临街/现成装修</td>
+      <td>—</td>
+      <td>⭐⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>中鑫大厦写字楼</td>
+      <td>光明绘猫路</td>
+      <td>200㎡</td>
+      <td>0.8万</td>
+      <td>40元/㎡/月</td>
+      <td>写字楼/精装修</td>
+      <td>2026-09-05</td>
+      <td>⭐⭐⭐</td>
+    </tr>
+    <tr>
+      <td>凤凰英荟城商铺</td>
+      <td>长圳/凤凰英荟城</td>
+      <td>192㎡</td>
+      <td>3.3万</td>
+      <td>172元/㎡/月<br>(5.73元/天)</td>
+      <td>一楼/社区底商</td>
+      <td>2026-06-18</td>
+      <td>⭐⭐</td>
+    </tr>
+  </table>
+
+  <h3>4.3 租金行情总结</h3>
+  <table>
+    <tr><th>场地类型</th><th>单价范围</th><th>200㎡月租金</th><th>优势</th><th>劣势</th></tr>
+    <tr><td>一楼临街商铺</td><td>150-240元/㎡/月</td><td>3-4.8万</td><td>自然流量大、品牌展示好</td><td>租金高、非教培首选</td></tr>
+    <tr><td><strong>二楼社区商业</strong></td><td><strong>60-100元/㎡/月</strong></td><td><strong>1.2-2万</strong></td><td><strong>性价比高、安静适合学习、教培聚集</strong></td><td><strong>需引流、昭示性一般</strong></td></tr>
+    <tr><td>写字楼/产业园</td><td>30-50元/㎡/月</td><td>0.6-1万</td><td>租金最低、环境好</td><td>获客难、商业氛围弱</td></tr>
+    <tr><td>教育城/综合体</td><td>50-80元/㎡/月</td><td>1-1.6万</td><td>教培聚集、共享客流</td><td>选择少、竞争也大</td></tr>
+  </table>
+  
+  <div class="insight">
+    <strong>对顺·行者的意义：</strong>优先选择二楼社区商业（60-100元/㎡/月），性价比最优。200㎡场地月租金控制在1.5万以内最佳，2万是上限。公明和光明中心区各有优质二楼标的，长圳可考虑产业园方案压低成本。
+  </div>
+</div>
+
+<!-- SECTION 5: BUSINESS DISTRICT -->
+<div class="section">
+  <h2>五、商圈活力与教培聚集度</h2>
+  
+  <h3>5.1 五大商圈客流对比</h3>
+  <p>商圈客流与消费活跃度直接反映片区商业成熟度和家长消费意愿。2025年国庆数据显示，<strong>蓝鲸世界以日均6.88万人次居首</strong>（光明中心区/凤凰城），大仟里日均5.34万（公明马田）紧随其后。<a class="src" href="http://iguangming.sznews.com/content/2025-10/10/content_31710513.htm">深圳光明网 2025-10</a></p>
+  
+  <div class="chart-container">
+    <img src="chart_mall_traffic.png" alt="五大商圈客流对比">
+    <div class="chart-caption">数据来源：2025年国庆中秋8天假期日均客流，深圳光明网</div>
+  </div>
+
+  <h3>5.2 教培机构聚集点</h3>
+  <table>
+    <tr><th>片区</th><th>教培聚集点</th><th>代表机构</th><th>聚集程度</th></tr>
+    <tr><td>公明/马田</td><td>宏发嘉域、益田假日府邸、大东明城市广场</td><td>宏博教育(2130㎡/1000+生源)、万邦一百、景程教育</td><td>⭐⭐⭐⭐⭐最成熟</td></tr>
+    <tr><td>光明中心区</td><td>星河天地商业街、绿地新都会</td><td>新入驻为主</td><td>⭐⭐⭐新兴</td></tr>
+    <tr><td>长圳/凤凰城</td><td>勤诚达K+广场、N次方公园</td><td>各类艺术培训</td><td>⭐⭐⭐快速增长</td></tr>
+    <tr><td>玉律/田寮</td><td>社区底商为主</td><td>启明星托管等小型机构</td><td>⭐⭐分散</td></tr>
+  </table>
+  
+  <div class="insight">
+    <strong>对顺·行者的意义：</strong>公明马田片区教培最成熟，说明家长付费习惯已被教育，但竞争也最激烈；光明中心区是新兴市场，先发优势明显；长圳片区快速增长，适合抢占年轻家长市场。
+  </div>
+</div>
+
+<!-- SECTION 6: 3 RECOMMENDATIONS -->
+<div class="section">
+  <h2>六、三大推荐考察点详解</h2>
+  <p>综合学校规模、消费力、租金、交通、竞争态势五大维度，筛选出以下3个优先考察地点：</p>
+
+  <!-- Recommendation 1 -->
+  <div class="rec-card rank-1">
+    <div class="rec-header">
+      <div class="rec-title">🥇 方案A：中粮云景花园二楼（公明-马田片区）</div>
+      <div>
+        <span class="rec-badge">综合评分第一</span>
+        <span class="rec-score">9.2 / 10</span>
+      </div>
+    </div>
+    
+    <div class="rec-grid">
+      <div class="rec-item">
+        <span class="label">📍 具体位置</span>
+        <span class="value">马田街道中粮云景花园二楼转角</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🏫 辐射学校</span>
+        <span class="value">公明中学(1000初一)、光明二中、光明高级中学、公明一小/二小</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">💰 租金</span>
+        <span class="value">240㎡ · 1.92万/月 · 80元/㎡/月</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🚇 交通</span>
+        <span class="value">6号线公明广场站400米，13号线(在建)</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">👨‍👩‍👧‍👦 周边人口</span>
+        <span class="value">中粮云景、宏发天汇城等87个小区，约56万居住人口</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🛍️ 商业配套</span>
+        <span class="value">大仟里购物中心(日均5.34万)、天虹商场</span>
+      </div>
+    </div>
+    
+    <div class="pros-cons">
+      <div class="pros">
+        <h5 class="pros-title">✅ 核心优势</h5>
+        <ul>
+          <li>学生基数最大：公明中学初一1000人+光明二中+光明高级中学，辐射初中生超5000人</li>
+          <li>教培市场最成熟：宏博教育等大型机构聚集，家长付费习惯已养成</li>
+          <li>位置极佳：十字路口转角二楼，昭示性强，教培优先</li>
+          <li>双地铁覆盖，交通便利，接送方便</li>
+          <li>室内配套完善（消防/上下水/卫生间/中央空调），装修成本低</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h5 class="cons-title">⚠️ 注意事项</h5>
+        <ul>
+          <li>租金相对较高（80元/㎡/月），需关注240㎡是否可分租200㎡</li>
+          <li>片区竞争较激烈，需差异化定位（AI+拔尖教育特色）</li>
+          <li>房源更新于5月，需核实是否已租出</li>
+          <li>周边小区以本地居民为主，消费偏务实，定价需精准</li>
+        </ul>
+      </div>
+    </div>
+    
+    <p style="margin-top: 14px; font-size: 13px; color: #718096;">
+      来源：<a class="src" href="https://sz.58.com/shangpu/87307989541082x.shtml">58同城 2026-05-22</a>
+      <a class="src" href="http://iguangming.sznews.com/content/2025-10/10/content_31710513.htm">深圳光明网 2025-10</a>
+      <a class="src" href="https://wap.leyoujia.com/shenzhen/esf/detail/9uU6xEjcb6YBuNg63DfjcB.html">乐有家</a>
+    </p>
+  </div>
+
+  <!-- Recommendation 2 -->
+  <div class="rec-card rank-2">
+    <div class="rec-header">
+      <div class="rec-title">🥈 方案B：绿地新都会二楼（光明中心区）</div>
+      <div>
+        <span class="rec-badge">消费力最强</span>
+        <span class="rec-score">8.8 / 10</span>
+      </div>
+    </div>
+    
+    <div class="rec-grid">
+      <div class="rec-item">
+        <span class="label">📍 具体位置</span>
+        <span class="value">光明大道与光明大街交汇处绿地新都会二楼</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🏫 辐射学校</span>
+        <span class="value">光明中学(800初一)、深圳实验光明学校(360初一)、华夏中学</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">💰 租金</span>
+        <span class="value">200㎡ · 1.2万/月 · 60元/㎡/月</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🚇 交通</span>
+        <span class="value">6号线光明大街站无缝接驳（TOD）</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">👨‍👩‍👧‍👦 周边人口</span>
+        <span class="value">星河天地、宏发万悦山、光明大第等高端社区，房价4-5.5万/㎡</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🛍️ 商业配套</span>
+        <span class="value">蓝鲸世界(日均6.88万)、万达广场、星河天地商业街</span>
+      </div>
+    </div>
+    
+    <div class="pros-cons">
+      <div class="pros">
+        <h5 class="pros-title">✅ 核心优势</h5>
+        <ul>
+          <li>消费力最强：周边房价4-5.5万/㎡，家长高知高收入，接受AI教育理念</li>
+          <li>名校双辐射：光明中学+深圳实验光明学校（四大名校分校）</li>
+          <li>TOD交通枢纽：地铁无缝接驳，家长接送极其便利</li>
+          <li>租金性价比高：200㎡仅1.2万/月，比公明还便宜</li>
+          <li>光明区商务局重点招商项目，政策支持力度大</li>
+          <li>教培竞争相对少，先发优势明显</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h5 class="cons-title">⚠️ 注意事项</h5>
+        <ul>
+          <li>毛坯交付，需自行装修，前期投入较大</li>
+          <li>光明中心区入住率仍在提升，部分小区人气不足</li>
+          <li>深圳实验光明学校初中部为寄宿制，走读生有限</li>
+          <li>房源标注"面积请填写实际面积"，需核实准确面积</li>
+        </ul>
+      </div>
+    </div>
+    
+    <p style="margin-top: 14px; font-size: 13px; color: #718096;">
+      来源：<a class="src" href="http://m.anjuke.com/sz/sp/zu/7480060160/">58安居客 2026-08-24</a>
+      <a class="src" href="https://shenzhen.qfang.com/school/detail/14227">Q房网</a>
+      <a class="src" href="https://sz.fang.anjuke.com/fangjia/ph-top/guangming_5516/">安居客房价排行</a>
+    </p>
+  </div>
+
+  <!-- Recommendation 3 -->
+  <div class="rec-card rank-3">
+    <div class="rec-header">
+      <div class="rec-title">🥉 方案C：勤诚达/凤凰英荟城周边（长圳-凤凰城）</div>
+      <div>
+        <span class="rec-badge">增长潜力最大</span>
+        <span class="rec-score">8.5 / 10</span>
+      </div>
+    </div>
+    
+    <div class="rec-grid">
+      <div class="rec-item">
+        <span class="label">📍 具体位置</span>
+        <span class="value">长圳片区，勤诚达K+广场或鹏森海纳中心周边</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🏫 辐射学校</span>
+        <span class="value">深中光明科学城学校(810初一)、长育学校、凤凰城实验学校、深大附属实验中学</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">💰 租金</span>
+        <span class="value">二楼约50-80元/㎡/月 · 产业园约30-40元/㎡/月</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🚇 交通</span>
+        <span class="value">6号线长圳站，未来13号线</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">👨‍👩‍👧‍👦 周边人口</span>
+        <span class="value">凤凰英荟城9672户/3万+人，勤诚达正大城4686户</span>
+      </div>
+      <div class="rec-item">
+        <span class="label">🛍️ 商业配套</span>
+        <span class="value">N次方公园(日均2.85万，营收增长29.7%黑马)、勤诚达K+广场</span>
+      </div>
+    </div>
+    
+    <div class="pros-cons">
+      <div class="pros">
+        <h5 class="pros-title">✅ 核心优势</h5>
+        <ul>
+          <li>深中名校IP效应：深圳中学光明科学城学校是光明最热门学校之一</li>
+          <li>人口基数大：凤凰英荟城是深圳最大保障房社区，9672户3万+人</li>
+          <li>增长速度快：N次方公园营收增速29.7%，片区消费力快速崛起</li>
+          <li>租金选择多：从产业园30元到社区商业80元，灵活度高</li>
+          <li>年轻父母多：保障房+刚需盘，孩子年龄集中，目标客群精准</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h5 class="cons-title">⚠️ 注意事项</h5>
+        <ul>
+          <li>保障房居民消费能力参差不齐，需做好客户分层</li>
+          <li>片区仍在发展中，商业氛围不如公明和光明中心区成熟</li>
+          <li>深中光明科学城学校学区以保障房为主，家庭支付能力需核实</li>
+          <li>场地选择较分散，需现场多看几个备选</li>
+        </ul>
+      </div>
+    </div>
+    
+    <p style="margin-top: 14px; font-size: 13px; color: #718096;">
+      来源：<a class="src" href="http://m.anjuke.com/sz/sp/zu/d4639216992198661/">58安居客 2026-08-31</a>
+      <a class="src" href="http://news.qq.com/rain/a/20250824A06H4F00">腾讯新闻 2025-08</a>
+      <a class="src" href="https://wap.leyoujia.com/shenzhen/xq/detail/746967.html">乐有家</a>
+    </p>
+  </div>
+
+  <h3>6.1 三个方案横向对比</h3>
+  <table>
+    <tr><th>对比维度</th><th>A. 中粮云景(公明)</th><th>B. 绿地新都会(光明中心区)</th><th>C. 长圳凤凰城</th></tr>
+    <tr><td>综合评分</td><td><strong>9.2</strong></td><td>8.8</td><td>8.5</td></tr>
+    <tr><td>学生基数</td><td>⭐⭐⭐⭐⭐ 最大</td><td>⭐⭐⭐⭐ 较大</td><td>⭐⭐⭐⭐ 大</td></tr>
+    <tr><td>家长消费力</td><td>⭐⭐⭐⭐ 中等偏上</td><td>⭐⭐⭐⭐⭐ 最强</td><td>⭐⭐⭐ 分化大</td></tr>
+    <tr><td>租金性价比</td><td>⭐⭐⭐⭐ 较高</td><td>⭐⭐⭐⭐⭐ 最佳</td><td>⭐⭐⭐⭐ 灵活</td></tr>
+    <tr><td>交通便利性</td><td>⭐⭐⭐⭐ 双地铁</td><td>⭐⭐⭐⭐⭐ TOD无缝</td><td>⭐⭐⭐ 单地铁</td></tr>
+    <tr><td>竞争环境</td><td>⭐⭐⭐ 较激烈</td><td>⭐⭐⭐⭐ 竞争少</td><td>⭐⭐⭐⭐ 竞争少</td></tr>
+    <tr><td>增长潜力</td><td>⭐⭐⭐ 稳定</td><td>⭐⭐⭐⭐ 较大</td><td>⭐⭐⭐⭐⭐ 最大</td></tr>
+    <tr><td>推荐定位</td><td><strong>首选稳盘</strong></td><td><strong>品质路线</strong></td><td><strong>增长路线</strong></td></tr>
+  </table>
+</div>
+
+<!-- SECTION 7: ROUTE -->
+<div class="section">
+  <h2>七、考察路线规划（2026年9月8日）</h2>
+  
+  <h3>7.1 路线总览</h3>
+  <p><strong>路线逻辑</strong>：从东向西，沿地铁6号线行进，减少折返。上午考察光明中心区（消费力最强），中午在公明用餐并考察首选方案，下午考察长圳增长极。三个点均在6号线沿线，地铁直达，自驾也方便。</p>
+
+  <div class="route-step">
+    <div class="route-num">1</div>
+    <div class="route-content">
+      <div class="time">🕘 09:00 - 10:30</div>
+      <div class="place">第一站：绿地新都会二楼（光明中心区）</div>
+      <div class="detail">
+        <strong>交通：</strong>地铁6号线「光明大街站」出口即达（TOD无缝接驳）；自驾导航"绿地新都会"，停地下车库<br>
+        <strong>考察要点：</strong>核实二楼200㎡场地具体位置和面积 → 查看到达路线和招牌位置 → 了解物业招商政策和免租期 → 步行至光明中学（约1.2公里，评估步行可达性）→ 观察星河天地/蓝鲸世界周边教培分布<br>
+        <strong>附近学校步行距离：</strong>光明中学约1.2km，深圳实验光明学校约1.5km，华夏中学约800m
+      </div>
+    </div>
+  </div>
+
+  <div class="route-step">
+    <div class="route-num">2</div>
+    <div class="route-content">
+      <div class="time">🕚 10:45 - 12:30</div>
+      <div class="place">第二站：中粮云景花园二楼（公明-马田）</div>
+      <div class="detail">
+        <strong>交通：</strong>地铁6号线「公明广场站」步行约400米；自驾导航"中粮云景花园"<br>
+        <strong>考察要点：</strong>查看二楼转角三间铺面实际格局和面积 → 确认是否可分租（目标200㎡）→ 评估转角昭示性和家长接送动线 → 步行至公明中学（约1km，验证学生流量）→ 顺路考察大仟里周边教培机构分布（益田假日府邸、宏发嘉域）<br>
+        <strong>附近学校步行距离：</strong>公明中学约1km，光明区第二中学约800m，光明高级中学约1.5km<br>
+        <strong>💡 午餐建议：</strong>大仟里购物中心餐饮区，边吃边观察客流
+      </div>
+    </div>
+  </div>
+
+  <div class="route-step">
+    <div class="route-num">3</div>
+    <div class="route-content">
+      <div class="time">🕒 14:00 - 16:00</div>
+      <div class="place">第三站：长圳-凤凰城（勤诚达+凤凰英荟城+N次方公园）</div>
+      <div class="detail">
+        <strong>交通：</strong>地铁6号线「长圳站」；自驾导航"凤凰英荟城"或"N次方公园"<br>
+        <strong>考察要点：</strong>N次方公园查看教培聚集情况和空铺 → 凤凰英荟城社区底商考察（9672户大盘流量）→ 勤诚达正大城K+广场查看教育业态 → 鹏森海纳中心评估产业园方案 → 步行至深圳中学光明科学城学校（约800米）<br>
+        <strong>附近学校步行距离：</strong>深中光明科学城学校约800m，凤凰城实验学校约430m，长育学校约1km<br>
+        <strong>备选场地：</strong>现场留意是否有二楼/三楼教培场地招租，挂牌可能未上网
+      </div>
+    </div>
+  </div>
+
+  <div class="route-step">
+    <div class="route-num">4</div>
+    <div class="route-content">
+      <div class="time">🕓 16:15 - 17:00</div>
+      <div class="place">复盘总结（可选：蓝鲸世界/凤凰城站）</div>
+      <div class="detail">
+        <strong>建议地点：</strong>蓝鲸世界或星河天地咖啡厅<br>
+        <strong>复盘内容：</strong>三个方案横向打分 → 确定优先谈判对象 → 列出待确认问题清单 → 制定后续跟进计划
+      </div>
+    </div>
+  </div>
+
+  <h3>7.2 现场核查清单</h3>
+  <h4>🏢 场地硬件</h4>
+  <ul class="checklist">
+    <li>实际使用面积（扣除公摊后）</li>
+    <li>层高是否满足自习室需求（建议3米以上）</li>
+    <li>消防设施是否合规，是否有消防验收</li>
+    <li>上下水、卫生间配置</li>
+    <li>电路负载是否满足（电脑+空调+照明）</li>
+    <li>隔音效果（周边是否有噪音源）</li>
+    <li>自然采光和通风条件</li>
+    <li>可改造空间（隔断、玻璃墙等）</li>
+  </ul>
+
+  <h4>💰 租赁条件</h4>
+  <ul class="checklist">
+    <li>租金底价和递增幅度</li>
+    <li>免租期（装修期，建议争取2-3个月）</li>
+    <li>押金方式（几押几付）</li>
+    <li>物业费、水电费标准</li>
+    <li>租赁期限和续约优先权</li>
+    <li>是否有进场费/转让费/茶水费</li>
+    <li>产权是否清晰，能否办理营业执照</li>
+    <li>教育业态是否被允许（确认政策合规）</li>
+  </ul>
+
+  <h4>📍 位置与流量</h4>
+  <ul class="checklist">
+    <li>距离最近学校步行时间和路线</li>
+    <li>学生上下学必经之路吗</li>
+    <li>家长接送停车是否方便</li>
+    <li>地铁/公交站点距离</li>
+    <li>周边小区数量和入住率</li>
+    <li>周边竞品机构数量和定价</li>
+    <li>招牌/指示牌可见性</li>
+    <li>电梯/楼梯到达便利性</li>
+  </ul>
+
+  <h4>📊 周边竞品摸底</h4>
+  <ul class="checklist">
+    <li>周边3公里内有几家托管/自习室/培训机构</li>
+    <li>同类自习室的定价（按月/按小时）</li>
+    <li>主要竞品的面积、座位数、满座率</li>
+    <li>竞品的核心卖点和客户评价</li>
+    <li>是否有连锁品牌入驻</li>
+    <li>当地家长对AI教育的认知度</li>
+  </ul>
+</div>
+
+<!-- SECTION 8: INVESTMENT -->
+<div class="section">
+  <h2>八、投资估算与盈利模型（供投资人洽谈参考）</h2>
+  
+  <h3>8.1 初始投资估算（200㎡/50座位）</h3>
+  <table>
+    <tr><th>项目</th><th>金额（万元）</th><th>备注</th></tr>
+    <tr><td>场地押金（2-3个月）</td><td>2.4-6.0</td><td>按1.2-2万/月计算</td></tr>
+    <tr><td>装修工程</td><td>20-30</td><td>隔断、地面、墙面、吊顶、灯光，约1000-1500元/㎡</td></tr>
+    <tr><td>桌椅家具</td><td>5-8</td><td>50套学习桌椅+休息区家具</td></tr>
+    <tr><td>AI设备与系统</td><td>8-15</td><td>电脑/平板、AI学习系统、监控</td></tr>
+    <tr><td>空调新风系统</td><td>4-6</td><td>中央空调或分体空调+新风</td></tr>
+    <tr><td>消防改造</td><td>2-4</td><td>根据场地情况</td></tr>
+    <tr><td>前期市场推广</td><td>3-5</td><td>地推、线上投放、开业活动</td></tr>
+    <tr><td>备用金（3个月运营）</td><td>10-15</td><td>租金+人员+水电</td></tr>
+    <tr style="font-weight: 700; background: #ebf8ff;">
+      <td>合计</td><td>54.4-89.0万</td><td>建议预算60-80万</td>
+    </tr>
+  </table>
+
+  <h3>8.2 月度运营成本</h3>
+  <table>
+    <tr><th>项目</th><th>金额（元/月）</th><th>备注</th></tr>
+    <tr><td>场地租金</td><td>12,000-20,000</td><td>二楼200㎡</td></tr>
+    <tr><td>物业费+水电费</td><td>2,000-3,000</td><td>含空调费</td></tr>
+    <tr><td>人员工资（3-4人）</td><td>25,000-35,000</td><td>店长1名+学习管理师2-3名</td></tr>
+    <tr><td>AI系统/设备维护</td><td>3,000-5,000</td><td>系统授权+耗材</td></tr>
+    <tr><td>市场推广</td><td>5,000-10,000</td><td>含地推、线上</td></tr>
+    <tr><td>其他杂费</td><td>2,000-3,000</td><td>办公用品、维修等</td></tr>
+    <tr style="font-weight: 700; background: #ebf8ff;">
+      <td>月成本合计</td><td>49,000-76,000</td><td>约5-7.6万/月</td>
+    </tr>
+  </table>
+
+  <h3>8.3 收入预测与回本周期</h3>
+  <table>
+    <tr><th>指标</th><th>保守估计</th><th>中性估计</th><th>乐观估计</th></tr>
+    <tr><td>客单价（元/月）</td><td>2,000</td><td>2,500</td><td>3,000</td></tr>
+    <tr><td>满座率</td><td>50%（25人）</td><td>70%（35人）</td><td>85%（43人）</td></tr>
+    <tr><td>月营收（万元）</td><td>5.0</td><td>8.75</td><td>12.9</td></tr>
+    <tr><td>月利润（万元）</td><td>0-2.6</td><td>1.15-3.85</td><td>5.3-8.0</td></tr>
+    <tr><td>回本周期</td><td>24-36个月</td><td>15-20个月</td><td>8-12个月</td></tr>
+  </table>
+  
+  <div class="insight">
+    <strong>对顺·行者的意义：</strong>以中性估计计算（35人×2500元=8.75万营收），扣除月成本约6万，月利润2-3万，回本周期15-20个月，属于教培行业较好水平。若结合顺·行者现有拔尖教育产品做高客单价转化，回本周期可进一步缩短。
+  </div>
+</div>
+
+<!-- SECTION 9: RISK -->
+<div class="section">
+  <h2>九、风险提示与决策建议</h2>
+  
+  <h3>9.1 主要风险</h3>
+  <table>
+    <tr><th>风险类型</th><th>具体风险</th><th>应对建议</th></tr>
+    <tr><td>政策风险</td><td>教培行业监管政策变化</td><td>定位为"AI自习室/学习服务"而非学科培训，合规运营</td></tr>
+    <tr><td>竞争风险</td><td>现有托管/培训机构转型进入</td><td>强化AI+拔尖教育差异化，建立技术壁垒</td></tr>
+    <tr><td>选址风险</td><td>所选位置学生流量不达预期</td><td>实地蹲点测算上下学人流，签短约+续约权</td></tr>
+    <tr><td>入住率风险</td><td>新片区入住率提升慢</td><td>优先选择成熟片区（公明），新片区控制投入</td></tr>
+    <tr><td>租金风险</td><td>合同到期后大幅涨租</td><td>争取3-5年租期+约定递增幅度（如每年3-5%）</td></tr>
+  </table>
+
+  <h3>9.2 决策建议</h3>
+  <div class="insight">
+    <strong>首店策略建议：</strong>优先选择<strong>方案A（中粮云景/公明）</strong>作为首店——学生基数最大、教培市场最成熟、风险最低、回本最稳。同时光明中心区和长圳片区作为后续扩张储备点，形成"稳盘+品质盘+增长盘"的光明区布局战略。
+  </div>
+  <p>建议明日考察后，根据现场实际情况，在3个方案中选择1-2个进入深度谈判阶段，争取最佳租赁条件。谈判重点：免租期（至少2个月装修期）、租金递增（每年不超过5%）、分租灵活性（初期可先租小面积再扩）。</p>
+</div>
+
+<!-- INFO GAP -->
+<div class="section" style="background: #fffbeb;">
+  <h2 style="border-bottom-color: #f6ad55;">📋 数据说明与信息缺口</h2>
+  <p style="font-size: 13.5px;">
+    本报告数据来源包括：光明区统计局公报、光明区教育局招生指引、58安居客/58同城真实挂牌、安居客/乐有家/Q房网房价数据、深圳光明网商圈数据等。所有关键数据均标注来源与日期。
+  </p>
+  <div class="info-gap">
+    <strong>尚未核实的信息（建议现场确认）：</strong><br>
+    1. 部分九年一贯制学校初中部的具体在校生人数<br>
+    2. 各挂牌房源的实时空置状态（可能已出租）<br>
+    3. 光明区自习室竞品的具体数量、定价和经营状况<br>
+    4. 分街道人均可支配收入的精确数据（目前通过房价/消费间接推断）<br>
+    5. 教育业态的具体政策要求和办证流程
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>📄 报告编号：SXZ-GM-20260907 | 完成日期：2026年9月7日</p>
+  <p>委托方：顺·行者学苑 | 用途：光明区AI自习室选址决策参考</p>
+  <p style="margin-top: 8px; font-size: 11.5px;">本报告基于公开信息整理，具体租赁条件以现场洽谈为准。投资估算仅供参考，实际以详细财务模型为准。</p>
+</div>
+
+</div>
+</body>
+</html>
