@@ -258,9 +258,12 @@ function renderSubject(){
     data: SUBJECTS[s]
   }));
   const vals = active.flatMap(s => SUBJECTS[s].filter(v => v != null));
-  let axis = { min: 0, max: 100 };
+  const maxFull = active.length ? Math.max(...active.map(s => FULL[s])) : 100;
+  let axis = { min: 0, max: maxFull };
   if (vals.length){
-    axis = paddedAxis({ min: Math.min(...vals), max: Math.max(...vals) }, 0.3);
+    const p = paddedAxis({ min: Math.min(...vals), max: Math.max(...vals) }, 0.3);
+    axis.min = Math.max(0, p.min);
+    axis.max = Math.min(maxFull, p.max);
   }
   subjectChart.setOption({
     grid: baseGrid,
