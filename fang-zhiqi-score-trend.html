@@ -22,7 +22,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:var(--font);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;position:relative}
 
   /* ===== 顶部横幅 ===== */
   header.report{background:var(--deep);color:#fff;padding:38px 0 30px;border-radius:0 0 24px 24px}
@@ -220,6 +220,18 @@ const COLORS = {
   "地理":"#5B8DEF", "体育":"#9AA5B1"
 };
 
+// 各科满分参考：数学100、英语100、物理70、化学50、历史70、道法50、生物50、地理50、体育50；校内语文为百分制（满分100）
+const FULL = { "语文":100, "数学":100, "英语":100, "物理":70, "化学":50, "历史":70, "道法":50, "生物":50, "地理":50, "体育":50 };
+
+// 依据数据范围上下留白，使曲线落在图表中部，不顶到上下边缘
+function paddedAxis(v, pad = 0.22, minFloor = 0){
+  const span = Math.max(v.max - v.min, 10);
+  return {
+    min: Math.max(minFloor, Math.floor(v.min - span * pad)),
+    max: Math.ceil(v.max + span * pad)
+  };
+}
+
 /* ================= 图表 ================= */
 const charts = {};
 function initChart(id){
@@ -237,21 +249,40 @@ const subjectChart = initChart("chart-subject");
 const activeSubjects = new Set(["语文","数学","英语"]);
 
 function renderSubject(){
-  const series = Object.keys(SUBJECTS).filter(s => activeSubjects.has(s)).map(s => ({
+  const active = Object.keys(SUBJECTS).filter(s => activeSubjects.has(s));
+  const series = active.map(s => ({
     name: s, type: "line", smooth: true, connectNulls: false,
     symbol: "circle", symbolSize: 7,
     itemStyle: { color: COLORS[s] },
     lineStyle: { width: 2.5 },
     data: SUBJECTS[s]
   }));
+  const vals = active.flatMap(s => SUBJECTS[s].filter(v => v != null));
+  let axis = { min: 0, max: 100 };
+  if (vals.length){
+    axis = paddedAxis({ min: Math.min(...vals), max: Math.max(...vals) }, 0.3);
+  }
   subjectChart.setOption({
     grid: baseGrid,
-    tooltip: { trigger: "axis", valueFormatter: v => (v == null ? "未考 / 无记录" : v + " 分") },
+    tooltip: {
+      trigger: "axis",
+      formatter: params => {
+        const i = params[0].dataIndex;
+        let html = `<b>${EXAMS[i]}</b>`;
+        params.forEach(it => {
+          const v = it.value;
+          html += `<br/>${it.marker}${it.seriesName}：${v == null ? "未考" : v + " 分（满分 " + FULL[it.seriesName] + "）"}`;
+        });
+        return html;
+      }
+    },
     legend: { top: 0, type: "scroll", textStyle: { color: "#667085" } },
     xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-    yAxis: { type: "value", name: "分数", scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+    yAxis: { type: "value", name: "分数", min: axis.min, max: axis.max, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
     series
   }, true);
+  requestAnimationFrame(() => { subjectChart.resize(); subjectChart.getZr().refreshImmediately(); });
+  setTimeout(() => { subjectChart.resize(); subjectChart.getZr().refreshImmediately(); }, 200);
 }
 
 const chipRow = document.getElementById("chipRow");
@@ -269,9 +300,12 @@ Object.keys(SUBJECTS).forEach(s => {
 });
 renderSubject();
 
-/* ---------- 总分走势 ---------- */
-const totalChart = initChart("chart-total");
-totalChart.setOption({
+/* ---------- 总分走势（懒加载） ---------- */
+let totalChart = null;
+const totalRange = paddedAxis({ min: Math.min(...TOTAL), max: Math.max(...TOTAL) }, 0.2);
+function buildTotal(){
+  totalChart = initChart("chart-total");
+  totalChart.setOption({
   grid: baseGrid,
   tooltip: {
     trigger: "axis",
@@ -283,7 +317,7 @@ totalChart.setOption({
     }
   },
   xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-  yAxis: { type: "value", name: "总分", scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+  yAxis: { type: "value", name: "总分", min: totalRange.min, max: totalRange.max, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
   series: [{
     name: "总分", type: "line", smooth: true, symbol: "circle", symbolSize: 9,
     lineStyle: { width: 3, color: "#2978B5" },
@@ -292,16 +326,20 @@ totalChart.setOption({
     label: { show: true, position: "top", fontSize: 11, color: "#2978B5" },
     data: TOTAL
   }]
-}, true);
+  }, true);
+}
 
-/* ---------- 年级排名 ---------- */
-const rankChart = initChart("chart-rank");
+/* ---------- 年级排名（懒加载） ---------- */
+let rankChart = null;
+const rankRange = paddedAxis({ min: Math.min(...RANK.map(r => r.v)), max: Math.max(...RANK.map(r => r.v)) }, 0.15);
 const rankData = RANK.map(r => ({
   value: r.v,
   label: r.label ? { show: true, position: "bottom", fontSize: 11, color: "#b0463a", formatter: r.label } : { show: false },
   itemStyle: r.label ? { color: "#b0463a", borderColor: "#fff", borderWidth: 2 } : { color: "#2978B5" }
 }));
-rankChart.setOption({
+function buildRank(){
+  rankChart = initChart("chart-rank");
+  rankChart.setOption({
   grid: { ...baseGrid, bottom: 70 },
   tooltip: {
     trigger: "axis",
@@ -314,9 +352,10 @@ rankChart.setOption({
     }
   },
   xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-  yAxis: { type: "value", name: "名次", nameLocation: "end", nameGap: 12, inverse: true, scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+  yAxis: { type: "value", name: "名次", nameLocation: "end", nameGap: 12, inverse: true, min: rankRange.min, max: rankRange.max, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
   series: [{ name: "年级排名", type: "line", smooth: true, symbol: "circle", symbolSize: 10, lineStyle: { width: 3, color: "#2978B5" }, data: rankData }]
-}, true);
+  }, true);
+}
 
 /* ---------- Tab 切换 ---------- */
 document.querySelectorAll(".tab-btn").forEach(btn => {
@@ -324,8 +363,17 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
     document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
     document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
     btn.classList.add("active");
-    document.getElementById("view-" + btn.dataset.view).classList.add("active");
+    const view = btn.dataset.view;
+    const viewEl = document.getElementById("view-" + view);
+    viewEl.classList.add("active");
+    void viewEl.offsetWidth; // 强制回流，确保容器取得可见尺寸
+    if (view === "total" && !totalChart) buildTotal();
+    if (view === "rank" && !rankChart) buildRank();
+    const chart = charts["chart-" + view];
     Object.values(charts).forEach(c => c.resize());
+    // 可见态初始化后，延迟再次重绘，确保曲线按真实宽度完整布局并上屏
+    requestAnimationFrame(() => { if (chart) { chart.resize(); chart.getZr().refreshImmediately(); } });
+    setTimeout(() => { if (chart) { chart.resize(); chart.getZr().refreshImmediately(); } }, 250);
   };
 });
 
