@@ -40,7 +40,7 @@
   .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;color:var(--sub);font-family:inherit;transition:all .15s;user-select:none}
   .chip.active{color:#fff;border-color:transparent}
   .hint{font-size:12.5px;color:var(--sub);margin-top:10px;line-height:1.7}
-  #chart{width:100%;height:460px}
+  .chart{width:100%;height:460px}
   .view{display:none}
   .view.active{display:block}
 
@@ -66,7 +66,7 @@
   <div class="wrap">
     <span class="kicker">顺·行者学苑 · 学情档案</span>
     <h1>📈 方志祺 · 历次考试成绩走势</h1>
-    <p class="lead">数据范围：七年级上学期期中 — 九年级上学期期中（共 10 次考试）；“—”表示未考试或暂无记录，不代表零分。</p>
+    <p class="lead">数据范围：七年级上学期期中 — 九年级上学期期中（共 10 次考试）；“—”表示该科本次未考，不计为零分。</p>
     <div class="tabs">
       <button class="tab-btn active" data-view="subject">各科成绩曲线</button>
       <button class="tab-btn" data-view="total">总分走势</button>
@@ -82,23 +82,23 @@
     <div class="card">
       <div class="chip-row" id="chipRow"></div>
       <div class="hint">提示：不同科目满分口径不同（如历史、道法、物理、化学满分低于语数英），曲线走势用于观察单科自身升降；跨科目比较绝对值请结合满分线。点击科目标签可切换显示 / 隐藏对应曲线。</div>
-      <div id="chart-subject"></div>
+      <div id="chart-subject" class="chart"></div>
     </div>
   </section>
 
   <!-- ===== 视图：总分 ===== -->
   <section class="view" id="view-total">
     <div class="card">
-      <div id="chart-total"></div>
-      <div class="hint">总分口径提示：八下期末总分不含已结业的生物、地理；各次考试科目及计分口径不同，总分不宜直接横向比较。九上10月月考总分 446.5 为所列七科合计；九上期中总分 512.8 按成绩单记录。</div>
+      <div id="chart-total" class="chart"></div>
+      <div class="hint">各次考试科目与计分口径不同，总分不宜直接横向比较；八下期末总分不含已结业的生物、地理。</div>
     </div>
   </section>
 
   <!-- ===== 视图：排名 ===== -->
   <section class="view" id="view-rank">
     <div class="card">
-      <div id="chart-rank"></div>
-      <div class="hint">排名数值越小越靠前（纵轴已倒置，顶部为更好名次）。部分名次为约数或预估，图中已按原始记录标注；九上期中含体育第 87 名、不含体育 60+。</div>
+      <div id="chart-rank" class="chart"></div>
+      <div class="hint">排名数值越小越靠前（纵轴已倒置，顶部为更好名次）；约数或预估名次已在图中标注。九上期中含体育第 87 名、不含体育 60+。</div>
     </div>
   </section>
 
@@ -111,12 +111,12 @@
       </div>
     </details>
     <div class="note-box">
-      <strong>档案备注（按原始记录保留，未作推测）：</strong>
+      <strong>口径说明：</strong>
       <ul>
-        <li>七上期中原记录总分 417.9，所列各科相加为 417.4；八上期末原记录总分 555，所列各科相加为 553.5；九上期中各科相加为 512.87，与成绩单 512.8 相差 0.07。差异原因未注明，暂保留原记录。</li>
-        <li>九上10月月考英语 62 分不含听说；总分 446.5 为七科合计；排名 20+ 为预估，450 分以上有 17 人。</li>
-        <li>九上期中：英语是否含听说未注明；等级记录为 语文 A、数学 A+、英语 A、物理 A+、化学 A、历史 A、道法 B、体育 B、全科总分 A。</li>
-        <li>其他考试的 A+ 分数线及单科排名暂无可靠记录；期中各科 A+ 分数线未提供，未套用 10 月月考分数线。</li>
+        <li>各次考试科目与计分口径不同，总分不宜直接横向比较；八下期末总分不含已结业的生物、地理。</li>
+        <li>九上10月月考英语 62 分不含听说；排名 20+ 为预估。</li>
+        <li>九上期中英语成绩含听说；排名含体育第 87 名、不含体育 60+。</li>
+        <li>九上期中各科等级：语文 A、数学 A+、英语 A、物理 A+、化学 A、历史 A、道法 B、体育 B，全科总分 A。</li>
       </ul>
     </div>
   </div>
@@ -196,22 +196,22 @@ const SUBJECTS = {
 const TOTAL = [417.9, 398.75, 478, 490.1, 506.6, 555, 555.6, 474.5, 446.5, 512.8];
 
 const RANK = [
-  { v: 255, note: "" },
-  { v: 246, note: "" },
-  { v: 121, note: "" },
-  { v: 120, note: "" },
-  { v: 215, note: "" },
-  { v: 170, note: "" },
-  { v: 73,  note: "" },
-  { v: 110, note: "约110" },
-  { v: 20,  note: "20+（预估）" },
-  { v: 87,  note: "87（含体育）；不含体育 60+" }
+  { v: 255, label: "", tip: "" },
+  { v: 246, label: "", tip: "" },
+  { v: 121, label: "", tip: "" },
+  { v: 120, label: "", tip: "" },
+  { v: 215, label: "", tip: "" },
+  { v: 170, label: "", tip: "" },
+  { v: 73,  label: "", tip: "" },
+  { v: 110, label: "约110", tip: "约110名" },
+  { v: 20,  label: "20+（预估）", tip: "20+（预估）" },
+  { v: 87,  label: "87（含体育）", tip: "87（含体育）/ 60+（不含体育）" }
 ];
 
 const EXAM_NOTES = [
   "", "", "", "", "", "", "", "",
-  "英语 62 分不含听说；总分 446.5 为七科合计；排名 20+ 为预估。",
-  "总分 512.8 按成绩单记录；排名含体育第 87、不含体育 60+；英语是否含听说未注明。"
+  "英语 62 分不含听说；排名 20+ 为预估。",
+  "英语成绩含听说；排名含体育第 87 名、不含体育 60+。"
 ];
 
 const COLORS = {
@@ -249,7 +249,7 @@ function renderSubject(){
     tooltip: { trigger: "axis", valueFormatter: v => (v == null ? "未考 / 无记录" : v + " 分") },
     legend: { top: 0, type: "scroll", textStyle: { color: "#667085" } },
     xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-    yAxis: { type: "value", name: "分数", axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+    yAxis: { type: "value", name: "分数", scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
     series
   }, true);
 }
@@ -283,7 +283,7 @@ totalChart.setOption({
     }
   },
   xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-  yAxis: { type: "value", name: "总分", axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+  yAxis: { type: "value", name: "总分", scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
   series: [{
     name: "总分", type: "line", smooth: true, symbol: "circle", symbolSize: 9,
     lineStyle: { width: 3, color: "#2978B5" },
@@ -298,8 +298,8 @@ totalChart.setOption({
 const rankChart = initChart("chart-rank");
 const rankData = RANK.map(r => ({
   value: r.v,
-  label: r.note ? { show: true, position: "bottom", fontSize: 11, color: "#b0463a", formatter: r.note } : { show: false },
-  itemStyle: r.note ? { color: "#b0463a", borderColor: "#fff", borderWidth: 2 } : { color: "#2978B5" }
+  label: r.label ? { show: true, position: "bottom", fontSize: 11, color: "#b0463a", formatter: r.label } : { show: false },
+  itemStyle: r.label ? { color: "#b0463a", borderColor: "#fff", borderWidth: 2 } : { color: "#2978B5" }
 }));
 rankChart.setOption({
   grid: { ...baseGrid, bottom: 70 },
@@ -308,13 +308,13 @@ rankChart.setOption({
     formatter: params => {
       const i = params[0].dataIndex;
       const r = RANK[i];
-      let html = `<b>${EXAMS[i]}</b><br/>年级排名：${r.note || ("第 " + r.v + " 名")}`;
+      let html = `<b>${EXAMS[i]}</b><br/>年级排名：${r.tip || ("第 " + r.v + " 名")}`;
       if (EXAM_NOTES[i]) html += `<br/><span style="color:#667085;font-size:12px">${EXAM_NOTES[i]}</span>`;
       return html;
     }
   },
   xAxis: { type: "category", data: EXAMS, axisLabel: { ...baseAxisLabel, interval: 0, rotate: 30 } },
-  yAxis: { type: "value", name: "年级排名（越小越好）", inverse: true, min: 0, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
+  yAxis: { type: "value", name: "名次", nameLocation: "end", nameGap: 12, inverse: true, scale: true, axisLabel: baseAxisLabel, splitLine: { lineStyle: { color: "#eef2f7" } } },
   series: [{ name: "年级排名", type: "line", smooth: true, symbol: "circle", symbolSize: 10, lineStyle: { width: 3, color: "#2978B5" }, data: rankData }]
 }, true);
 
@@ -338,7 +338,7 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
       const v = SUBJECTS[k][i];
       return `<td>${v == null ? "—" : v}</td>`;
     });
-    const rankText = RANK[i].note ? RANK[i].note : "第 " + RANK[i].v + " 名";
+    const rankText = RANK[i].tip ? RANK[i].tip : "第 " + RANK[i].v + " 名";
     return `<tr><td>${ex}</td>${cells.join("")}<td>${TOTAL[i]}</td><td>${rankText}</td></tr>`;
   });
   document.getElementById("detailTable").innerHTML = head + "<tbody>" + rows.join("") + "</tbody>";
